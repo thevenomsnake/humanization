@@ -51,5 +51,5 @@ workspace: delivery
 - Behavior: 新增 `copy` 全表述文字模式、文本 anti-slop 参考、六语言 warning 规则和 GUI 文本属性扫描；明确排除视觉规则。
 - Validation: `PYTHONUTF8=1` 下运行 quick_validate、四份脚本 py_compile、`check_writing_smoke.py`、六 locale clean copy、英文 web microcopy 和中文破折号负例，最终 smoke 通过。
 - Evidence: `Skill is valid!`、`check_writing smoke passed`、六次 `OK locale=... format=copy`、一次 `OK locale=en format=web-microcopy`，负例返回中文破折号错误。
-- Commit or artifact: pending
+- Commit or artifact: `7d9c556` (implementation commit)
 - Blocker: none
