@@ -65,7 +65,7 @@ python scripts/check_writing.py --locale zh-CN --format prose draft.md
 python scripts/check_writing.py --locale en --format web-microcopy page.html
 ```
 
-可以重复使用 `--brand-term TERM` 声明不可改写的品牌词；脚本只检查字段、标点、硬禁句和明显的能力/隐私越界。自然度、幽默、地区语感和翻译质量留给对应语言档案的人工或模型判断。旧入口 `scripts/check_prose.py` 仍保留，用于旧中文调用。
+可以重复使用 `--brand-term TERM` 声明不可改写的品牌词；脚本只检查字段、标点和明确硬禁句，不自动判断自然度、能力或隐私承诺。自然度、幽默、地区语感和翻译质量留给对应语言档案的人工或模型判断。旧入口 `scripts/check_prose.py` 仍保留，用于旧中文调用。
 
 ## 6. 交付与一致性
 
