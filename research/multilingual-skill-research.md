@@ -1,12 +1,12 @@
-# human-writing-general 研究结论
+# Humanization 研究结论
 
 研究日期：2026-08-07
 
-范围：只研究 `thevenomsnake/human-writing-general`、其上游、`kill-ai-slop` 文本子集、Skill 格式、语言标签和 Web microcopy 约束。未访问或修改 Sumimi、Cloudflare 或任何生产环境。
+范围：只研究 `thevenomsnake/humanization`、其上游、`kill-ai-slop` 文本子集、Skill 格式、语言标签和 Web microcopy 约束。未访问或修改 Sumimi、Cloudflare 或任何生产环境。
 
 ## 结论摘要
 
-- 这个项目现在是上游中文 Skill 的 fork，不是已经完成的多语言 Skill。最小可用切片应先保住一个安装单元 `human-writing-general/`，把中文专属规则从全局规则移入 `zh-CN` 档案，再增加 `en` 档案和 Web microcopy 格式，最后用同一 CLI 入口显式接收 `locale` 与 `format`。
+- 这个项目现在是上游中文 Skill 的 fork，不是已经完成的多语言 Skill。最小可用切片应先保住一个安装单元 `humanization/`，把中文专属规则从全局规则移入 `zh-CN` 档案，再增加 `en` 档案和 Web microcopy 格式，最后用同一 CLI 入口显式接收 `locale` 与 `format`。
 - 事实、能力边界、来源、虚构与现实分流、段落推进和品牌词一致性可作为跨语言核心。词序、标点、正式程度、机器翻译痕迹、套话与自然节奏不能用中文规则翻译后复用。
 - 硬规则可以确定性检查；自然度、语气和文化适配必须留在语言档案，靠人工或模型审阅。脚本不应把“看起来像真人”伪装成通过/失败。
 
@@ -26,7 +26,7 @@ GitHub API 将 `KKKKhazix/human-writing` 标记为公开、非 fork，描述为�
 
 OpenAI 官方文档规定 Skill 是一个目录，必须有 `SKILL.md`，其 front matter 必须含 `name` 和 `description`；`scripts/`、`references/`、`assets/` 和 `agents/openai.yaml` 均为可选：[Build skills](https://learn.chatgpt.com/docs/build-skills)。宿主先加载 name/description，再在命中后读完整 `SKILL.md`，所以 description 要简洁写清触发范围与边界。
 
-官方文档列出的 `agents/openai.yaml` 可选字段包括 `interface.display_name`、`short_description`、图标、`brand_color`、`default_prompt`，以及 `policy.allow_implicit_invocation` 和工具依赖。稳定标识、目录名、front matter `name`、调用名和 default prompt 应统一为 `human-writing-general`；UI 显示名统一为 `Human Writing General`。仓库发布前应检查这些值没有残留 `$human-writing`。
+官方文档列出的 `agents/openai.yaml` 可选字段包括 `interface.display_name`、`short_description`、图标、`brand_color`、`default_prompt`，以及 `policy.allow_implicit_invocation` 和工具依赖。稳定标识、目录名、front matter `name`、调用名和 default prompt 应统一为 `humanization`；UI 显示名统一为 `Humanization`。仓库发布前应检查这些值没有残留 `$human-writing-general`。
 
 Codex 的 repo 技能发现路径是当前目录到仓库根目录的 `.agents/skills`，用户级路径为 `$HOME/.agents/skills`。上游 README 的 `~/.agents/skills/human-writing/` 属于用户级安装约定；发行时仍应把完整 Skill 目录作为安装单元，而不是只复制一个 Markdown 文件。
 

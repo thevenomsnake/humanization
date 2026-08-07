@@ -1,21 +1,21 @@
 <p align="center">
-  <img src="./assets/readme-cover.svg" alt="Human Writing General" width="100%">
+  <img src="./assets/readme-cover.svg" alt="Humanization" width="100%">
 </p>
 
 <p align="center">
-  <a href="./human-writing-general/VERSION"><img alt="Version 2.1.0" src="https://img.shields.io/badge/version-2.1.0-C4473A?style=flat-square"></a>
+  <a href="./humanization/VERSION"><img alt="Version 3.0.0" src="https://img.shields.io/badge/version-3.0.0-C4473A?style=flat-square"></a>
   <a href="./LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/license-MIT-313131?style=flat-square"></a>
-  <a href="https://github.com/thevenomsnake/human-writing-general/releases/latest"><img alt="GitHub Release" src="https://img.shields.io/github/v/release/thevenomsnake/human-writing-general?style=flat-square&color=6B6258"></a>
+  <a href="https://github.com/thevenomsnake/humanization/releases/latest"><img alt="GitHub Release" src="https://img.shields.io/github/v/release/thevenomsnake/humanization?style=flat-square&color=6B6258"></a>
 </p>
 
 <p align="center">
   <a href="#快速安装">快速安装</a> ·
   <a href="#它做什么">写作流程</a> ·
   <a href="#仓库结构">仓库结构</a> ·
-  <a href="https://github.com/thevenomsnake/human-writing-general/issues">提交问题</a>
+  <a href="https://github.com/thevenomsnake/humanization/issues">提交问题</a>
 </p>
 
-> Human Writing General 让多语言作品有清楚的事实边界、说话位置和自然节奏，而不是把中文规则翻译到所有语言。
+> Humanization 让多语言作品有清楚的事实边界、说话位置和自然节奏，而不是把中文规则翻译到所有语言。
 
 支持 `zh-CN`、`zh-TW`、`en`、`ja`、`ko`、`es` 的所有表达性文字，包含文章、故事、文档、产品说明、营销文案、邮件、社交内容，以及网站标题、导航、按钮、状态、错误、隐私和无障碍文本。
 
@@ -38,18 +38,18 @@
 把下面这句话发给你的 Agent。
 
 ```bash
-帮我安装这个skill：https://github.com/thevenomsnake/human-writing-general
+帮我安装这个skill：https://github.com/thevenomsnake/humanization
 ```
 
-Agent 会读取仓库、找到 `human-writing-general`，完成安装。装好之后显示名为 `Human Writing General`。
+Agent 会读取仓库、找到 `humanization`，完成安装。装好之后显示名为 `Humanization`。
 
 <details>
 <summary><strong>Agent 不支持直接安装时</strong></summary>
 
-从 [Releases](https://github.com/thevenomsnake/human-writing-general/releases/latest) 下载，或者把仓库里的 [`human-writing-general`](./human-writing-general) 文件夹完整复制到本机 Skills 目录。文件夹名保留 `human-writing-general`。
+从 [Releases](https://github.com/thevenomsnake/humanization/releases/latest) 下载，或者把仓库里的 [`humanization`](./humanization) 文件夹完整复制到本机 Skills 目录。文件夹名保留 `humanization`。
 
 ```text
-~/.agents/skills/human-writing-general/
+~/.agents/skills/humanization/
 ```
 
 </details>
@@ -57,12 +57,12 @@ Agent 会读取仓库、找到 `human-writing-general`，完成安装。装好�
 装好之后这样用：
 
 ```text
-使用 $human-writing-general，用 `locale=en format=copy` 把这组产品事实写成具体的产品文字，并按 `web-microcopy` 规则检查 HTML 字段。
+使用 $humanization，用 `locale=en format=copy` 把这组产品事实写成具体的产品文字，并按 `web-microcopy` 规则检查 HTML 字段。
 ```
 
-## 2.1.0 改了什么
+## 3.0.0 改了什么
 
-2.1 吸收 `kill-ai-slop` 的文本部分，扩展到所有表达性文字，命中模板句只给人工判断，不吸收网页视觉规则。2.0 的通用事实核心、六个 locale 和 web microcopy 分支继续保留。校验器显式接收 `--locale` 与 `--format`，不自动猜混合语言。
+3.0 将稳定标识定稿为 `humanization`，UI 显示名为 `Humanization`。2.1 吸收 `kill-ai-slop` 的文本部分，扩展到所有表达性文字，命中模板句只给人工判断，不吸收网页视觉规则。2.0 的通用事实核心、六个 locale 和 web microcopy 分支继续保留。校验器显式接收 `--locale` 与 `--format`，不自动猜混合语言。
 
 完整变更见 [CHANGELOG.md](./CHANGELOG.md)。
 
@@ -72,7 +72,7 @@ Agent 会读取仓库、找到 `human-writing-general`，完成安装。装好�
 <summary><strong>展开查看完整目录</strong></summary>
 
 ```text
-human-writing-general/
+humanization/
 ├── SKILL.md
 ├── VERSION
 ├── LICENSE
@@ -105,13 +105,13 @@ human-writing-general/
 
 | 位置 | 干什么的 |
 | :--- | :--- |
-| [`SKILL.md`](./human-writing-general/SKILL.md) | 通用事实边界、locale/format 分流和交付检查 |
-| [`locales/`](./human-writing-general/references/locales) | 六个语言档案，各自维护自然表达与地区边界 |
-| [`expressive-text.md`](./human-writing-general/references/formats/expressive-text.md) | 文章之外的产品、文档、营销和 GUI 表达性文字 |
-| [`web-microcopy.md`](./human-writing-general/references/formats/web-microcopy.md) | 网站短文案的输入契约与可验证字段 |
-| [`anti-slop.md`](./human-writing-general/references/text/anti-slop.md) | 所有表达性文字的文本反模板规则 |
-| [`check_writing.py`](./human-writing-general/scripts/check_writing.py) | 显式 locale/format 的通用确定性校验器 |
-| [`check_zh_cn.py`](./human-writing-general/scripts/check_zh_cn.py) | 原中文动作级检查器，限定在 zh-CN prose |
+| [`SKILL.md`](./humanization/SKILL.md) | 通用事实边界、locale/format 分流和交付检查 |
+| [`locales/`](./humanization/references/locales) | 六个语言档案，各自维护自然表达与地区边界 |
+| [`expressive-text.md`](./humanization/references/formats/expressive-text.md) | 文章之外的产品、文档、营销和 GUI 表达性文字 |
+| [`web-microcopy.md`](./humanization/references/formats/web-microcopy.md) | 网站短文案的输入契约与可验证字段 |
+| [`anti-slop.md`](./humanization/references/text/anti-slop.md) | 所有表达性文字的文本反模板规则 |
+| [`check_writing.py`](./humanization/scripts/check_writing.py) | 显式 locale/format 的通用确定性校验器 |
+| [`check_zh_cn.py`](./humanization/scripts/check_zh_cn.py) | 原中文动作级检查器，限定在 zh-CN prose |
 
 </details>
 
@@ -121,8 +121,8 @@ MIT 协议开源。仓库不包含第三方文章、训练语料或模型权重�
 
 本 fork 基于 [KKKKhazix/human-writing](https://github.com/KKKKhazix/human-writing)；本地 `upstream` remote 指向上游，保留用于后续同步。
 
-碰到规则冲突、误报或者某个模型上表现不对，欢迎[提 Issue](https://github.com/thevenomsnake/human-writing-general/issues)。附上你的提示词、模型输出片段和你觉得应该是什么样，排查起来快很多。
+碰到规则冲突、误报或者某个模型上表现不对，欢迎[提 Issue](https://github.com/thevenomsnake/humanization/issues)。附上你的提示词、模型输出片段和你觉得应该是什么样，排查起来快很多。
 
 <p align="center">
-  <sub>Human Writing General · 2.1.0</sub>
+  <sub>Humanization · 3.0.0</sub>
 </p>

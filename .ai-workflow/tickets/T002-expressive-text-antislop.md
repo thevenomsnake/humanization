@@ -10,7 +10,7 @@ workspace: delivery
 
 ## Outcome
 
-`human-writing-general` 覆盖文章之外的所有表达性文字，包括文档、产品说明、营销文案、邮件、社交内容和网页 GUI 文案；它吸收 `kill-ai-slop` 的文本识别与改写原则，不处理视觉样式或组件实现。
+`humanization` 覆盖文章之外的所有表达性文字，包括文档、产品说明、营销文案、邮件、社交内容和网页 GUI 文案；它吸收 `kill-ai-slop` 的文本识别与改写原则，不处理视觉样式或组件实现。
 
 ## Acceptance
 
@@ -33,8 +33,8 @@ workspace: delivery
 ## Reads First
 
 - `research/multilingual-skill-research.md`
-- `human-writing-general/SKILL.md`
-- `human-writing-general/references/locales/`
+- `humanization/SKILL.md`
+- `humanization/references/locales/`
 
 ## Completion Check
 

@@ -1,9 +1,9 @@
 ---
-name: human-writing-general
+name: humanization
 description: 用于 zh-CN、zh-TW、en、ja、ko、es 的所有表达性文字，包括文章、故事、文档、产品内容、营销文案、邮件和网页 GUI 文案；按明确的 locale 与 format 处理事实边界、语言自然度、文本反模板规则、品牌词、隐私和无障碍文本，不吸收视觉样式规则。
 ---
 
-# Human Writing General 2.1.0
+# Humanization 3.0.0
 
 把作品写成有具体说话位置、事实边界和自然语言节奏的文字。先确定 `locale` 和 `format`，再读取对应档案；不自动把混合语言猜成一种规则。
 

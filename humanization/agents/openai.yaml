@@ -1,0 +1,4 @@
+interface:
+  display_name: "Humanization"
+  short_description: "面向六种语言的文章、产品内容与网页文案写作改稿检查工具"
+  default_prompt: "使用 $humanization，以指定的 locale 和 format 写作或改稿，去掉模板化表达并守住事实、品牌词、隐私和语言自然度。"

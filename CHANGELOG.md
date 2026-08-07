@@ -1,5 +1,10 @@
 # 更新日志
 
+## 3.0.0（2026-08-07）
+
+- 稳定标识定稿为 `humanization`，Skill 目录、front matter `name`、调用名和仓库名同步更名；UI 显示名为 `Humanization`。
+- 这是一次破坏性重命名，旧的 `$human-writing-general` 调用名不再作为稳定入口。
+
 ## 2.1.0（2026-08-07）
 
 - 从文章与 web microcopy 扩展到 `copy` 全表述文字模式，覆盖文档、产品内容、营销文案、邮件、社交内容和 GUI 字符串。
