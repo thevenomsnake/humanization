@@ -50,5 +50,5 @@ workspace: delivery
 - Behavior: 完成 `human-writing-general` 入口、六个 locale 档案、web microcopy 规则和显式校验 CLI；保留中文兼容检查入口。
 - Validation: `PYTHONUTF8=1` 下运行 quick_validate、三份脚本 py_compile、六 locale prose、英文 web microcopy 和中文破折号失败样例，定向 smoke 通过。
 - Evidence: `Skill is valid!`、六次 `OK locale=... format=prose`、一次 `OK locale=en format=web-microcopy`，负例返回中文破折号错误。
-- Commit or artifact: `f7521de` (amended after recording this completion)
+- Commit or artifact: `b1257ba` (implementation commit)
 - Blocker: none
