@@ -79,8 +79,8 @@ Unicode CLDR 是 locale 数据的权威来源，提供语言/地区命名、格�
 
 1. 将 `human-writing/SKILL.md` 入口改为通用核心，保留现实/虚构/来源/能力边界；新增 `references/locales/{zh-CN,zh-TW,en,ja,ko,es}.md`，先完成 `zh-CN` 与 `en` 的正向规则，其余四个档案先写清规范来源、地区边界和待人工校准项。
 2. 新增 `references/formats/web-microcopy.md`，定义输入契约：受众、页面/组件、事实、CTA、品牌词与不可翻译词、隐私/能力承诺、目标 locale；短格式绕过长文材料数量和篇幅门槛。
-3. 把 `check_prose.py` 拆成最小 CLI：`python check_prose.py --locale zh-CN --format prose PATH`。第一步只保留通用事实/字段检查和 `zh-CN` 硬规则；`en` 先检查可验证的 Web 字段与明显结构问题。无 locale/format 时失败，不自动猜混合语言。
-4. 保留原 MIT 文件与上游归属；配置 `upstream` remote 只用于同步，不改上游。发布 v2.0.0 时记录不可变 tag 对应 SHA，并让 `VERSION`、front matter `name`、目录名、UI display name 和 default prompt 全部一致。
+3. 把 `check_prose.py` 拆成最小 CLI：`python check_writing.py --locale zh-CN --format prose PATH`。第一步只保留通用事实/字段检查和 `zh-CN` 硬规则；`en` 先检查可验证的 Web 字段与明显结构问题。无 locale/format 时失败，不自动猜混合语言。
+4. 保留原 MIT 文件与上游归属；配置 `upstream` remote 只用于同步，不改上游。发布时记录不可变 tag 对应 SHA，并让 `VERSION`、front matter `name`、目录名、UI display name 和 default prompt 全部一致。
 
 ### 不在首片实现的内容
 
