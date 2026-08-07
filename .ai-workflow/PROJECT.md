@@ -27,6 +27,7 @@ Humanization 3.0.0 已完成稳定标识定稿。上游 1.1.0 中文 Skill 与 `
 
 - [T001 六语言入口与短文案切片](tickets/T001-multilingual-slice.md): completed, approved
 - [T002 全表达性文字与文本反 slop](tickets/T002-expressive-text-antislop.md): completed, approved
+- [T003 Humanization 稳定标识与仓库重命名](tickets/T003-humanization-rename.md): completed, approved
 
 ## Decisions
 
