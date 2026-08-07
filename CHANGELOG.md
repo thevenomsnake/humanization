@@ -1,5 +1,13 @@
 # 更新日志
 
+## 2.0.0（2026-08-07）
+
+- Skill 安装单元、front matter、UI 元数据和调用名统一为 `human-writing-general`。
+- 把事实/能力边界、现实与虚构分流、段落推进和品牌词一致性提升为通用核心。
+- 新增 `zh-CN`、`zh-TW`、`en`、`ja`、`ko`、`es` 六个独立语言档案和 `web-microcopy` 格式。
+- 将原中文检查器命名为 `check_zh_cn.py`，新增显式 `--locale`/`--format` 的 `check_writing.py`，保留 `check_prose.py` 兼容入口。
+- 保留 MIT 许可证、上游归属和 `upstream` 同步入口。
+
 ## 1.1.0（2026-08-05）
 
 核心变化只有一句话。禁令从字符串级上移到修辞动作级，检测器补盲区、降误伤、加统计层。

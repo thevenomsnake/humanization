@@ -182,7 +182,7 @@
 长稿保存为文本或 Markdown 后运行下面的命令。
 
 ```text
-python3 scripts/check_prose.py 稿件.md
+python3 scripts/check_zh_cn.py 稿件.md
 ```
 
 脚本会把冒号、破折号、翻案句、硬停词、模型路标和绝对禁用的黑话判为失败。它会把需要结合语境判断的词列为提醒，还会提醒短句排队、段落过度单一、固定开场与多套比喻。

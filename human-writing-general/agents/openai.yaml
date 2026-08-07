@@ -1,0 +1,4 @@
+interface:
+  display_name: "Human Writing General"
+  short_description: "多语言创作、改稿与网站短文案"
+  default_prompt: "使用 $human-writing-general，以指定的 locale 和 format 写作或改稿，守住事实、品牌词、隐私和语言自然度。"
