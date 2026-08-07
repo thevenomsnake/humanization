@@ -2,7 +2,7 @@
 
 研究日期：2026-08-07
 
-范围：只研究 `thevenomsnake/human-writing-general`、其上游、Skill 格式、语言标签和 Web microcopy 约束。未访问或修改 Sumimi、Cloudflare 或任何生产环境。
+范围：只研究 `thevenomsnake/human-writing-general`、其上游、`kill-ai-slop` 文本子集、Skill 格式、语言标签和 Web microcopy 约束。未访问或修改 Sumimi、Cloudflare 或任何生产环境。
 
 ## 结论摘要
 
@@ -85,3 +85,11 @@ Unicode CLDR 是 locale 数据的权威来源，提供语言/地区命名、格�
 ### 不在首片实现的内容
 
 不做五套中文规则翻译、不做自动“自然度评分”、不做逐句跨语言对齐、不接 Sumimi/Cloudflare/生产安装器。等六档案有真实样例和人工校准后，再扩大语言专属检测；等发布流程需要时，再增加固定 tag 安装与阻断逻辑。
+
+## `kill-ai-slop` 文本融合研究
+
+本地已读取已安装的 `kill-ai-slop` Skill 及其 `taxonomy.md`、`detection.md`、`fixes.md`。原 Skill 将“具体胜过口号”、先删减、确认语境再判断，以及复制层的三类信号列为核心，尤其是 AI copywriting voice、装饰性关键词强调和 emoji 泛滥。它还明确把扫描命中视为线索，不是自动判决，并允许按语言加载额外规则。
+
+本次只吸收文本原则，排除颜色、字体、布局、卡片、圆角、动效、图标、按钮样式和视觉扫描器。文本原则会改写为适用于文章、文档、产品内容、营销文案、邮件、社交内容和 GUI 文案的通用参考，再由六个 locale 档案处理本语言的模板句、语气和机器翻译痕迹。
+
+来源仓库：[yetone/kill-ai-slop](https://github.com/yetone/kill-ai-slop)，其 API 元数据标注为 Apache License 2.0：[仓库 API](https://api.github.com/repos/yetone/kill-ai-slop)，许可证原文：[LICENSE](https://github.com/yetone/kill-ai-slop/blob/main/LICENSE)。本 fork 不复制其脚本或视觉规则，新增参考文件会注明这是经过范围缩减和多语言改写的文本适配。

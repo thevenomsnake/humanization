@@ -1,4 +1,4 @@
 interface:
   display_name: "Human Writing General"
-  short_description: "六语言创作、改稿、网站短文案与事实边界检查工具"
-  default_prompt: "使用 $human-writing-general，以指定的 locale 和 format 写作或改稿，守住事实、品牌词、隐私和语言自然度。"
+  short_description: "面向六种语言的文章、产品内容与网页文案写作改稿检查工具"
+  default_prompt: "使用 $human-writing-general，以指定的 locale 和 format 写作或改稿，去掉模板化表达并守住事实、品牌词、隐私和语言自然度。"

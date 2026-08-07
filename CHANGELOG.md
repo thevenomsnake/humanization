@@ -1,5 +1,12 @@
 # 更新日志
 
+## 2.1.0（2026-08-07）
+
+- 从文章与 web microcopy 扩展到 `copy` 全表述文字模式，覆盖文档、产品内容、营销文案、邮件、社交内容和 GUI 字符串。
+- 融合 `kill-ai-slop` 的文本原则，新增多语言文本反模板参考；明确排除视觉样式、组件和动效规则。
+- 校验器新增六语言的模板化表达 warning；warning 只供人工判断，不改变确定性硬规则的退出码。
+- 记录 `kill-ai-slop` 的 Apache-2.0 来源与本 fork 的适配范围。
+
 ## 2.0.0（2026-08-07）
 
 - Skill 安装单元、front matter、UI 元数据和调用名统一为 `human-writing-general`。

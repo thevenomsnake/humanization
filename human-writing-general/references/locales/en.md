@@ -9,9 +9,9 @@ Use language-neutral English unless the product explicitly chooses `en-US` or `e
 - Do not invent first-hand experience, sources, metrics, tool access, guarantees, or customer outcomes. Mark uncertainty or narrow the claim.
 - Let English punctuation and sentence rhythm stand on their own. Chinese bans on colons or dashes do not apply; use either only when the sentence needs them.
 
-## Web microcopy
+## Product, documentation, and interface copy
 
-Use sentence case and one clear action per control. Buttons normally use a specific verb (“Save”, “Continue”, “View details”); labels name the thing; statuses say what changed; errors say what happened and how to recover. Keep privacy and accessibility claims observable.
+Lead documentation and product copy with the object, action, and relevant condition. Ground marketing claims in evidence. Use sentence case and one clear action per control. Buttons normally use a specific verb (“Save”, “Continue”, “View details”); labels name the thing; statuses say what changed; errors say what happened and how to recover. Keep privacy and accessibility claims observable.
 
 ## Translation checks
 
