@@ -18,6 +18,7 @@
 <p align="center">
   <a href="#install">Install</a> ·
   <a href="#how-it-works">How it works</a> ·
+  <a href="#before-and-after">Before and after</a> ·
   <a href="#where-the-rules-come-from">Sources</a> ·
   <a href="#locale-profiles">Locale profiles</a> ·
   <a href="#repository-layout">Repository layout</a> ·
@@ -41,6 +42,16 @@ Every task loads three modules, each with a narrow job.
 The common contract first marks each candidate as `keep`, `rewrite`, `move`, or `remove`. If the candidate also exposes a missing action, state, or recovery path, it adds `needs_product_decision` for the underlying journey. Internal facts constrain what the product may claim, but they do not automatically become public copy. The locale profiles then decide how approved messages should sound locally. Translations may use different sentence structures and lengths, but they must preserve the same audience, action, capability boundary, privacy promise, and approved terminology.
 
 When source material is incomplete, the Skill asks a focused question, checks a source, or narrows the claim. When a page has no supported action or recovery path, it returns `needs_product_decision` instead of hiding the product gap behind explanatory copy. Deterministic checks fail when they can prove damage; message relevance, tone, and naturalness remain contextual review decisions.
+
+## Before and after
+
+Humanization does not polish every true sentence into publishable copy. It first asks whether the sentence has a user-facing job on this surface.
+
+| Before | After |
+| :--- | :--- |
+| “This public site has no processing service, does not provide file uploads, does not connect to external systems, and has no entry point to start a task.” | **No replacement public copy.**<br><br>**Copy disposition:** `remove`<br>**Product flow:** `needs_product_decision`. Is this page reading-only, or should visitors be able to start a task here? If analysis belongs here, implement a real entry point and CTA before writing copy. |
+
+The internal facts stay in the capability ledger. The sentence disappears because it does not help a visitor act or decide. The missing entry point remains a separate product decision; explanatory copy cannot complete that journey.
 
 ## Where the rules come from
 

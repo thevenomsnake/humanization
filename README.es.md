@@ -18,6 +18,7 @@
 <p align="center">
   <a href="#instalación">Instalación</a> ·
   <a href="#cómo-funciona">Cómo funciona</a> ·
+  <a href="#antes-y-después">Antes y después</a> ·
   <a href="#de-dónde-salen-las-reglas">Fuentes</a> ·
   <a href="#perfiles-de-locale">Perfiles de locale</a> ·
   <a href="#estructura-del-repositorio">Estructura del repositorio</a> ·
@@ -41,6 +42,16 @@ Cada tarea combina tres módulos con responsabilidades bien delimitadas.
 El contrato común clasifica primero cada candidato como `keep`, `rewrite`, `move` o `remove`. Si el candidato también deja al descubierto una acción, un estado o una ruta de recuperación que falta, añade `needs_product_decision` al flujo subyacente. Los datos internos delimitan lo que el producto puede afirmar, pero no pasan automáticamente a la interfaz. Después, los perfiles de locale expresan con naturalidad los mensajes aprobados. Las traducciones pueden cambiar de estructura y longitud, pero conservan el público, la acción, el alcance real de las capacidades, las promesas de privacidad y la terminología aprobada.
 
 Si el material de partida está incompleto, la Skill formula una pregunta concreta, comprueba una fuente o reduce el alcance de la afirmación. Si una página carece de una acción o ruta de recuperación respaldada por el producto, devuelve `needs_product_decision`; una explicación no sustituye ese flujo pendiente. Las comprobaciones deterministas dan error ante daños demostrables. La pertinencia del mensaje, el tono y la naturalidad se revisan según el contexto.
+
+## Antes y después
+
+Humanization no convierte en texto publicable cada frase que sea cierta. Primero comprueba si cumple una función para el usuario en esa superficie.
+
+| Antes | Después |
+| :--- | :--- |
+| «Este sitio público no tiene un servicio de procesamiento, no permite subir archivos, no se conecta a sistemas externos y tampoco ofrece una forma de iniciar una tarea». | **No se añade ningún texto público en su lugar.**<br><br>**Destino del texto:** `remove`<br>**Flujo de producto:** `needs_product_decision`. ¿Esta página es solo informativa o debería permitir iniciar un análisis? Si el análisis forma parte de esta página, primero hay que implementar un punto de entrada y una CTA reales. |
+
+Los datos internos permanecen en el inventario de capacidades. La frase se elimina porque no ayuda a actuar ni a decidir. La falta de un punto de entrada sigue siendo una decisión de producto independiente; un texto explicativo no completa ese recorrido.
 
 ## De dónde salen las reglas
 
