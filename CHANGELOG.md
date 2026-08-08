@@ -2,6 +2,7 @@
 
 ## 未发布
 
+- 重做安装卡片元数据：使用英文多语言说明、Humanization 专属六语言 H 图标和独立品牌色；旧“活人感写作”卡片不属于本 Skill。
 - 将运行时规则收束为通用契约、六个 locale 档案和 GUI microcopy 三层；`SKILL.md` 只负责路由。
 - 把 GUI 从 HTML 文件类型扩展到所有界面文字表面，按按钮、错误、空状态、确认、通知等组件定义职责。
 - 校验器拆为 common、locale、GUI 三个内部模块；新增 `--source`，可比较 JSON/ARB key 与结构、HTML markup，以及 placeholder、ICU、变量、URL 和转义。

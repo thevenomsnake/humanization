@@ -1,4 +1,7 @@
 interface:
   display_name: "Humanization"
-  short_description: "面向六种语言的文章、产品内容与 GUI 文案写作改稿检查工具"
-  default_prompt: "使用 $humanization，显式指定 locale、format 和 surface，以最小必要改动保护事实、CTA、品牌词、占位符与 GUI 运行时结构。"
+  short_description: "Natural writing and GUI copy across six locales"
+  icon_small: "./assets/icon-small.png"
+  icon_large: "./assets/icon-large.svg"
+  brand_color: "#143D36"
+  default_prompt: "Use $humanization with an explicit locale, format, and surface to revise text while preserving facts, CTA, brand terms, placeholders, and runtime structure."

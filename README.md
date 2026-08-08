@@ -67,7 +67,7 @@ Ask an agent that supports installing Skills from GitHub:
 Install the humanization Skill from https://github.com/thevenomsnake/humanization. The Skill is in the humanization/ directory.
 ```
 
-The installed directory name must remain `humanization`. Its UI display name is `Humanization`.
+The installed directory name must remain `humanization`. The correct card is named `Humanization`, uses a dark-green H icon with six language bars, and reads “Natural writing and GUI copy across six locales.” If Codex shows `活人感写作`, it is displaying the legacy `human-writing` Skill, not Humanization.
 
 <details>
 <summary><strong>Manual installation</strong></summary>
@@ -116,6 +116,9 @@ humanization/
 ├── LICENSE
 ├── agents/
 │   └── openai.yaml
+├── assets/
+│   ├── icon-small.png
+│   └── icon-large.svg
 ├── references/
 │   ├── core.md
 │   ├── locales/

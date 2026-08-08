@@ -1,6 +1,6 @@
 ---
 name: humanization
-description: 用于 zh-CN、zh-TW、en、ja、ko、es 的文章、故事、文档、产品内容、营销文案、邮件和 GUI 文案；显式选择 locale、format 与 surface，以通用契约保护事实、来源、能力、隐私、CTA、品牌词和占位符，再由语言档案处理自然表达，由 GUI 模块保护 key、ICU、变量和运行时结构。
+description: Write and revise prose, stories, documentation, product content, marketing copy, email, and GUI microcopy in zh-CN, zh-TW, en, ja, ko, and es. Use an explicit locale, format, and surface to preserve facts, sources, capabilities, privacy, CTA, brand terms, placeholders, ICU messages, variables, markup, and runtime structure while applying native language rules.
 ---
 
 # Humanization 3.0.0
