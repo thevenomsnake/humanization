@@ -19,17 +19,13 @@
 
 ## 它做什么
 
-写作之前先解决一个前置问题：你手上有没有东西可写。
+Humanization 只有三层所有权。
 
-现实题材，材料不够就去查、追问或缩小题目；虚构题材可以创造人物和情节，但每个场景仍然要有目标、动作和变化。短文案不套用长文材料数量门槛。
+- **通用契约** 只管事实、来源、能力、隐私、CTA、品牌词、占位符和最小编辑。
+- **语言档案** 分别处理语序、敬语或语体、标点、地区词、翻译腔和自然节奏。
+- **GUI 文案** 按按钮、错误、空状态、确认、通知等组件处理，并保护 key、ICU、变量、markup 和运行时结构。
 
-材料过关之后管三件事。
-
-- **事实** 现实写作核准数字、引语和亲历，虚构写作检查人物、行动与因果。
-- **推进** 每段或每个文案单元都增加事实、动作、区别、选择或后果。
-- **语言** 由目标语言档案处理词序、标点、正式程度、机器翻译痕迹和节奏。
-
-初稿写完再做检查。确定性脚本只管明确字段、标点和硬禁令；文本反模板命中只给人工判断警告。自然度、语气、地区用词和翻译质量由对应语言档案人工判断。
+现实材料不足时研究、追问或缩小主张；原文已经成立时不强行改写。确定性脚本只阻断可证明的输入或资源损坏，词汇、语气、地区用词和自然度仍由对应语言档案判断。
 
 ## 快速安装
 
@@ -55,7 +51,7 @@ Agent 会读取仓库、找到 `humanization`，完成安装。装好之后显�
 装好之后这样用：
 
 ```text
-使用 $humanization，用 `locale=en format=copy` 把这组产品事实写成具体的产品文字，并按 `web-microcopy` 规则检查 HTML 字段。
+使用 $humanization，用 `locale=en format=web-microcopy surface=error` 改写这组错误文案；保留 CTA、品牌词、placeholder 和源资源结构。
 ```
 
 ## 3.0.0 改了什么
@@ -77,6 +73,7 @@ humanization/
 ├── agents/
 │   └── openai.yaml
 ├── references/
+│   ├── core.md
 │   ├── locales/
 │   │   ├── zh-CN.md
 │   │   ├── zh-TW.md
@@ -86,15 +83,16 @@ humanization/
 │   │   └── es.md
 │   ├── formats/
 │   │   ├── expressive-text.md
-│   │   └── web-microcopy.md
-│   ├── text/
-│   │   └── anti-slop.md
+│   │   └── gui-microcopy.md
 │   ├── forum-prose.md
 │   ├── reality.md
 │   ├── fiction.md
 │   ├── formats.md
 │   └── revision.md
 └── scripts/
+    ├── check_common.py
+    ├── check_gui.py
+    ├── check_locale.py
     ├── check_writing.py
     ├── check_writing_smoke.py
     ├── check_zh_cn.py
@@ -103,19 +101,19 @@ humanization/
 
 | 位置 | 干什么的 |
 | :--- | :--- |
-| [`SKILL.md`](./humanization/SKILL.md) | 通用事实边界、locale/format 分流和交付检查 |
+| [`SKILL.md`](./humanization/SKILL.md) | 只负责 core、locale 和 format 路由 |
+| [`core.md`](./humanization/references/core.md) | 事实、来源、能力、隐私、CTA、品牌词、占位符和最小编辑 |
 | [`locales/`](./humanization/references/locales) | 六个语言档案，各自维护自然表达与地区边界 |
-| [`expressive-text.md`](./humanization/references/formats/expressive-text.md) | 文章之外的产品、文档、营销和 GUI 表达性文字 |
-| [`web-microcopy.md`](./humanization/references/formats/web-microcopy.md) | 网站短文案的输入契约与可验证字段 |
-| [`anti-slop.md`](./humanization/references/text/anti-slop.md) | 所有表达性文字的文本反模板规则 |
-| [`check_writing.py`](./humanization/scripts/check_writing.py) | 显式 locale/format 的通用确定性校验器 |
+| [`expressive-text.md`](./humanization/references/formats/expressive-text.md) | 非 GUI 的产品、文档、营销、邮件和社交文字 |
+| [`gui-microcopy.md`](./humanization/references/formats/gui-microcopy.md) | GUI 组件职责和结构化资源保护 |
+| [`check_writing.py`](./humanization/scripts/check_writing.py) | 汇总 common、locale 和 GUI 检查的唯一 CLI |
 | [`check_zh_cn.py`](./humanization/scripts/check_zh_cn.py) | 原中文动作级检查器，限定在 zh-CN prose |
 
 </details>
 
 ## 反馈
 
-MIT 协议开源。仓库不包含第三方文章、训练语料或模型权重；文本反模板参考注明了 `kill-ai-slop` 的 Apache-2.0 来源与适配范围。
+MIT 协议开源。仓库不包含第三方文章、训练语料或模型权重；通用契约注明了 `kill-ai-slop` 的 Apache-2.0 来源与“只吸收文本、不吸收视觉”的适配范围。
 
 本 fork 基于 [KKKKhazix/human-writing](https://github.com/KKKKhazix/human-writing)；本地 `upstream` remote 指向上游，保留用于后续同步。
 

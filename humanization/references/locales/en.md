@@ -1,18 +1,36 @@
 # `en` English
 
-Use language-neutral English unless the product explicitly chooses `en-US` or `en-GB`. Follow plain-language guidance from [Digital.gov](https://digital.gov/guides/plain-language/).
+Use language-neutral English only as a fallback. Select `en-US`, `en-GB`, or another regional profile when spelling, dates, legal wording, or product terminology depends on region.
 
-## Writing boundaries
+## Syntax and cohesion
 
-- Put the actor and action early. Prefer concrete verbs, short paragraphs, and claims that the supplied facts can support.
-- Keep a consistent register for the audience. Avoid inflated corporate language and generic AI openings such as “in today's fast-paced world,” “delve into,” “seamless,” and “leverage” when they add no fact.
-- Do not invent first-hand experience, sources, metrics, tool access, guarantees, or customer outcomes. Mark uncertainty or narrow the claim.
-- Let English punctuation and sentence rhythm stand on their own. Chinese bans on colons or dashes do not apply; use either only when the sentence needs them.
+- Put the actor near the action when responsibility or recovery would otherwise be unclear. Passive voice and inanimate subjects are valid when the actor is unknown, irrelevant, or intentionally backgrounded.
+- Prefer verbs over inflated nominal phrases, but keep technical noun phrases that carry established meaning.
+- Keep pronoun references, articles, modifiers, and clause attachment unambiguous. Do not preserve source-language word order merely to mirror the original.
 
-## Product, documentation, and interface copy
+## Register and regional usage
 
-Lead documentation and product copy with the object, action, and relevant condition. Ground marketing claims in evidence. Use sentence case and one clear action per control. Buttons normally use a specific verb (“Save”, “Continue”, “View details”); labels name the thing; statuses say what changed; errors say what happened and how to recover. Keep privacy and accessibility claims observable.
+- Match the audience and channel. Contractions, direct address, slang, and formality are choices, not mandatory signs of humanity.
+- Use one regional spelling and terminology policy. Do not silently mix US and UK forms or force a generic voice onto a defined brand.
+- A user sample or approved product voice outranks a generic anti-slop preference.
 
-## Translation checks
+## Punctuation
 
-Reject literal calques that preserve source-language word order, noun stacks, or politeness. Keep brand terms and non-translatable product names exactly as declared by the input contract.
+- Colons, semicolons, em dashes, parentheses, and passive constructions are ordinary English tools. Use them for their grammatical job; never ban them because another locale does.
+- Use the product's capitalization convention for UI terms and headings. Sentence case is a common fallback, not a universal brand rule.
+
+## Translationese and template signals
+
+- Review literal noun stacks, repeated explicit subjects, copied politeness, false friends, and source-language punctuation.
+- Review clusters of inflated significance, vague attribution, superficial `-ing` analysis, synonym cycling, forced three-part lists, repeated `not just X but Y`, and generic chatbot openings or closings.
+- A single word such as `delve`, `seamless`, `leverage`, or one contrast sentence is not evidence by itself. Keep it when it is precise, quoted, technical, or characteristic of the writer.
+
+## Natural rhythm
+
+- Vary sentence and paragraph shape only when the information calls for it. Do not manufacture fragments, slang, mistakes, or an arbitrary mix of formal and casual language.
+- Let some paragraphs end on the last useful fact or action instead of adding a recap. Preserve deliberate repetition when it improves clarity.
+- Let `../formats/gui-microcopy.md` define the component job; this profile supplies the English wording and register.
+
+## Reference
+
+- [Digital.gov plain language](https://digital.gov/guides/plain-language/)

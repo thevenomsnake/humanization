@@ -1,5 +1,12 @@
 # 更新日志
 
+## 未发布
+
+- 将运行时规则收束为通用契约、六个 locale 档案和 GUI microcopy 三层；`SKILL.md` 只负责路由。
+- 把 GUI 从 HTML 文件类型扩展到所有界面文字表面，按按钮、错误、空状态、确认、通知等组件定义职责。
+- 校验器拆为 common、locale、GUI 三个内部模块；新增 `--source`，可比较 JSON/ARB key 与结构、HTML markup，以及 placeholder、ICU、变量、URL 和转义。
+- 移除全局必读的多语言 `anti-slop` 词表；风格信号归各 locale 且只产生 warning，中文标点规则不再误伤 `zh-TW copy`。
+
 ## 3.0.0（2026-08-07）
 
 - 稳定标识定稿为 `humanization`，Skill 目录、front matter `name`、调用名和仓库名同步更名；UI 显示名为 `Humanization`。

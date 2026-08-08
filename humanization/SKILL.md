@@ -1,46 +1,35 @@
 ---
 name: humanization
-description: 用于 zh-CN、zh-TW、en、ja、ko、es 的所有表达性文字，包括文章、故事、文档、产品内容、营销文案、邮件和网页 GUI 文案；按明确的 locale 与 format 处理事实边界、语言自然度、文本反模板规则、品牌词、隐私和无障碍文本，不吸收视觉样式规则。
+description: 用于 zh-CN、zh-TW、en、ja、ko、es 的文章、故事、文档、产品内容、营销文案、邮件和 GUI 文案；显式选择 locale、format 与 surface，以通用契约保护事实、来源、能力、隐私、CTA、品牌词和占位符，再由语言档案处理自然表达，由 GUI 模块保护 key、ICU、变量和运行时结构。
 ---
 
 # Humanization 3.0.0
 
-把作品写成有具体说话位置、事实边界和自然语言节奏的文字。先确定 `locale` 和 `format`，再读取对应档案；不自动把混合语言猜成一种规则。
+用一个通用契约、一个语言档案和一个格式模块完成写作或改稿。不要自动猜测混合文本的 locale，也不要把某种语言的禁令提升为全局规则。
 
-## 1. 建立输入契约
+## 1. 确定输入
 
-在内部记下以下字段，缺少会改变事实或 CTA 的字段时只问一个聚焦问题：
+记录以下字段；缺失内容会改变事实、承诺或 CTA 时只问一个聚焦问题：
 
-- `locale`: `zh-CN`、`zh-TW`、`en`、`ja`、`ko` 或 `es`。
-- `format`: `prose`、`copy` 或 `web-microcopy`。`copy` 是所有非长文表达性文字的通用模式，`web-microcopy` 专门校验 HTML/GUI 字段。
-- `surface`: 文章、文档、产品页、按钮、错误、邮件等具体文字表面；没有特殊表面时写 `general`。
-- 受众、目的、渠道、已有材料和交付长度。
-- 现实、虚构或混合；现实内容的来源与用户亲历边界。
-- 品牌词、不可翻译词、产品名称、CTA 和隐私/能力承诺。
+- `locale`: `zh-CN`、`zh-TW`、`en`、`ja`、`ko` 或 `es`；
+- `format`: `prose`、`copy` 或 `web-microcopy`；
+- `surface`: 文章、邮件、按钮、错误、空状态、确认、通知、页面或资源文件等真实表面；
+- 受众、目的、渠道、已有材料和交付限制；
+- 现实、虚构或混合，以及现实内容的来源边界；
+- 品牌词、不可翻译词、CTA、隐私/能力承诺；
+- GUI 任务的源资源、key、placeholder、ICU、变量、markup 和运行时约束。
 
-## 2. 先守住通用核心
+`web-microcopy` 是兼容保留的公开 format 名，实际覆盖所有 GUI 文案，不限于 HTML 或网页。
 
-### 事实与能力
+## 2. 按三层路由
 
-- 现实作品只使用用户提供或可核验的事实、数字、引语、过程和经历；不能把推测写成现场或亲历。
-- 虚构作品可以创造人物、动作、对白和心理，但每个场景都要有目标、选择、关系、信息或后果的变化。
-- 不虚构检索、工具调用、客户、用户反馈、指标、权限或交付能力。无法证明的承诺改成条件、范围或待确认事项。
-- 材料不足时研究、提问或缩小题目。长篇的材料门槛只适用于 `prose`，不阻挡短文案。
+### 通用层
 
-### 推进与说话位置
+始终读取 `references/core.md`。它是事实、来源、能力、隐私、CTA、品牌词、占位符和最小编辑的唯一规则来源。
 
-- 先让读者知道谁在什么条件下说什么；把判断放在它的依据附近。
-- 每段或每个文案单元增加事实、动作、区别、选择或后果；删掉只换说法的重复。
-- 让语气服务于受众和渠道。用具体动词、名词和可核验的细节，少用空泛的营销承诺与模板化路标。
-- 不要求逐句直译或句子数量一致。跨语言只保持受众、事实、能力边界、CTA、隐私承诺和品牌词一致。
+### 语言层
 
-### 文字反模板检查
-
-所有格式都读取 `references/text/anti-slop.md`。它吸收 `kill-ai-slop` 中与文字有关的原则，检查口号式翻案、空泛的最高级形容词、三连节奏、装饰性强调、无来源数字、重复标题和抽象名词堆叠。命中只是复核线索，引用、用户内容、真实状态和有来源的数字保留；颜色、字体、布局、卡片、动效、图标和按钮样式不属于本 Skill。
-
-## 3. 选择语言档案
-
-只读取与目标 locale 对应的一个档案；混合交付才读取多个档案并分别检查。档案里包含本语言的标点、正式度、机器翻译痕迹、套话和节奏边界：
+只读取目标 locale 对应的一个档案；多语言交付才分别读取多个档案。语言档案只负责语序、敬语或语体、标点、地区词、翻译腔、模板信号和自然节奏：
 
 - `references/locales/zh-CN.md`
 - `references/locales/zh-TW.md`
@@ -48,37 +37,40 @@ description: 用于 zh-CN、zh-TW、en、ja、ko、es 的所有表达性文字�
 - `references/locales/ja.md`
 - `references/locales/ko.md`
 - `references/locales/es.md`
-- `references/text/anti-slop.md`
-- `references/formats/expressive-text.md`
 
-中文长文的细分现实/虚构/改稿资料仍在 `references/` 根目录，仅在 `locale` 为 `zh-CN` 且任务命中相应文体时读取。它们不是通用规则。
+中文长文需要细分文体时，由 `zh-CN.md` 继续路由到根目录的中文专属资料。其他 locale 不读取这些文件。
 
-## 4. 按格式分流
+### 格式层
 
-### `prose`
+- `prose`: 按材料和文体组织长文，不套用 GUI 组件规则。
+- `copy`: 读取 `references/formats/expressive-text.md`，处理非 GUI 的文档、产品、营销、邮件和社交文字。
+- `web-microcopy`: 读取 `references/formats/gui-microcopy.md`，按按钮、错误、空状态、确认、通知等组件处理文字并保护资源结构。
 
-先确认现实材料或虚构许可，再按语言档案写初稿。长文初稿完成后再读取 `references/revision.md`（仅中文档案使用）并运行对应检查器。交稿只交作品和必要的事实来源，不展示内部清单。
+一段文字附着在控件或产品状态上时使用 `web-microcopy`，无论它存放在 HTML、JSON、YAML、ARB、PO、源码还是设计稿中。
 
-### `copy`
+## 3. 写作或改稿
 
-读取 `references/formats/expressive-text.md`。用它处理文章之外的完整表达性文字，包括文档段落、产品说明、营销内容、邮件、社交内容和 GUI 字符串。长度和载体可以不同，事实、能力、品牌词和目标动作不能漂移。
+1. 按 `core.md` 建立不可变账本。
+2. 用目标 locale 档案决定自然语序、语体、标点、地区词和节奏。
+3. 用选定的 format 模块完成文字表面的任务。
+4. 只做必要改动；原文合格时停手，歧义影响事实或行动时交还作者决定。
+5. 跨语言只对齐事实、能力、隐私、CTA、品牌词和保护 token，不要求逐句直译或句数相同。
 
-### `web-microcopy`
+## 4. 做确定性校验
 
-先读取 `references/formats/web-microcopy.md`。标题、导航、按钮、标签、状态、错误/空状态、隐私说明、`title`、description、Open Graph 和无障碍名称各自承担一个动作。短文案不套用长文的字数或材料数量规则，但仍需事实、能力、品牌词和隐私边界。按钮和标签使用目标语言自然的短动词，不把英文逐词翻译成其他语言。
-
-## 5. 做确定性校验
-
-显式传入 locale 和 format；不要让脚本猜语言或格式：
+显式传入 locale 和 format：
 
 ```bash
 python scripts/check_writing.py --locale zh-CN --format prose draft.md
 python scripts/check_writing.py --locale es --format copy campaign.txt
 python scripts/check_writing.py --locale en --format web-microcopy page.html
+python scripts/check_writing.py --locale ja --format web-microcopy --source source.json target.json
 ```
 
-可以重复使用 `--brand-term TERM` 声明不可改写的品牌词；脚本只检查字段、标点和明确硬禁句，并对文本反模板信号给出人工判断警告，不自动判断自然度、能力或隐私承诺。自然度、幽默、地区语感和翻译质量留给对应语言档案的人工或模型判断。旧入口 `scripts/check_prose.py` 仍保留，用于旧中文调用。
+可重复使用 `--brand-term TERM` 声明必须保留的品牌词。`--source` 提供 GUI 源资源后，检查器会比较 JSON/ARB key 与结构、HTML markup，以及常见 placeholder、ICU 参数、变量、URL 和转义；其他资源格式仍应运行项目自己的 parser 或 linter。
 
-## 6. 交付与一致性
+脚本只阻断可证明的空输入、品牌词丢失、资源结构损坏、可访问名称缺失和 locale 专属硬规则。词汇、语气、翻译腔和节奏只给人工判断 warning。旧入口 `scripts/check_prose.py` 继续兼容 `zh-CN prose`。
 
-交付前核对：目标 locale 明确，所有现实事实有来路，品牌词未被翻译，CTA 的动作和能力边界没有漂移，隐私文字没有超出实际行为，web 控件具备可识别名称。发现任一项不一致就先修正或标成待确认，不用另一种漂亮句式掩盖缺口。
+## 5. 交付
+
+交付作品或资源本身，并简短标出无法确认的事实或未运行的资源检查。不要展示内部清单，也不要把 warning 写成作者身份判断。
