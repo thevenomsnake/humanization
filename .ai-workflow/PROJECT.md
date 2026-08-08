@@ -17,7 +17,7 @@ project_name: "humanization"
 
 ## Current State
 
-Humanization 3.0.0 已完成稳定标识定稿，并已从 GitHub fork network 脱离为独立项目。运行时按通用契约、六个 locale 档案和 GUI microcopy 模块分层；确定性校验只阻断可证明的结构损坏，语言自然度信号保持 warning-only，视觉反 slop 规则明确排除。
+Humanization 3.0.0 已完成稳定标识定稿，并已从 GitHub fork network 脱离为独立项目。运行时按通用契约、六个 locale 档案和 GUI microcopy 模块分层；通用层先判断候选信息是否服务用户任务、决定、状态、恢复或必要披露，再交给格式与语言模块表达。确定性校验只阻断可证明的结构损坏，内容存在性和语言自然度由模型或人工结合产品上下文判断。
 
 ## Roles
 
@@ -32,3 +32,4 @@ Humanization 3.0.0 已完成稳定标识定稿，并已从 GitHub fork network �
 ## Decisions
 
 - [研究结论](../research/multilingual-skill-research.md)
+- [GUI 文案存在性门研究](../research/gui-copy-existence-gate.md)

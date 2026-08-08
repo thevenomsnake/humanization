@@ -2,6 +2,14 @@
 
 Use this module for text attached to an interface or product state. The public format name remains `web-microcopy` for compatibility, but the rules apply to HTML, JSON, YAML, ARB, PO, source code, design files, desktop apps, mobile apps, and web apps.
 
+## Content gate
+
+Run the common content existence gate before choosing a component sentence. A fact can be true and still belong in an internal capability ledger, developer diagnostic, help article, or policy document rather than in the current UI.
+
+Keep a visible string only when it names the current action or state, helps the user make a consequential choice, explains a result, enables recovery, supports navigation or identification, or provides a required privacy, permission, legal, safety, or accessibility disclosure. If the string has no such job, return `remove` or `move`. If the candidate also exposes a missing capability, state, CTA, or recovery path for the intended journey, return `needs_product_decision` alongside the copy disposition.
+
+For capability limits, describe the user-facing consequence and a real next step when one exists. Keep implementation details such as backend components, API topology, logs, and error codes in developer-facing diagnostics. Do not turn a list of absent features into public promotion or pre-emptive warning copy.
+
 ## Input and resource ledger
 
 Record the selected locale, component, current state, user goal, supported action, consequence, available space, facts, CTA, brand terms, privacy/capability claims, and source resource. Before editing a structured resource, inventory:
@@ -18,10 +26,11 @@ Only edit translatable values. Do not add, remove, rename, translate, or reorder
 | Component | Text job | Required check |
 | --- | --- | --- |
 | Navigation or tab | Name the destination or view. | Use the approved term consistently; do not disguise an action as navigation. |
+| Page introduction or feature summary | State what the visitor can do here and why it matters. | Lead with a supported outcome or action; disclose a limitation only when it changes an informed choice or expectation. |
 | Button or menu item | Name the outcome of the action. | Prefer the exact outcome over vague `OK`; make destructive actions explicit. |
 | Label or help text | Name the control or supply a needed condition. | Do not use placeholder text as the only label. |
-| Error or validation | State what happened and enable recovery. | Give a cause only when known; offer only a real next step. |
-| Empty or no-results state | Explain the current state and orient the next action. | Distinguish first use, no results, loading, permission failure, and system failure when the product does. |
+| Error or validation | State what happened and enable recovery. | Give a cause only when known; keep implementation details in diagnostics; offer only a real next step. |
+| Empty or no-results state | Explain the current state and orient the next action. | Distinguish first use, no results, loading, permission failure, and system failure when the product does; do not invent a CTA when no action exists. |
 | Confirmation | Support an informed choice. | Name the effect, cost, scope, and irreversibility; label both choices by outcome. |
 | Status or notification | Report a current or completed change. | Keep it timely and non-blocking unless the user must decide; expose meaningful text to assistive technology. |
 | Privacy or permission | Explain actual collection, use, sharing, storage, or access. | Do not expand the product's legal or technical promise. |
@@ -31,7 +40,7 @@ Only edit translatable values. Do not add, remove, rename, translate, or reorder
 
 Read the selected locale profile after identifying the component job. The profile decides whether the natural realization is a verb, noun phrase, complete sentence, honorific form, regional term, or another construction. Do not force English word order or a universal “short verb” rule onto every locale.
 
-Short strings bypass long-form material counts and paragraph rules. Minimal editing still applies: preserve a working control label or state when it already fits the product and locale.
+Short strings bypass long-form material counts and paragraph rules. Minimal editing still applies: preserve a working control label or state when it already fits the product and locale. For a structured resource, report a `remove` disposition without blanking the value or deleting the key; preserve the current nesting and runtime shape until the resource owner approves a schema change.
 
 ## Resource validation
 

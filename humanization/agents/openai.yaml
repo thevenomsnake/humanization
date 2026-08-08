@@ -4,4 +4,4 @@ interface:
   icon_small: "./assets/icon-small.png"
   icon_large: "./assets/icon-large.svg"
   brand_color: "#143D36"
-  default_prompt: "Use $humanization with an explicit locale, format, and surface to revise text while preserving facts, CTA, brand terms, placeholders, and runtime structure."
+  default_prompt: "Use $humanization with an explicit locale, format, and surface to decide which product messages belong, then revise the approved copy while preserving facts, CTA, brand terms, placeholders, and runtime structure."

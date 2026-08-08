@@ -24,9 +24,9 @@
   <a href="https://github.com/thevenomsnake/humanization/issues">问题反馈</a>
 </p>
 
-<p align="center"><strong>为六种 locale 提供自然的产品文字与 GUI 文案。</strong></p>
+<p align="center"><strong>先判断文案该不该出现，再为六种 locale 写得自然。</strong></p>
 
-Humanization 融合多个成熟写作、编辑、本地化与 anti-slop 项目的实践，服务多语言产品创造者。它覆盖文章、故事、文档、产品内容、营销文案、邮件和社交内容，也处理导航、按钮、错误、空状态、确认、通知、隐私说明和无障碍名称等 GUI 文字。
+Humanization 融合多个成熟写作、编辑、本地化、内容设计与 anti-slop 项目的实践，服务多语言产品创造者。它覆盖文章、故事、文档、产品内容、营销文案、邮件和社交内容，也处理导航、按钮、错误、空状态、确认、通知、隐私说明和无障碍名称等 GUI 文字。动笔改写之前，它会先区分内部能力事实与用户在当前载体上真正需要看到的信息。
 
 **语言档案：** [zh-CN 简体中文](./humanization/references/locales/zh-CN.md) · [zh-TW 繁體中文](./humanization/references/locales/zh-TW.md) · [en English](./humanization/references/locales/en.md) · [ja 日本語](./humanization/references/locales/ja.md) · [ko 한국어](./humanization/references/locales/ko.md) · [es Español](./humanization/references/locales/es.md)
 
@@ -34,13 +34,13 @@ Humanization 融合多个成熟写作、编辑、本地化与 anti-slop 项目�
 
 每项任务由三个各司其职的模块共同处理。
 
-- **通用契约：** 事实、来源、能力、隐私、CTA、品牌词、占位符和最小编辑。
+- **通用契约：** 事实、来源、能力、隐私、CTA、品牌词、占位符、最小编辑和内容存在性门。
 - **语言档案：** 分别定义本语言的语序、语体或敬语、标点、术语、翻译腔审查和自然节奏。
 - **GUI 微文案：** 分别处理按钮、错误、空状态、确认和通知，并保护 key、ICU 消息、变量、markup 和运行时结构。
 
-通用契约让各语言版本的事实主张和产品承诺保持稳定，语言档案负责将这些约束写成自然的目标语言。各版本可以采用不同的句式和长度，同时保持相同的受众、动作、能力边界、隐私承诺和已批准术语。
+通用契约先把每条候选信息标为 `keep`、`rewrite`、`move` 或 `remove`。如果候选信息还暴露了缺失的动作、状态或恢复路径，再为底层流程同时标记 `needs_product_decision`。内部事实负责约束产品主张，只有承担用户职责的信息才会进入公开文案。语言档案随后决定这些信息在目标语言中如何自然表达。各版本可以采用不同的句式和长度，同时保持相同的受众、动作、能力边界、隐私承诺和已批准术语。
 
-原始材料存在缺口时，Skill 会提出一个聚焦问题、核查来源或缩小主张。原文已经成立时则保持原样。确定性检查负责确认可证实的损坏，语气和自然度交由所选语言档案审阅。
+原始材料存在缺口时，Skill 会提出一个聚焦问题、核查来源或缩小主张。页面缺少可用 CTA 或恢复路径时，Skill 返回 `needs_product_decision`，由产品团队决定如何补齐流程。确定性检查会拦截能够证实的损坏；信息是否相关、语气是否合适、语言是否自然，都要结合上下文审阅。
 
 ## 规则来源
 
@@ -49,9 +49,12 @@ Humanization 融合多个成熟写作、编辑、本地化与 anti-slop 项目�
 | 项目 | 对 Humanization 的贡献 |
 | :--- | :--- |
 | [KKKKhazix/human-writing](https://github.com/KKKKhazix/human-writing/tree/cd879d22c8588125c1869d0b443f5d8df74b4192) | 奠定最初的 `zh-CN` 长文基础，包括材料是否充足、来源核查、现实与虚构边界、改稿流程和自然中文节奏。 |
-| [yetone/kill-ai-slop](https://github.com/yetone/kill-ai-slop) | 启发文本审阅流程，用具体信息代替口号，先清理装饰再改写，并把模式命中作为进一步审阅的线索。 |
+| [yetone/kill-ai-slop](https://github.com/yetone/kill-ai-slop/tree/96d1ca568a1db7e1ef9a381644c744440f816ee4) | 启发文本审阅流程，用具体信息代替口号，先清理装饰再改写，并把模式命中作为进一步审阅的线索。 |
 | [ehmo/slopkit (`slopbeth`)](https://github.com/ehmo/slopkit/blob/b33718bb9283c11b09567dc714f92d90ffb7bd16/skills/slopbeth/SKILL.md) | 启发证据账本的设计，用于记录实体、数字、日期、URL、引语和不确定性，让每项主张都与现有证据一致。 |
 | [blader/humanizer](https://github.com/blader/humanizer/blob/523374dee72d67c7b2b5f858ea0094ffda49c3ac/SKILL.md) 和 [petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop/blob/d30eddb9e04562234f2070b5ee63ca4649d9a05e/skills/no-ai-slop/SKILL.md) | 启发最小编辑流程，保留作者的事实和有效表达，只做足以解决问题的改动，并允许 `no_change`。 |
+| [18F/content-guide](https://github.com/18F/content-guide/tree/1b1723d3d5b8f91d92c16487c88b56265dc0ec3a) 和 [GOV.UK Design System](https://github.com/alphagov/govuk-design-system/tree/efb0d77d38b7ed7f921697564d2c47723d434977) | 启发以用户需求为准的内容取舍、正向任务说明和信息放置原则，并要求错误与不可用状态为用户提供真实的下一步。 |
+| [Shopify Polaris](https://github.com/Shopify/polaris-react-archive/blob/af6ffb66a5b1d20f6c2c898b334a1ebb53728ba2/polaris.shopify.com/content/content/fundamentals.mdx)、[Carbon Design System](https://github.com/carbon-design-system/carbon-website/tree/e14433309b1dd53ec790eaa176139007ea9e9c80) 和 [PatternFly](https://github.com/patternfly/patternfly-org/tree/3aff87cace31c7d7e94ebae4cb35666f4f2e75d7) | 启发组件级内容取舍，保留与任务相关的帮助，区分界面状态，并把限制与用户可观察的后果及产品支持的动作相连。 |
+| [ya8282/ux-writing-skill](https://github.com/ya8282/ux-writing-skill/tree/711e4162d21367bc62003e428696dc76807d56ec)、[OOOOuyang/UX-writing-skill](https://github.com/OOOOuyang/UX-writing-skill/tree/fad02668533dca76d638aaacf6c2e834657df0ab) 和 [RobTar97/japanese-writing-skills](https://github.com/RobTar97/japanese-writing-skills/tree/e4b1700464219c60da786f005a061bccffbbd4e3) | 启发显式内容处置，要求每条辅助文案都有明确职责，并将面向用户的恢复文案与开发诊断分开。 |
 
 ## 语言档案
 
@@ -66,7 +69,7 @@ Humanization 融合多个成熟写作、编辑、本地化与 anti-slop 项目�
 | `ko` | [Mozilla Korean style guide](https://github.com/mozilla-l10n/styleguides/blob/main/docs/ko/README.md)、[dotoricode/korean-humanizer](https://github.com/dotoricode/korean-humanizer/tree/7dff5b48cc06fc4252d4766b802ecd61e62c50ad) 和 [HarryJhin/korean-writing](https://github.com/HarryJhin/korean-writing/tree/e4db3883ed76521b7a0cac30392fa67d182cc8ab) | 自然省略主语、助词和分写、`합니다`/`해요`/`다` 语体等级、敬语、句末形式，以及英语和日语翻译腔审查。 |
 | `es` | [Mozilla Spanish style guides](https://github.com/mozilla-l10n/styleguides/tree/main/docs/es) | 性数一致、附着代词、`tú`/`usted`/`ustedes`、句首大写式 UI、地区术语、标点和英语仿译审查。 |
 
-所链接的项目分别适用各自的许可证。[研究笔记](./research/multilingual-skill-research.md) 记录了来源证据，以及这些来源如何影响 Humanization；复用相关文字或代码前，请查阅相应仓库的许可证。Humanization 的项目专属规则根据上述实践重新撰写。
+所链接的项目分别适用各自的许可证。[多语言研究笔记](./research/multilingual-skill-research.md) 和 [GUI 文案存在性门研究报告](./research/gui-copy-existence-gate.md) 记录了来源证据，以及这些来源如何影响 Humanization；复用相关文字或代码前，请查阅相应仓库的许可证。Humanization 的项目专属规则根据上述实践重新撰写。
 
 ## 安装
 
@@ -95,6 +98,12 @@ $CODEX_HOME/skills/humanization/
 Use $humanization with locale=ja, format=web-microcopy, and surface=error. Rewrite these error messages while preserving the CTA, brand terms, placeholders, and source resource structure.
 ```
 
+改写之前，先审查现有文案是否适合留在当前载体：
+
+```text
+Use $humanization with locale=zh-CN, format=web-microcopy, and surface=public-page. Decide whether each capability statement should be kept, rewritten, moved, or removed, and flag any underlying product decision.
+```
+
 公开 format 名 `web-microcopy` 覆盖 HTML、JSON、YAML、ARB、PO、源代码和设计文件中的 GUI 文字，适用于网站、桌面和移动产品。
 
 运行确定性检查器时使用同样的显式路由：
@@ -109,6 +118,7 @@ python humanization/scripts/check_writing.py --locale es --format web-microcopy 
 - 将 `humanization` 定为稳定的 Skill 名和目录名，UI 显示名为 `Humanization`。
 - 把运行时指南拆成一个通用契约、六个语言档案和一个 GUI 微文案模块。
 - 加入由 `kill-ai-slop` 启发的具体信息、克制表达和审阅线索原则。
+- 新增跨语言内容存在性门，用来区分内部能力事实与适合公开的用户信息。
 - `--locale` 和 `--format` 改为显式参数，由调用方为混合文本指定路由，语气继续作为人工审阅项。
 
 完整历史记录见 [CHANGELOG.md](./CHANGELOG.md)。
@@ -158,10 +168,10 @@ humanization/
 | 路径 | 用途 |
 | :--- | :--- |
 | [`SKILL.md`](./humanization/SKILL.md) | 让每项任务依次经过通用、语言和格式模块。 |
-| [`core.md`](./humanization/references/core.md) | 负责事实、来源、能力、隐私、CTA、品牌词、占位符和最小编辑。 |
+| [`core.md`](./humanization/references/core.md) | 负责事实、来源、能力、隐私、CTA、品牌词、占位符、最小编辑和内容处置。 |
 | [`locales/`](./humanization/references/locales) | 保存六个语言的原生写作档案。 |
 | [`expressive-text.md`](./humanization/references/formats/expressive-text.md) | 处理非 GUI 的产品、文档、营销、邮件和社交文字。 |
-| [`gui-microcopy.md`](./humanization/references/formats/gui-microcopy.md) | 定义 GUI 组件职责和结构化资源保护。 |
+| [`gui-microcopy.md`](./humanization/references/formats/gui-microcopy.md) | 定义 GUI 内容存在性门、组件职责和结构化资源保护。 |
 | [`check_writing.py`](./humanization/scripts/check_writing.py) | 提供执行通用、语言和 GUI 检查的统一 CLI。 |
 | [`check_zh_cn.py`](./humanization/scripts/check_zh_cn.py) | 将原有动作级检查器限定在 `zh-CN prose`。 |
 

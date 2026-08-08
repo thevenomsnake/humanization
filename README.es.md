@@ -24,9 +24,9 @@
   <a href="https://github.com/thevenomsnake/humanization/issues">Incidencias</a>
 </p>
 
-<p align="center"><strong>Redacción natural para productos y microcopy de GUI en seis locales.</strong></p>
+<p align="center"><strong>Decide qué contenido debe aparecer en el producto y redáctalo con naturalidad en seis locales.</strong></p>
 
-Humanization reúne prácticas de proyectos consolidados de escritura, edición, localización y anti-slop. Está pensado para quienes crean productos multilingües y trabajan con prosa, relatos, documentación, contenido de producto, textos de marketing, correo electrónico, publicaciones sociales y textos de GUI como navegación, botones, errores, estados vacíos, confirmaciones, notificaciones, avisos de privacidad y nombres accesibles.
+Humanization reúne métodos prácticos de proyectos consolidados de escritura, edición, localización, diseño de contenidos y anti-slop. Está pensado para quienes crean productos multilingües y trabajan con prosa, relatos, documentación, contenido de producto, textos de marketing, correo electrónico, publicaciones sociales y textos de GUI como navegación, botones, errores, estados vacíos, confirmaciones, notificaciones, avisos de privacidad y nombres accesibles. Antes de reescribir, distingue los datos internos sobre capacidades de los mensajes que los usuarios necesitan realmente en la superficie seleccionada.
 
 **Perfiles de locale:** [zh-CN 简体中文](./humanization/references/locales/zh-CN.md) · [zh-TW 繁體中文](./humanization/references/locales/zh-TW.md) · [en English](./humanization/references/locales/en.md) · [ja 日本語](./humanization/references/locales/ja.md) · [ko 한국어](./humanization/references/locales/ko.md) · [es Español](./humanization/references/locales/es.md)
 
@@ -34,13 +34,13 @@ Humanization reúne prácticas de proyectos consolidados de escritura, edición,
 
 Cada tarea combina tres módulos con responsabilidades bien delimitadas.
 
-- **Contrato común:** hechos, fuentes, capacidades, privacidad, CTA, términos de marca, placeholders y edición mínima.
+- **Contrato común:** hechos, fuentes, capacidades, privacidad, CTA, términos de marca, placeholders, edición mínima y el filtro que decide si cada contenido debe existir en esa superficie.
 - **Perfil de locale:** sintaxis, registro u honoríficos, puntuación, vocabulario regional, rastros de traducción literal y ritmo natural.
 - **Microcopy de GUI:** redacción específica para botones, errores, estados vacíos, confirmaciones y notificaciones, con protección de claves, mensajes ICU, variables, markup y estructura en tiempo de ejecución.
 
-El contrato común mantiene estables los hechos y las promesas del producto en todos los idiomas. Los perfiles de locale se encargan de expresarlos con naturalidad en cada lugar. Las traducciones pueden cambiar de estructura y longitud, pero conservan el público, la acción, el alcance real de las capacidades, las promesas de privacidad y la terminología aprobada.
+El contrato común clasifica primero cada candidato como `keep`, `rewrite`, `move` o `remove`. Si el candidato también deja al descubierto una acción, un estado o una ruta de recuperación que falta, añade `needs_product_decision` al flujo subyacente. Los datos internos delimitan lo que el producto puede afirmar, pero no pasan automáticamente a la interfaz. Después, los perfiles de locale expresan con naturalidad los mensajes aprobados. Las traducciones pueden cambiar de estructura y longitud, pero conservan el público, la acción, el alcance real de las capacidades, las promesas de privacidad y la terminología aprobada.
 
-Si el material de partida está incompleto, la Skill formula una pregunta concreta, comprueba una fuente o reduce el alcance de la afirmación. Si el original ya cumple su función, lo conserva. Las comprobaciones deterministas dan error ante daños demostrables; la valoración del tono y la naturalidad corresponde al perfil de locale seleccionado.
+Si el material de partida está incompleto, la Skill formula una pregunta concreta, comprueba una fuente o reduce el alcance de la afirmación. Si una página carece de una acción o ruta de recuperación respaldada por el producto, devuelve `needs_product_decision`; una explicación no sustituye ese flujo pendiente. Las comprobaciones deterministas dan error ante daños demostrables. La pertinencia del mensaje, el tono y la naturalidad se revisan según el contexto.
 
 ## De dónde salen las reglas
 
@@ -49,9 +49,12 @@ Humanization se apoya en métodos y guías que otros proyectos han compartido p�
 | Proyecto | Contribución a Humanization |
 | :--- | :--- |
 | [KKKKhazix/human-writing](https://github.com/KKKKhazix/human-writing/tree/cd879d22c8588125c1869d0b443f5d8df74b4192) | Aportó la base inicial para textos extensos en `zh-CN`: suficiencia del material, comprobación de fuentes, límites entre realidad y ficción, flujo de revisión y ritmo natural del chino. |
-| [yetone/kill-ai-slop](https://github.com/yetone/kill-ai-slop) | Ayudó a definir una revisión textual que prefiere la información concreta a los eslóganes, elimina la decoración antes de reescribir y usa las coincidencias con patrones como indicios para revisar. |
-| [ehmo/slopkit (`slopbeth`)](https://github.com/ehmo/slopkit/blob/b33718bb9283c11b09567dc714f92d90ffb7bd16/skills/slopbeth/SKILL.md) | Inspiró el inventario de evidencias para entidades, números, fechas, URL, citas e incertidumbre, junto con la regla de conservar los vacíos cuando faltan pruebas. |
+| [yetone/kill-ai-slop](https://github.com/yetone/kill-ai-slop/tree/96d1ca568a1db7e1ef9a381644c744440f816ee4) | Ayudó a definir una revisión textual que prefiere la información concreta a los eslóganes, elimina la decoración antes de reescribir y usa las coincidencias con patrones como indicios para revisar. |
+| [ehmo/slopkit (`slopbeth`)](https://github.com/ehmo/slopkit/blob/b33718bb9283c11b09567dc714f92d90ffb7bd16/skills/slopbeth/SKILL.md) | Inspiró el inventario de evidencias para entidades, números, fechas, URL, citas e incertidumbre, de modo que cada afirmación permanezca dentro de lo que permiten las pruebas disponibles. |
 | [blader/humanizer](https://github.com/blader/humanizer/blob/523374dee72d67c7b2b5f858ea0094ffda49c3ac/SKILL.md) y [petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop/blob/d30eddb9e04562234f2070b5ee63ca4649d9a05e/skills/no-ai-slop/SKILL.md) | Inspiraron el flujo de edición mínima: conservar los hechos y la voz que ya funciona, hacer el cambio útil más pequeño y permitir `no_change`. |
+| [18F/content-guide](https://github.com/18F/content-guide/tree/1b1723d3d5b8f91d92c16487c88b56265dc0ec3a) y [GOV.UK Design System](https://github.com/alphagov/govuk-design-system/tree/efb0d77d38b7ed7f921697564d2c47723d434977) | Ayudaron a definir el filtro basado en las necesidades del usuario, las instrucciones orientadas a tareas, la colocación de los mensajes y el requisito de ofrecer un siguiente paso real en errores y estados de indisponibilidad. |
+| [Shopify Polaris](https://github.com/Shopify/polaris-react-archive/blob/af6ffb66a5b1d20f6c2c898b334a1ebb53728ba2/polaris.shopify.com/content/content/fundamentals.mdx), [Carbon Design System](https://github.com/carbon-design-system/carbon-website/tree/e14433309b1dd53ec790eaa176139007ea9e9c80) y [PatternFly](https://github.com/patternfly/patternfly-org/tree/3aff87cace31c7d7e94ebae4cb35666f4f2e75d7) | Guiaron la selección de contenido por componente: conservar la ayuda pertinente para la tarea, distinguir los estados de la interfaz y vincular las limitaciones con consecuencias observables y acciones que el producto admite. |
+| [ya8282/ux-writing-skill](https://github.com/ya8282/ux-writing-skill/tree/711e4162d21367bc62003e428696dc76807d56ec), [OOOOuyang/UX-writing-skill](https://github.com/OOOOuyang/UX-writing-skill/tree/fad02668533dca76d638aaacf6c2e834657df0ab) y [RobTar97/japanese-writing-skills](https://github.com/RobTar97/japanese-writing-skills/tree/e4b1700464219c60da786f005a061bccffbbd4e3) | Ayudaron a definir decisiones explícitas sobre el destino de cada contenido, el principio de que cada texto auxiliar debe justificar su presencia y la separación entre los mensajes de recuperación para usuarios y los diagnósticos para desarrollo. |
 
 ## Perfiles de locale
 
@@ -66,7 +69,7 @@ Cada perfil reúne la sintaxis, el registro, la puntuación, la terminología, l
 | `ko` | [Guía de estilo coreano de Mozilla](https://github.com/mozilla-l10n/styleguides/blob/main/docs/ko/README.md), [dotoricode/korean-humanizer](https://github.com/dotoricode/korean-humanizer/tree/7dff5b48cc06fc4252d4766b802ecd61e62c50ad) y [HarryJhin/korean-writing](https://github.com/HarryJhin/korean-writing/tree/e4db3883ed76521b7a0cac30392fa67d182cc8ab) | Elipsis natural del sujeto, partículas y espaciado, niveles de habla `합니다`/`해요`/`다`, conservación de honoríficos, terminaciones y revisión de calcos del inglés y el japonés. |
 | `es` | [Guías de estilo en español de Mozilla](https://github.com/mozilla-l10n/styleguides/tree/main/docs/es) | Concordancia, clíticos, tratamiento con `tú`/`usted`/`ustedes`, mayúscula inicial en la interfaz, terminología regional, puntuación y revisión de calcos del inglés. |
 
-Los proyectos enlazados conservan sus propias licencias. [Las notas de investigación](./research/multilingual-skill-research.md) documentan las fuentes y la aportación de cada una a Humanization; consulta la licencia de cada repositorio enlazado antes de reutilizar su texto o código. Las instrucciones específicas de Humanization se redactaron a partir de las prácticas resumidas arriba.
+Los proyectos enlazados conservan sus propias licencias. [Las notas de investigación multilingüe](./research/multilingual-skill-research.md) y [el informe sobre qué copy de GUI debe existir](./research/gui-copy-existence-gate.md) documentan las fuentes y la aportación de cada una a Humanization; consulta la licencia de cada repositorio enlazado antes de reutilizar su texto o código. Las instrucciones específicas de Humanization se redactaron a partir de las prácticas resumidas arriba.
 
 ## Instalación
 
@@ -95,6 +98,12 @@ $CODEX_HOME/skills/humanization/
 Usa $humanization con locale=ja, format=web-microcopy y surface=error. Reescribe estos mensajes de error sin alterar la CTA, los términos de marca, los placeholders ni la estructura del recurso de origen.
 ```
 
+Antes de reescribir, revisa si el contenido actual debe permanecer en la superficie donde aparece:
+
+```text
+Usa $humanization con locale=zh-CN, format=web-microcopy y surface=public-page. Clasifica cada afirmación sobre capacidades como keep, rewrite, move o remove, y señala cualquier decisión de producto subyacente.
+```
+
 El nombre público de formato `web-microcopy` cubre textos de GUI en HTML, JSON, YAML, ARB, PO, código fuente y archivos de diseño para productos web, de escritorio y móviles.
 
 Ejecuta el validador determinista con las mismas opciones explícitas:
@@ -109,6 +118,7 @@ python humanization/scripts/check_writing.py --locale es --format web-microcopy 
 - Se consolidó `humanization` como nombre estable de la Skill y del directorio, con `Humanization` como nombre visible en la interfaz.
 - Las instrucciones de ejecución se organizaron en un contrato común, seis perfiles de locale y un módulo de microcopy de GUI.
 - Se incorporaron principios de información concreta, contención y revisión mediante indicios a partir de `kill-ai-slop`.
+- Se añadió un filtro multilingüe que separa los datos internos sobre capacidades de los mensajes que deben publicarse para los usuarios.
 - `--locale` y `--format` pasaron a ser explícitos; los textos mixtos se enrutan de forma deliberada y las valoraciones de tono se presentan como avisos para revisión.
 
 Consulta [CHANGELOG.md](./CHANGELOG.md) para ver el historial completo.
@@ -158,10 +168,10 @@ humanization/
 | Ruta | Función |
 | :--- | :--- |
 | [`SKILL.md`](./humanization/SKILL.md) | Dirige cada tarea a los módulos común, de locale y de formato. |
-| [`core.md`](./humanization/references/core.md) | Reúne hechos, fuentes, capacidades, privacidad, CTA, términos de marca, placeholders y edición mínima. |
+| [`core.md`](./humanization/references/core.md) | Reúne hechos, fuentes, capacidades, privacidad, CTA, términos de marca, placeholders, edición mínima y la decisión de conservar, reescribir, mover o retirar cada contenido. |
 | [`locales/`](./humanization/references/locales) | Contiene los seis perfiles de escritura nativa. |
 | [`expressive-text.md`](./humanization/references/formats/expressive-text.md) | Cubre textos no vinculados a una GUI: producto, documentación, marketing, correo electrónico y publicaciones sociales. |
-| [`gui-microcopy.md`](./humanization/references/formats/gui-microcopy.md) | Define la función de los componentes de GUI y la protección de recursos estructurados. |
+| [`gui-microcopy.md`](./humanization/references/formats/gui-microcopy.md) | Define el filtro de contenido para GUI, la función de cada componente y la protección de recursos estructurados. |
 | [`check_writing.py`](./humanization/scripts/check_writing.py) | Ofrece una única CLI para las comprobaciones comunes, de locale y de GUI. |
 | [`check_zh_cn.py`](./humanization/scripts/check_zh_cn.py) | Mantiene el comprobador original de acciones limitado a `zh-CN prose`. |
 
