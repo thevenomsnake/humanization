@@ -8,42 +8,44 @@
 
 <p align="center">
   <a href="#快速安装">快速安装</a> ·
-  <a href="#它做什么">写作流程</a> ·
+  <a href="#它做什么">工作方式</a> ·
   <a href="#仓库结构">仓库结构</a> ·
   <a href="https://github.com/thevenomsnake/humanization/issues">提交问题</a>
 </p>
 
-<p align="center"><strong>Humanization 让多语言作品有清楚的事实边界、说话位置和自然节奏。</strong></p>
+<p align="center"><strong>Humanization 把同一组事实写成六种语言里各自自然的文字。</strong></p>
 
-支持 `zh-CN`、`zh-TW`、`en`、`ja`、`ko`、`es` 的所有表达性文字，包含文章、故事、文档、产品说明、营销文案、邮件、社交内容，以及网站标题、导航、按钮、状态、错误、隐私和无障碍文本。
+面向 `zh-CN`、`zh-TW`、`en`、`ja`、`ko`、`es` 的文章、故事、文档、产品说明、营销文案、邮件和社交内容，也处理导航、按钮、错误、空状态、通知、隐私说明与无障碍名称等 GUI 文案。
 
 ## 它做什么
 
-Humanization 只有三层所有权。
+写作和改稿分成三层，每层只管一件事。
 
 - **通用契约** 只管事实、来源、能力、隐私、CTA、品牌词、占位符和最小编辑。
 - **语言档案** 分别处理语序、敬语或语体、标点、地区词、翻译腔和自然节奏。
 - **GUI 文案** 按按钮、错误、空状态、确认、通知等组件处理，并保护 key、ICU、变量、markup 和运行时结构。
 
-现实材料不足时研究、追问或缩小主张；原文已经成立时不强行改写。确定性脚本只阻断可证明的输入或资源损坏，词汇、语气、地区用词和自然度仍由对应语言档案判断。
+这里没有把中文规则翻译五遍。英文中的冒号和 em dash 是正常工具；日语和韩语需要处理省略、敬语与句尾；西班牙语要区分地区词和称呼；`zh-TW` 也按台湾用词与标点独立处理。
+
+现实材料不够时，先补查来源、追问或缩小主张。原文已经成立就停手。确定性脚本只阻断能够证明的输入或资源损坏，词汇、语气、地区用词和自然度仍由对应语言档案判断。
 
 ## 快速安装
 
-把下面这句话发给你的 Agent。
+在支持从 GitHub 安装 Skill 的 Agent 中，直接发：
 
-```bash
-帮我安装这个skill：https://github.com/thevenomsnake/humanization
+```text
+请从 https://github.com/thevenomsnake/humanization 安装 humanization Skill。
 ```
 
-Agent 会读取仓库、找到 `humanization`，完成安装。装好之后显示名为 `Humanization`。
+安装后的技能目录名应为 `humanization`，界面显示名为 `Humanization`。
 
 <details>
 <summary><strong>Agent 不支持直接安装时</strong></summary>
 
-从 [Releases](https://github.com/thevenomsnake/humanization/releases/latest) 下载，或者把仓库里的 [`humanization`](./humanization) 文件夹完整复制到本机 Skills 目录。文件夹名保留 `humanization`。
+把仓库里的 [`humanization`](./humanization) 文件夹完整复制到 Codex Skills 目录。文件夹名保留 `humanization`。
 
 ```text
-~/.agents/skills/humanization/
+$CODEX_HOME/skills/humanization/
 ```
 
 </details>
@@ -51,12 +53,15 @@ Agent 会读取仓库、找到 `humanization`，完成安装。装好之后显�
 装好之后这样用：
 
 ```text
-使用 $humanization，用 `locale=en format=web-microcopy surface=error` 改写这组错误文案；保留 CTA、品牌词、placeholder 和源资源结构。
+使用 $humanization，locale=en，format=web-microcopy，surface=error。改写这组错误文案，保留 CTA、品牌词、placeholder 和源资源结构。
 ```
 
 ## 3.0.0 改了什么
 
-3.0 将稳定标识定稿为 `humanization`，UI 显示名为 `Humanization`。2.1 吸收 `kill-ai-slop` 的文本部分，扩展到所有表达性文字，命中模板句只给人工判断，不吸收网页视觉规则。2.0 的通用事实核心、六个 locale 和 web microcopy 分支继续保留。校验器显式接收 `--locale` 与 `--format`，不自动猜混合语言。
+- 稳定标识定为 `humanization`，界面显示名为 `Humanization`。
+- 规则拆成通用契约、六个语言档案和 GUI 文案模块。
+- 只吸收 `kill-ai-slop` 的文本原则，不引入颜色、卡片、圆角或动效等视觉规则。
+- 校验器显式接收 `--locale` 与 `--format`，不猜测混合文本的语言，也不把语气判断当成硬错误。
 
 完整变更见 [CHANGELOG.md](./CHANGELOG.md)。
 
@@ -113,9 +118,9 @@ humanization/
 
 ## 反馈
 
-MIT 协议开源。仓库不包含第三方文章、训练语料或模型权重；通用契约注明了 `kill-ai-slop` 的 Apache-2.0 来源与“只吸收文本、不吸收视觉”的适配范围。
+本项目使用 MIT 许可证，仓库不包含第三方文章、训练语料或模型权重。
 
-本 fork 基于 [KKKKhazix/human-writing](https://github.com/KKKKhazix/human-writing)；本地 `upstream` remote 指向上游，保留用于后续同步。
+本 fork 基于 [KKKKhazix/human-writing](https://github.com/KKKKhazix/human-writing)，维护时通过 `upstream` remote 同步原项目。文本原则参考 [yetone/kill-ai-slop](https://github.com/yetone/kill-ai-slop)，该项目使用 Apache-2.0 许可证；这里只吸收文字部分。
 
 碰到规则冲突、误报或者某个模型上表现不对，欢迎[提 Issue](https://github.com/thevenomsnake/humanization/issues)。附上你的提示词、模型输出片段和你觉得应该是什么样，排查起来快很多。
 
