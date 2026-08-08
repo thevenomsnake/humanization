@@ -1,42 +1,56 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
   <title id="title">Humanization</title>
   <desc id="desc">Multilingual expressive text writing and revision Skill</desc>
-  <defs>
-    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#F8F4EC"/>
-      <stop offset="1" stop-color="#EEE5D8"/>
-    </linearGradient>
-    <linearGradient id="ink" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#242321"/>
-      <stop offset="1" stop-color="#4B4742"/>
-    </linearGradient>
-  </defs>
 
-  <rect width="1200" height="420" rx="28" fill="url(#paper)"/>
-  <circle cx="1115" cy="52" r="180" fill="#C4473A" opacity="0.055"/>
-  <circle cx="1140" cy="30" r="108" fill="none" stroke="#C4473A" stroke-width="2" opacity="0.18"/>
-  <circle cx="92" cy="388" r="150" fill="#A69784" opacity="0.07"/>
-  <path d="M80 88 H362" stroke="#C4473A" stroke-width="3"/>
-  <path d="M80 328 H810" stroke="#BEB2A3" stroke-width="1"/>
+  <rect width="1200" height="420" fill="#F4F6F1"/>
+  <rect x="735" width="465" height="420" fill="#143D36"/>
+  <rect width="310" height="12" fill="#D94B3D"/>
+  <rect x="310" width="425" height="12" fill="#E6B83F"/>
+  <rect x="735" width="465" height="12" fill="#2E63C7"/>
 
-  <text x="80" y="72" fill="#C4473A" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="700" letter-spacing="3">HUMANIZATION · 3.0.0</text>
-  <text x="80" y="192" fill="url(#ink)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="76" font-weight="700" letter-spacing="2">Humanization</text>
-  <text x="84" y="250" fill="#625D56" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="27">Facts, actions, and words people can use.</text>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="72" y="64" fill="#D94B3D" font-size="17" font-weight="700">HUMANIZATION / 3.0.0</text>
+    <text x="72" y="166" fill="#171A18" font-size="78" font-weight="700">Humanization</text>
+    <line x1="72" y1="196" x2="640" y2="196" stroke="#171A18" stroke-width="2"/>
+    <text x="72" y="239" fill="#3E4541" font-size="25">Facts, actions, and words people can use.</text>
 
-  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" fill="#3E3A36">
-    <rect x="80" y="284" width="126" height="42" rx="21" fill="#FFFFFF" opacity="0.72"/>
-    <text x="143" y="311" text-anchor="middle">PROSE</text>
-    <rect x="220" y="284" width="126" height="42" rx="21" fill="#FFFFFF" opacity="0.72"/>
-    <text x="283" y="311" text-anchor="middle">COPY</text>
-    <rect x="360" y="284" width="126" height="42" rx="21" fill="#FFFFFF" opacity="0.72"/>
-    <text x="423" y="311" text-anchor="middle">WEB GUI</text>
+    <g fill="#171A18" font-size="17" font-weight="700">
+      <text x="72" y="318">PROSE</text>
+      <line x1="157" y1="300" x2="157" y2="323" stroke="#A9B0AA"/>
+      <text x="184" y="318">PRODUCT COPY</text>
+      <line x1="334" y1="300" x2="334" y2="323" stroke="#A9B0AA"/>
+      <text x="361" y="318">WEB GUI</text>
+    </g>
+
+    <text x="72" y="382" fill="#69716C" font-size="15">OPEN SOURCE / MIT / SIX LOCALES</text>
+
+    <text x="780" y="62" fill="#E6B83F" font-size="15" font-weight="700">ONE FACT / SIX NATURAL VOICES</text>
+    <line x1="780" y1="82" x2="1130" y2="82" stroke="#6C8C85"/>
+
+    <g font-size="22">
+      <rect x="756" y="103" width="6" height="20" fill="#D94B3D"/>
+      <text x="780" y="120" fill="#9FC0B9" font-size="14">zh-CN</text>
+      <text x="864" y="120" fill="#FFFFFF">写清事实</text>
+
+      <rect x="756" y="151" width="6" height="20" fill="#E6B83F"/>
+      <text x="780" y="168" fill="#9FC0B9" font-size="14">zh-TW</text>
+      <text x="864" y="168" fill="#FFFFFF">寫清楚事實</text>
+
+      <rect x="756" y="199" width="6" height="20" fill="#2E63C7"/>
+      <text x="780" y="216" fill="#9FC0B9" font-size="14">en</text>
+      <text x="864" y="216" fill="#FFFFFF">Write the facts</text>
+
+      <rect x="756" y="247" width="6" height="20" fill="#D94B3D"/>
+      <text x="780" y="264" fill="#9FC0B9" font-size="14">ja</text>
+      <text x="864" y="264" fill="#FFFFFF">事実を書く</text>
+
+      <rect x="756" y="295" width="6" height="20" fill="#E6B83F"/>
+      <text x="780" y="312" fill="#9FC0B9" font-size="14">ko</text>
+      <text x="864" y="312" fill="#FFFFFF">사실을 쓰다</text>
+
+      <rect x="756" y="343" width="6" height="20" fill="#2E63C7"/>
+      <text x="780" y="360" fill="#9FC0B9" font-size="14">es</text>
+      <text x="864" y="360" fill="#FFFFFF">Escribe los hechos</text>
+    </g>
   </g>
-
-  <g transform="translate(928 120)">
-    <rect width="154" height="154" rx="30" fill="#C4473A" opacity="0.10"/>
-    <rect x="12" y="12" width="130" height="130" rx="22" fill="none" stroke="#C4473A" stroke-width="2" opacity="0.48"/>
-    <text x="77" y="103" text-anchor="middle" fill="#C4473A" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="76" font-weight="700">H</text>
-  </g>
-
-  <text x="1118" y="367" text-anchor="end" fill="#7A7168" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="17" letter-spacing="1">A MULTILINGUAL EXPRESSIVE TEXT SKILL</text>
 </svg>

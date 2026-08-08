@@ -3,9 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="./humanization/VERSION"><img alt="Version 3.0.0" src="https://img.shields.io/badge/version-3.0.0-C4473A?style=flat-square"></a>
-  <a href="./LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/license-MIT-313131?style=flat-square"></a>
-  <a href="https://github.com/thevenomsnake/humanization/releases/latest"><img alt="GitHub Release" src="https://img.shields.io/github/v/release/thevenomsnake/humanization?style=flat-square&color=6B6258"></a>
+  <strong>v3.0.0</strong> · MIT · 6 locales · prose / copy / web GUI
 </p>
 
 <p align="center">
@@ -15,7 +13,7 @@
   <a href="https://github.com/thevenomsnake/humanization/issues">提交问题</a>
 </p>
 
-> Humanization 让多语言作品有清楚的事实边界、说话位置和自然节奏，而不是把中文规则翻译到所有语言。
+<p align="center"><strong>Humanization 让多语言作品有清楚的事实边界、说话位置和自然节奏。</strong></p>
 
 支持 `zh-CN`、`zh-TW`、`en`、`ja`、`ko`、`es` 的所有表达性文字，包含文章、故事、文档、产品说明、营销文案、邮件、社交内容，以及网站标题、导航、按钮、状态、错误、隐私和无障碍文本。
 
@@ -25,11 +23,11 @@
 
 现实题材，材料不够就去查、追问或缩小题目；虚构题材可以创造人物和情节，但每个场景仍然要有目标、动作和变化。短文案不套用长文材料数量门槛。
 
-材料过关之后管三件事：
+材料过关之后管三件事。
 
-| 事实 | 推进 | 语言 |
-| :--- | :--- | :--- |
-| 现实写作核准事实、数字、引语和亲历。虚构写作检查人物、行动与因果。 | 每段或每个文案单元都增加事实、动作、区别、选择或后果。 | 由目标语言档案处理词序、标点、正式程度、机器翻译痕迹和节奏。 |
+- **事实** 现实写作核准数字、引语和亲历，虚构写作检查人物、行动与因果。
+- **推进** 每段或每个文案单元都增加事实、动作、区别、选择或后果。
+- **语言** 由目标语言档案处理词序、标点、正式程度、机器翻译痕迹和节奏。
 
 初稿写完再做检查。确定性脚本只管明确字段、标点和硬禁令；文本反模板命中只给人工判断警告。自然度、语气、地区用词和翻译质量由对应语言档案人工判断。
 
