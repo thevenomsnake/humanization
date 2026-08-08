@@ -9,6 +9,7 @@
 <p align="center">
   <a href="#install">Install</a> ·
   <a href="#how-it-works">How it works</a> ·
+  <a href="#where-the-rules-come-from">Sources</a> ·
   <a href="#locale-profiles">Locale profiles</a> ·
   <a href="#repository-layout">Repository layout</a> ·
   <a href="https://github.com/thevenomsnake/humanization/issues">Issues</a>
@@ -32,18 +33,31 @@ The common contract keeps factual claims and product promises stable across lang
 
 When source material is incomplete, the Skill asks a focused question, checks a source, or narrows the claim. When the original already works, it leaves it alone. Deterministic checks only fail on damage they can prove; tone and naturalness remain review decisions owned by the selected locale profile.
 
+## Where the rules come from
+
+Humanization adapts editing mechanisms from other projects and rewrites them for this architecture. It does not paste their prose, examples, scripts, or word lists.
+
+| Project | What Humanization adopted | What stayed out |
+| :--- | :--- | :--- |
+| [KKKKhazix/human-writing](https://github.com/KKKKhazix/human-writing/tree/cd879d22c8588125c1869d0b443f5d8df74b4192) | The `zh-CN` long-form foundation: material sufficiency, source checks, reality/fiction boundaries, revision flow, and natural Chinese rhythm. | Chinese punctuation and contrast-sentence house rules remain inside `zh-CN prose`; they are not global rules. |
+| [yetone/kill-ai-slop](https://github.com/yetone/kill-ai-slop) | Text-only principles: prefer concrete information to slogans, remove decoration before rewriting, and treat pattern matches as review leads rather than verdicts. | Colors, typography, cards, corners, icons, motion, button styling, and visual scanners. |
+| [ehmo/slopkit (`slopbeth`)](https://github.com/ehmo/slopkit/blob/b33718bb9283c11b09567dc714f92d90ffb7bd16/skills/slopbeth/SKILL.md) | The evidence-bound ledger for entities, numbers, dates, URLs, quotations, and uncertainty; missing evidence must not be filled with invented claims. | English word bans, em-dash rules, self-reported scores, and detector-proof claims. |
+| [blader/humanizer](https://github.com/blader/humanizer/blob/523374dee72d67c7b2b5f858ea0094ffda49c3ac/SKILL.md) and [petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop/blob/d30eddb9e04562234f2070b5ee63ca4649d9a05e/skills/no-ai-slop/SKILL.md) | Preserve the writer's facts and working voice, prefer the smallest useful edit, allow `no_change`, and never infer AI authorship from a pattern list. | Universal voice formulas and automatic authorship judgments. |
+
 ## Locale profiles
 
 The profiles are native writing contracts, not translations of the Chinese rules.
 
-| Locale | What its profile owns |
-| :--- | :--- |
-| `zh-CN` | Mainland Chinese syntax and terms, full-width punctuation, and Chinese long-form rules confined to `zh-CN prose`. |
-| `zh-TW` | Taiwan usage, terminology, punctuation, and register. It is not a Simplified-to-Traditional character conversion. |
-| `en` | English clause structure, register, regional spelling policy, punctuation, and common translationese. Colons and em dashes remain normal tools. |
-| `ja` | Natural omission, particles, modifier order, `です・ます` or plain style, honorifics, and component-appropriate forms. |
-| `ko` | Korean word order, particles, spacing, speech level, honorifics, endings, and source-language interference. |
-| `es` | Agreement, clitics, forms of address, punctuation, regional vocabulary, and English calques. |
+| Locale | Native projects and guidance used | Language-specific principles adopted |
+| :--- | :--- | :--- |
+| `zh-CN` | [KKKKhazix/human-writing](https://github.com/KKKKhazix/human-writing/tree/cd879d22c8588125c1869d0b443f5d8df74b4192) and [GB/T 15834-2011](https://openstd.samr.gov.cn/) | Mainland Chinese syntax and terminology, full-width punctuation, material-led long-form writing, and Chinese house rules confined to `zh-CN prose`. |
+| `zh-TW` | [Mozilla zh-TW style guide](https://github.com/mozilla-l10n/styleguides/blob/main/docs/zh-TW/README.md) and [bruce6731/anti-ai-writing-taiwan](https://github.com/bruce6731/anti-ai-writing-taiwan/tree/2c14f6a6015885b0c1cad9b54c861bc7b8a3b27d) | Taiwan vocabulary, register, punctuation, cultural reordering, and the rule that `zh-TW` is not a Simplified-to-Traditional character conversion. Product-specific Mozilla terms were not imported. |
+| `en` | [Google styleguide](https://github.com/google/styleguide/tree/gh-pages/docguide), [Microsoft Writing Style Guide](https://github.com/MicrosoftDocs/microsoft-style-guide), and [Digital.gov Plain Language](https://digital.gov/guides/plain-language/) | Clear actor/action relationships, concise documentation, contextual brand voice, regional consistency, and ordinary use of English punctuation. Microsoft-specific terminology was not imported. |
+| `ja` | [Mozilla Japanese style guide](https://github.com/mozilla-l10n/styleguides/blob/main/docs/ja/l10nguideline.md), [chezou/slop-nuki](https://github.com/chezou/slop-nuki/tree/1bdf627b5991f4f806069619c9bde407960feac7), [iKora128/stop-ai-slop-jp](https://github.com/iKora128/stop-ai-slop-jp/tree/e09d32796f253a62693885757cea484c275d06f2), [RobTar97/japanese-writing-skills](https://github.com/RobTar97/japanese-writing-skills/tree/e4b1700464219c60da786f005a061bccffbbd4e3), and [coji/natural-japanese](https://github.com/coji/natural-japanese/tree/b54954f8deb4f110f0959f4e4fac295708900120) | Natural omission and word order, particles, honorifics and cushioning by context, component-specific noun/verb forms, GUI resource integrity, and density/genre-aware review instead of absolute pattern bans. |
+| `ko` | [Mozilla Korean style guide](https://github.com/mozilla-l10n/styleguides/blob/main/docs/ko/README.md), [dotoricode/korean-humanizer](https://github.com/dotoricode/korean-humanizer/tree/7dff5b48cc06fc4252d4766b802ecd61e62c50ad), and [HarryJhin/korean-writing](https://github.com/HarryJhin/korean-writing/tree/e4db3883ed76521b7a0cac30392fa67d182cc8ab) | Natural subject omission, particles and spacing, `합니다`/`해요`/`다` speech levels, honorific preservation, endings, and English/Japanese translationese. Arbitrary rewrite quotas were rejected. |
+| `es` | [Mozilla Spanish style guides](https://github.com/mozilla-l10n/styleguides/tree/main/docs/es) | Agreement, clitics, `tú`/`usted`/`ustedes`, sentence-case UI, regional terminology, punctuation, and English calques. Firefox-specific labels and one universal Spanish register were not imported. |
+
+The linked projects remain under their own licenses. [The research notes](./research/multilingual-skill-research.md) record the source evidence and adoption boundaries; consult each linked repository's license before reusing its text or code. The rules in Humanization are newly written summaries of the mechanisms above.
 
 ## Install
 
@@ -145,7 +159,7 @@ humanization/
 
 Humanization is released under the MIT License. The repository does not include third-party articles, training corpora, or model weights.
 
-This fork is based on [KKKKhazix/human-writing](https://github.com/KKKKhazix/human-writing) and retains an `upstream` remote for synchronization. Its text guidance also draws on [yetone/kill-ai-slop](https://github.com/yetone/kill-ai-slop), which is licensed under Apache-2.0. No visual design rules are copied into this Skill.
+This fork is based on [KKKKhazix/human-writing](https://github.com/KKKKhazix/human-writing) and retains an `upstream` remote for synchronization. The source map above distinguishes the rules that informed Humanization from the project-specific rules that were deliberately excluded.
 
 For rule conflicts, false positives, or model-specific failures, [open an issue](https://github.com/thevenomsnake/humanization/issues) with the prompt, the relevant output, and the result you expected.
 
