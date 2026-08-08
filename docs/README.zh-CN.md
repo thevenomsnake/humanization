@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="./assets/readme-cover.svg" alt="Humanization" width="100%">
+  <img src="../assets/readme-cover.svg" alt="Humanization" width="100%">
 </p>
 
 <p align="center">
-  <a href="./README.md">English</a> ·
+  <a href="../README.md">English</a> ·
   <strong>简体中文</strong> ·
   <a href="./README.zh-TW.md">繁體中文</a> ·
   <a href="./README.ja.md">日本語</a> ·
@@ -29,7 +29,7 @@
 
 Humanization 融合多个成熟写作、编辑、本地化、内容设计与 anti-slop 项目的实践，服务多语言产品创造者。它覆盖文章、故事、文档、产品内容、营销文案、邮件和社交内容，也处理导航、按钮、错误、空状态、确认、通知、隐私说明和无障碍名称等 GUI 文字。动笔改写之前，它会先区分内部能力事实与用户在当前载体上真正需要看到的信息。
 
-**语言档案：** [zh-CN 简体中文](./humanization/references/locales/zh-CN.md) · [zh-TW 繁體中文](./humanization/references/locales/zh-TW.md) · [en English](./humanization/references/locales/en.md) · [ja 日本語](./humanization/references/locales/ja.md) · [ko 한국어](./humanization/references/locales/ko.md) · [es Español](./humanization/references/locales/es.md)
+**语言档案：** [zh-CN 简体中文](../humanization/references/locales/zh-CN.md) · [zh-TW 繁體中文](../humanization/references/locales/zh-TW.md) · [en English](../humanization/references/locales/en.md) · [ja 日本語](../humanization/references/locales/ja.md) · [ko 한국어](../humanization/references/locales/ko.md) · [es Español](../humanization/references/locales/es.md)
 
 ## 工作方式
 
@@ -49,12 +49,12 @@ Humanization 不会把每句真实信息润色后直接发布。它先判断这�
 
 | 修改前 | 修改后 |
 | :--- | :--- |
-| **内部能力盘点**<br><br>“这个公开网站没有处理服务，不提供文件上传，不连接外部系统，也没有开始任务的入口。” | **不补任何公开文案。**<br><br>**文案处置：** `remove`<br>**产品流程：** `needs_product_decision`。这个页面只供阅读，还是应该让访客在这里开始任务？如果这里确实需要分析功能，应先实现真实入口和 CTA，再写文案。 |
-| **已核实能力被套话淹没**<br><br>“在快速变化的工作环境中，我们以创新的 AI 洞察赋能团队，帮助大家按照同一套岗位标准比较每份文档。” | **按照同一套岗位标准比较每份文档。**<br><br>**文案处置：** `rewrite` |
-| **确实支持重试的错误**<br><br>“错误 500：由于 worker 超时，POST /profile 请求失败。” | **未能保存你的更改，请重试。**<br><br>**公开消息：** `rewrite`<br>**开发诊断：** `move` 到日志 |
-| **带变量的通知**<br><br>“文件 {fileName} 已经被成功上传。” | **{fileName} 已上传。**<br><br>**文案处置：** `rewrite`<br>**受保护变量：** `{fileName}` |
+| **内部能力盘点**<br><br>“这个页面没有处理服务，不接收文件，不连接外部系统，也没有开始任务的入口。” | **不补任何公开文案。**<br><br>**文案处置：** `remove`<br>**产品流程：** `needs_product_decision`。这个页面只提供信息，还是应该让访客在这里完成任务？如果任务应该在这里完成，应先实现真实入口和 CTA，再写文案。 |
+| **事实被空话淹没**<br><br>“为了持续提升用户体验，我们对 42 条客服工单进行了全面深入的分析，并发现了一个值得关注的重要现象：其中 31 条都提到绑定账户时遇到了困难。” | **我们查看了 42 条客服工单，其中 31 条提到绑定账户时遇到问题。**<br><br>**文案处置：** `rewrite` |
+| **确实支持重试的错误**<br><br>“错误 500：worker 超时，保存请求失败。” | **未能保存你的更改，请重试。**<br><br>**公开消息：** `rewrite`<br>**开发诊断：** `move` 到日志 |
+| **确实提供清除筛选的空状态**<br><br>“暂无数据。” | **没有符合当前筛选条件的结果。清除筛选条件，查看全部内容。**<br><br>**文案处置：** `rewrite` |
 
-这些例子不会虚构功能或恢复路径。没有用户职责的文字直接删除，已核实的含义继续保留，开发诊断移到合适位置，运行时变量保持原样。
+这些例子不会虚构功能或恢复路径。没有用户职责的文字直接删除，`42/31` 的事实保持不变，开发诊断移到合适位置，空状态只指向真实存在的操作。
 
 ## 规则来源
 
@@ -83,7 +83,7 @@ Humanization 不会把每句真实信息润色后直接发布。它先判断这�
 | `ko` | [Mozilla Korean style guide](https://github.com/mozilla-l10n/styleguides/blob/main/docs/ko/README.md)、[dotoricode/korean-humanizer](https://github.com/dotoricode/korean-humanizer/tree/7dff5b48cc06fc4252d4766b802ecd61e62c50ad) 和 [HarryJhin/korean-writing](https://github.com/HarryJhin/korean-writing/tree/e4db3883ed76521b7a0cac30392fa67d182cc8ab) | 自然省略主语、助词和分写、`합니다`/`해요`/`다` 语体等级、敬语、句末形式，以及英语和日语翻译腔审查。 |
 | `es` | [Mozilla Spanish style guides](https://github.com/mozilla-l10n/styleguides/tree/main/docs/es) | 性数一致、附着代词、`tú`/`usted`/`ustedes`、句首大写式 UI、地区术语、标点和英语仿译审查。 |
 
-所链接的项目分别适用各自的许可证。[多语言研究笔记](./research/multilingual-skill-research.md) 和 [GUI 文案存在性门研究报告](./research/gui-copy-existence-gate.md) 记录了来源证据，以及这些来源如何影响 Humanization；复用相关文字或代码前，请查阅相应仓库的许可证。Humanization 的项目专属规则根据上述实践重新撰写。
+所链接的项目分别适用各自的许可证。[多语言研究笔记](../research/multilingual-skill-research.md) 和 [GUI 文案存在性门研究报告](../research/gui-copy-existence-gate.md) 记录了来源证据，以及这些来源如何影响 Humanization；复用相关文字或代码前，请查阅相应仓库的许可证。Humanization 的项目专属规则根据上述实践重新撰写。
 
 ## 安装
 
@@ -98,7 +98,7 @@ Install the humanization Skill from https://github.com/thevenomsnake/humanizatio
 <details>
 <summary><strong>手动安装</strong></summary>
 
-把仓库中的 [`humanization`](./humanization) 目录复制到 Codex Skills 目录：
+把仓库中的 [`humanization`](../humanization) 目录复制到 Codex Skills 目录：
 
 ```text
 $CODEX_HOME/skills/humanization/
@@ -135,7 +135,7 @@ python humanization/scripts/check_writing.py --locale es --format web-microcopy 
 - 新增跨语言内容存在性门，用来区分内部能力事实与适合公开的用户信息。
 - `--locale` 和 `--format` 改为显式参数，由调用方为混合文本指定路由，语气继续作为人工审阅项。
 
-完整历史记录见 [CHANGELOG.md](./CHANGELOG.md)。
+完整历史记录见 [CHANGELOG.md](../CHANGELOG.md)。
 
 ## 仓库结构
 
@@ -181,13 +181,13 @@ humanization/
 
 | 路径 | 用途 |
 | :--- | :--- |
-| [`SKILL.md`](./humanization/SKILL.md) | 让每项任务依次经过通用、语言和格式模块。 |
-| [`core.md`](./humanization/references/core.md) | 负责事实、来源、能力、隐私、CTA、品牌词、占位符、最小编辑和内容处置。 |
-| [`locales/`](./humanization/references/locales) | 保存六个语言的原生写作档案。 |
-| [`expressive-text.md`](./humanization/references/formats/expressive-text.md) | 处理非 GUI 的产品、文档、营销、邮件和社交文字。 |
-| [`gui-microcopy.md`](./humanization/references/formats/gui-microcopy.md) | 定义 GUI 内容存在性门、组件职责和结构化资源保护。 |
-| [`check_writing.py`](./humanization/scripts/check_writing.py) | 提供执行通用、语言和 GUI 检查的统一 CLI。 |
-| [`check_zh_cn.py`](./humanization/scripts/check_zh_cn.py) | 将原有动作级检查器限定在 `zh-CN prose`。 |
+| [`SKILL.md`](../humanization/SKILL.md) | 让每项任务依次经过通用、语言和格式模块。 |
+| [`core.md`](../humanization/references/core.md) | 负责事实、来源、能力、隐私、CTA、品牌词、占位符、最小编辑和内容处置。 |
+| [`locales/`](../humanization/references/locales) | 保存六个语言的原生写作档案。 |
+| [`expressive-text.md`](../humanization/references/formats/expressive-text.md) | 处理非 GUI 的产品、文档、营销、邮件和社交文字。 |
+| [`gui-microcopy.md`](../humanization/references/formats/gui-microcopy.md) | 定义 GUI 内容存在性门、组件职责和结构化资源保护。 |
+| [`check_writing.py`](../humanization/scripts/check_writing.py) | 提供执行通用、语言和 GUI 检查的统一 CLI。 |
+| [`check_zh_cn.py`](../humanization/scripts/check_zh_cn.py) | 将原有动作级检查器限定在 `zh-CN prose`。 |
 
 </details>
 

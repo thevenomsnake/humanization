@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="./assets/readme-cover.svg" alt="Humanization" width="100%">
+  <img src="../assets/readme-cover.svg" alt="Humanization" width="100%">
 </p>
 
 <p align="center">
-  <a href="./README.md">English</a> ·
+  <a href="../README.md">English</a> ·
   <a href="./README.zh-CN.md">简体中文</a> ·
   <a href="./README.zh-TW.md">繁體中文</a> ·
   <strong>日本語</strong> ·
@@ -29,7 +29,7 @@
 
 Humanizationは、実績のあるライティング、編集、ローカライゼーション、コンテンツデザイン、anti-slopプロジェクトの実践知を集約したCodex Skillです。多言語プロダクトを作る人に向けて、文章、物語、ドキュメント、製品コンテンツ、マーケティングコピー、メール、ソーシャル投稿を支援します。ナビゲーション、ボタン、エラー、空状態、確認、通知、プライバシー通知、アクセシブルネームなどのGUIテキストにも対応します。書き直す前に、内部の機能情報と、対象の画面でユーザーに本当に必要なメッセージを切り分けます。
 
-**ロケールプロファイル:** [zh-CN 简体中文](./humanization/references/locales/zh-CN.md) · [zh-TW 繁體中文](./humanization/references/locales/zh-TW.md) · [en English](./humanization/references/locales/en.md) · [ja 日本語](./humanization/references/locales/ja.md) · [ko 한국어](./humanization/references/locales/ko.md) · [es Español](./humanization/references/locales/es.md)
+**ロケールプロファイル:** [zh-CN 简体中文](../humanization/references/locales/zh-CN.md) · [zh-TW 繁體中文](../humanization/references/locales/zh-TW.md) · [en English](../humanization/references/locales/en.md) · [ja 日本語](../humanization/references/locales/ja.md) · [ko 한국어](../humanization/references/locales/ko.md) · [es Español](../humanization/references/locales/es.md)
 
 ## 仕組み
 
@@ -49,12 +49,12 @@ Humanizationは、事実であれば何でも公開文に整えるわけでは�
 
 | 修正前 | 修正後 |
 | :--- | :--- |
-| **内部機能の棚卸し**<br><br>「この公開サイトには処理サービスがなく、ファイルのアップロードにも外部システムとの連携にも対応していません。タスクを開始する入口もありません。」 | **公開向けの代替文は追加しません。**<br><br>**文言の扱い:** `remove`<br>**プロダクト導線:** `needs_product_decision`。このページは閲覧専用ですか。それとも、ここから分析を始められるようにしますか。分析を提供するページなら、文言を用意する前に、実際に使える入口とCTAを実装します。 |
-| **確認済みの機能が決まり文句に埋もれている**<br><br>「急速に変化する作業環境において、革新的なAIインサイトを活用し、すべての文書を同じ確認基準で比較できるようチームを支援します。」 | **すべての文書を同じ確認基準で比較できます。**<br><br>**文言の扱い:** `rewrite` |
-| **再試行できるエラー**<br><br>「エラー500：workerのタイムアウトによりPOST /profileが失敗しました。」 | **変更を保存できませんでした。もう一度お試しください。**<br><br>**公開メッセージ:** `rewrite`<br>**開発用診断:** `move`（ログへ） |
-| **変数を含む通知**<br><br>「ファイル{fileName}が正常にアップロードされました。」 | **{fileName}をアップロードしました。**<br><br>**文言の扱い:** `rewrite`<br>**保護する変数:** `{fileName}` |
+| **内部機能の棚卸し**<br><br>「このページには処理サービスがなく、ファイルの受け付けや外部システムとの連携に対応していません。タスクを開始する操作もありません。」 | **公開向けの代替文は追加しません。**<br><br>**文言の扱い:** `remove`<br>**プロダクト導線:** `needs_product_decision`。このページは情報提供専用ですか。それとも、ここでタスクを完了できるようにしますか。タスクを提供するページなら、文言を用意する前に、実際に使える入口とCTAを実装します。 |
+| **事実が大げさな説明に埋もれている**<br><br>「ユーザー体験の継続的な向上に向けて、42件のサポート問い合わせを包括的に分析した結果、注目すべき重要な傾向が明らかになりました。そのうち31件で、アカウント連携時の問題が報告されていました。」 | **42件のサポート問い合わせを確認したところ、31件でアカウント連携時の問題が報告されていました。**<br><br>**文言の扱い:** `rewrite` |
+| **再試行できるエラー**<br><br>「エラー500：workerがタイムアウトしたため、保存リクエストに失敗しました。」 | **変更を保存できませんでした。もう一度お試しください。**<br><br>**公開メッセージ:** `rewrite`<br>**開発用診断:** `move`（ログへ） |
+| **フィルターを解除できる空状態**<br><br>「データがありません。」 | **条件に一致する結果がありません。フィルターを解除すると、すべての項目を表示できます。**<br><br>**文言の扱い:** `rewrite` |
 
-どの例でも、機能や復旧手段を作り足してはいません。役割のない文言は削除し、確認済みの意味を残し、開発用診断を適切な場所へ移し、ランタイム変数をそのまま保持します。
+どの例でも、機能や復旧手段を作り足してはいません。役割のない文言は削除し、`42/31`の事実を保ち、開発用診断を適切な場所へ移し、空状態では実際に使える操作だけを案内します。
 
 ## ルールの出典
 
@@ -83,7 +83,7 @@ Humanizationが成り立っているのは、他のプロジェクトが有用�
 | `ko` | [Mozilla Korean style guide](https://github.com/mozilla-l10n/styleguides/blob/main/docs/ko/README.md)、[dotoricode/korean-humanizer](https://github.com/dotoricode/korean-humanizer/tree/7dff5b48cc06fc4252d4766b802ecd61e62c50ad)、[HarryJhin/korean-writing](https://github.com/HarryJhin/korean-writing/tree/e4db3883ed76521b7a0cac30392fa67d182cc8ab) | 自然な主語の省略、助詞と分かち書き、`합니다`/`해요`/`다`の文体レベル、敬語の保持、文末表現、英語・日本語由来の翻訳調の見直し。 |
 | `es` | [Mozilla Spanish style guides](https://github.com/mozilla-l10n/styleguides/tree/main/docs/es) | 性数一致、接語、`tú`/`usted`/`ustedes`、sentence caseのUI、地域用語、句読点、英語の直訳表現。 |
 
-リンク先のプロジェクトには、それぞれ固有のライセンスが適用されます。[多言語調査ノート](./research/multilingual-skill-research.md)と[GUIコピー掲載判定レポート](./research/gui-copy-existence-gate.md)には、出典となる根拠と、各情報源がHumanizationにどう生かされているかを記録しています。文章やコードを再利用する前に、各リポジトリのライセンスを確認してください。Humanizationのプロジェクト固有の指示は、上記の実践をもとに新しく書かれています。
+リンク先のプロジェクトには、それぞれ固有のライセンスが適用されます。[多言語調査ノート](../research/multilingual-skill-research.md)と[GUIコピー掲載判定レポート](../research/gui-copy-existence-gate.md)には、出典となる根拠と、各情報源がHumanizationにどう生かされているかを記録しています。文章やコードを再利用する前に、各リポジトリのライセンスを確認してください。Humanizationのプロジェクト固有の指示は、上記の実践をもとに新しく書かれています。
 
 ## インストール
 
@@ -98,7 +98,7 @@ https://github.com/thevenomsnake/humanization から humanization Skill をイ�
 <details>
 <summary><strong>手動インストール</strong></summary>
 
-リポジトリの[`humanization`](./humanization)ディレクトリをCodexのSkillsディレクトリへコピーします。
+リポジトリの[`humanization`](../humanization)ディレクトリをCodexのSkillsディレクトリへコピーします。
 
 ```text
 $CODEX_HOME/skills/humanization/
@@ -135,7 +135,7 @@ python humanization/scripts/check_writing.py --locale es --format web-microcopy 
 - 内部の機能情報と公開可能なユーザーメッセージを分ける、言語横断のコンテンツ掲載ゲートを追加しました。
 - `--locale`と`--format`を明示し、混在テキストのルーティングを呼び出し側で選び、トーンの判断をwarningとしてレビューできるようにしました。
 
-完全な履歴は[CHANGELOG.md](./CHANGELOG.md)を参照してください。
+完全な履歴は[CHANGELOG.md](../CHANGELOG.md)を参照してください。
 
 ## リポジトリ構成
 
@@ -181,13 +181,13 @@ humanization/
 
 | パス | 役割 |
 | :--- | :--- |
-| [`SKILL.md`](./humanization/SKILL.md) | 各タスクを共通、ロケール、フォーマットの各モジュールへ振り分けます。 |
-| [`core.md`](./humanization/references/core.md) | 事実、出典、機能、プライバシー、CTA、ブランド用語、プレースホルダー、最小限の編集、コンテンツの扱いを管理します。 |
-| [`locales/`](./humanization/references/locales) | 各言語向けの6つの執筆プロファイルを収録します。 |
-| [`expressive-text.md`](./humanization/references/formats/expressive-text.md) | GUI以外の製品、ドキュメント、マーケティング、メール、ソーシャルコピーを扱います。 |
-| [`gui-microcopy.md`](./humanization/references/formats/gui-microcopy.md) | GUIコンテンツゲート、コンポーネントの役割、構造化リソースの保護を定義します。 |
-| [`check_writing.py`](./humanization/scripts/check_writing.py) | 共通、ロケール、GUIチェック用の単一CLIを提供します。 |
-| [`check_zh_cn.py`](./humanization/scripts/check_zh_cn.py) | 従来のアクションレベルのチェッカーを`zh-CN prose`に限定します。 |
+| [`SKILL.md`](../humanization/SKILL.md) | 各タスクを共通、ロケール、フォーマットの各モジュールへ振り分けます。 |
+| [`core.md`](../humanization/references/core.md) | 事実、出典、機能、プライバシー、CTA、ブランド用語、プレースホルダー、最小限の編集、コンテンツの扱いを管理します。 |
+| [`locales/`](../humanization/references/locales) | 各言語向けの6つの執筆プロファイルを収録します。 |
+| [`expressive-text.md`](../humanization/references/formats/expressive-text.md) | GUI以外の製品、ドキュメント、マーケティング、メール、ソーシャルコピーを扱います。 |
+| [`gui-microcopy.md`](../humanization/references/formats/gui-microcopy.md) | GUIコンテンツゲート、コンポーネントの役割、構造化リソースの保護を定義します。 |
+| [`check_writing.py`](../humanization/scripts/check_writing.py) | 共通、ロケール、GUIチェック用の単一CLIを提供します。 |
+| [`check_zh_cn.py`](../humanization/scripts/check_zh_cn.py) | 従来のアクションレベルのチェッカーを`zh-CN prose`に限定します。 |
 
 </details>
 

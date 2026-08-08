@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="./assets/readme-cover.svg" alt="Humanization" width="100%">
+  <img src="../assets/readme-cover.svg" alt="Humanization" width="100%">
 </p>
 
 <p align="center">
-  <a href="./README.md">English</a> ·
+  <a href="../README.md">English</a> ·
   <a href="./README.zh-CN.md">简体中文</a> ·
   <a href="./README.zh-TW.md">繁體中文</a> ·
   <a href="./README.ja.md">日本語</a> ·
@@ -29,7 +29,7 @@
 
 Humanization reúne métodos prácticos de proyectos consolidados de escritura, edición, localización, diseño de contenidos y anti-slop. Está pensado para quienes crean productos multilingües y trabajan con prosa, relatos, documentación, contenido de producto, textos de marketing, correo electrónico, publicaciones sociales y textos de GUI como navegación, botones, errores, estados vacíos, confirmaciones, notificaciones, avisos de privacidad y nombres accesibles. Antes de reescribir, distingue los datos internos sobre capacidades de los mensajes que los usuarios necesitan realmente en la superficie seleccionada.
 
-**Perfiles de locale:** [zh-CN 简体中文](./humanization/references/locales/zh-CN.md) · [zh-TW 繁體中文](./humanization/references/locales/zh-TW.md) · [en English](./humanization/references/locales/en.md) · [ja 日本語](./humanization/references/locales/ja.md) · [ko 한국어](./humanization/references/locales/ko.md) · [es Español](./humanization/references/locales/es.md)
+**Perfiles de locale:** [zh-CN 简体中文](../humanization/references/locales/zh-CN.md) · [zh-TW 繁體中文](../humanization/references/locales/zh-TW.md) · [en English](../humanization/references/locales/en.md) · [ja 日本語](../humanization/references/locales/ja.md) · [ko 한국어](../humanization/references/locales/ko.md) · [es Español](../humanization/references/locales/es.md)
 
 ## Cómo funciona
 
@@ -49,12 +49,12 @@ Humanization no convierte en texto publicable cada frase que sea cierta. Primero
 
 | Antes | Después |
 | :--- | :--- |
-| **Inventario interno de capacidades**<br><br>«Este sitio público no tiene un servicio de procesamiento, no permite subir archivos, no se conecta a sistemas externos y tampoco ofrece una forma de iniciar una tarea». | **No se añade ningún texto público en su lugar.**<br><br>**Destino del texto:** `remove`<br>**Flujo de producto:** `needs_product_decision`. ¿Esta página es solo informativa o debería permitir iniciar un análisis? Si el análisis forma parte de esta página, primero hay que implementar un punto de entrada y una CTA reales. |
-| **Una capacidad verificada oculta entre eslóganes**<br><br>«En el cambiante panorama de la trabajo, nuestra innovadora solución de IA permite a los equipos comparar todos los elementos con los mismos criterios del puesto». | **Los elementos se comparan con los mismos criterios del puesto.**<br><br>**Destino del texto:** `rewrite` |
-| **Error que permite volver a intentarlo**<br><br>«Error 500: POST /profile falló porque el worker agotó el tiempo de espera». | **No se pudieron guardar los cambios. Inténtalo de nuevo.**<br><br>**Mensaje público:** `rewrite`<br>**Diagnóstico de desarrollo:** `move` a los registros |
-| **Notificación con una variable**<br><br>«El archivo {fileName} se ha subido correctamente». | **Se ha subido {fileName}.**<br><br>**Destino del texto:** `rewrite`<br>**Variable protegida:** `{fileName}` |
+| **Inventario interno de capacidades**<br><br>«Esta página no tiene servicio de procesamiento, no acepta archivos, no se conecta a sistemas externos y no ofrece una acción para iniciar una tarea». | **No se añade ningún texto público en su lugar.**<br><br>**Destino del texto:** `remove`<br>**Flujo de producto:** `needs_product_decision`. ¿Esta página es solo informativa o debería permitir completar una tarea? Si la tarea corresponde a esta página, primero hay que implementar un punto de entrada y una CTA reales. |
+| **Hechos ocultos entre frases grandilocuentes**<br><br>«Como parte de nuestro compromiso continuo con la mejora de la experiencia de usuario, realizamos un análisis exhaustivo de 42 solicitudes de soporte y descubrimos un dato importante que merece atención: en 31 se mencionaban dificultades para vincular una cuenta». | **Revisamos 42 solicitudes de soporte. En 31 se mencionaban problemas al vincular una cuenta.**<br><br>**Destino del texto:** `rewrite` |
+| **Error que permite volver a intentarlo**<br><br>«Error 500: la solicitud de guardado falló porque el worker agotó el tiempo de espera». | **No se pudieron guardar los cambios. Inténtalo de nuevo.**<br><br>**Mensaje público:** `rewrite`<br>**Diagnóstico de desarrollo:** `move` a los registros |
+| **Estado vacío con una acción disponible**<br><br>«No hay datos». | **Ningún resultado coincide con estos filtros. Al borrar los filtros se mostrarán todos los elementos.**<br><br>**Destino del texto:** `rewrite` |
 
-Ningún ejemplo inventa funciones ni vías de recuperación. El texto sin una función para el usuario se elimina, el significado verificado se conserva, los diagnósticos se trasladan a la superficie adecuada y las variables de ejecución permanecen intactas.
+Ningún ejemplo inventa funciones ni vías de recuperación. El texto sin una función para el usuario se elimina, los datos `42/31` se conservan, los diagnósticos se trasladan a la superficie adecuada y el estado vacío solo remite a una acción disponible.
 
 ## De dónde salen las reglas
 
@@ -83,7 +83,7 @@ Cada perfil reúne la sintaxis, el registro, la puntuación, la terminología, l
 | `ko` | [Guía de estilo coreano de Mozilla](https://github.com/mozilla-l10n/styleguides/blob/main/docs/ko/README.md), [dotoricode/korean-humanizer](https://github.com/dotoricode/korean-humanizer/tree/7dff5b48cc06fc4252d4766b802ecd61e62c50ad) y [HarryJhin/korean-writing](https://github.com/HarryJhin/korean-writing/tree/e4db3883ed76521b7a0cac30392fa67d182cc8ab) | Elipsis natural del sujeto, partículas y espaciado, niveles de habla `합니다`/`해요`/`다`, conservación de honoríficos, terminaciones y revisión de calcos del inglés y el japonés. |
 | `es` | [Guías de estilo en español de Mozilla](https://github.com/mozilla-l10n/styleguides/tree/main/docs/es) | Concordancia, clíticos, tratamiento con `tú`/`usted`/`ustedes`, mayúscula inicial en la interfaz, terminología regional, puntuación y revisión de calcos del inglés. |
 
-Los proyectos enlazados conservan sus propias licencias. [Las notas de investigación multilingüe](./research/multilingual-skill-research.md) y [el informe sobre qué copy de GUI debe existir](./research/gui-copy-existence-gate.md) documentan las fuentes y la aportación de cada una a Humanization; consulta la licencia de cada repositorio enlazado antes de reutilizar su texto o código. Las instrucciones específicas de Humanization se redactaron a partir de las prácticas resumidas arriba.
+Los proyectos enlazados conservan sus propias licencias. [Las notas de investigación multilingüe](../research/multilingual-skill-research.md) y [el informe sobre qué copy de GUI debe existir](../research/gui-copy-existence-gate.md) documentan las fuentes y la aportación de cada una a Humanization; consulta la licencia de cada repositorio enlazado antes de reutilizar su texto o código. Las instrucciones específicas de Humanization se redactaron a partir de las prácticas resumidas arriba.
 
 ## Instalación
 
@@ -98,7 +98,7 @@ El directorio instalado debe conservar el nombre `humanization`. La tarjeta corr
 <details>
 <summary><strong>Instalación manual</strong></summary>
 
-Copia el directorio [`humanization`](./humanization) del repositorio en tu directorio de Skills de Codex:
+Copia el directorio [`humanization`](../humanization) del repositorio en tu directorio de Skills de Codex:
 
 ```text
 $CODEX_HOME/skills/humanization/
@@ -135,7 +135,7 @@ python humanization/scripts/check_writing.py --locale es --format web-microcopy 
 - Se añadió un filtro multilingüe que separa los datos internos sobre capacidades de los mensajes que deben publicarse para los usuarios.
 - `--locale` y `--format` pasaron a ser explícitos; los textos mixtos se enrutan de forma deliberada y las valoraciones de tono se presentan como avisos para revisión.
 
-Consulta [CHANGELOG.md](./CHANGELOG.md) para ver el historial completo.
+Consulta [CHANGELOG.md](../CHANGELOG.md) para ver el historial completo.
 
 ## Estructura del repositorio
 
@@ -181,13 +181,13 @@ humanization/
 
 | Ruta | Función |
 | :--- | :--- |
-| [`SKILL.md`](./humanization/SKILL.md) | Dirige cada tarea a los módulos común, de locale y de formato. |
-| [`core.md`](./humanization/references/core.md) | Reúne hechos, fuentes, capacidades, privacidad, CTA, términos de marca, placeholders, edición mínima y la decisión de conservar, reescribir, mover o retirar cada contenido. |
-| [`locales/`](./humanization/references/locales) | Contiene los seis perfiles de escritura nativa. |
-| [`expressive-text.md`](./humanization/references/formats/expressive-text.md) | Cubre textos no vinculados a una GUI: producto, documentación, marketing, correo electrónico y publicaciones sociales. |
-| [`gui-microcopy.md`](./humanization/references/formats/gui-microcopy.md) | Define el filtro de contenido para GUI, la función de cada componente y la protección de recursos estructurados. |
-| [`check_writing.py`](./humanization/scripts/check_writing.py) | Ofrece una única CLI para las comprobaciones comunes, de locale y de GUI. |
-| [`check_zh_cn.py`](./humanization/scripts/check_zh_cn.py) | Mantiene el comprobador original de acciones limitado a `zh-CN prose`. |
+| [`SKILL.md`](../humanization/SKILL.md) | Dirige cada tarea a los módulos común, de locale y de formato. |
+| [`core.md`](../humanization/references/core.md) | Reúne hechos, fuentes, capacidades, privacidad, CTA, términos de marca, placeholders, edición mínima y la decisión de conservar, reescribir, mover o retirar cada contenido. |
+| [`locales/`](../humanization/references/locales) | Contiene los seis perfiles de escritura nativa. |
+| [`expressive-text.md`](../humanization/references/formats/expressive-text.md) | Cubre textos no vinculados a una GUI: producto, documentación, marketing, correo electrónico y publicaciones sociales. |
+| [`gui-microcopy.md`](../humanization/references/formats/gui-microcopy.md) | Define el filtro de contenido para GUI, la función de cada componente y la protección de recursos estructurados. |
+| [`check_writing.py`](../humanization/scripts/check_writing.py) | Ofrece una única CLI para las comprobaciones comunes, de locale y de GUI. |
+| [`check_zh_cn.py`](../humanization/scripts/check_zh_cn.py) | Mantiene el comprobador original de acciones limitado a `zh-CN prose`. |
 
 </details>
 

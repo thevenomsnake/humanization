@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="./assets/readme-cover.svg" alt="Humanization" width="100%">
+  <img src="../assets/readme-cover.svg" alt="Humanization" width="100%">
 </p>
 
 <p align="center">
-  <a href="./README.md">English</a> ·
+  <a href="../README.md">English</a> ·
   <a href="./README.zh-CN.md">简体中文</a> ·
   <a href="./README.zh-TW.md">繁體中文</a> ·
   <a href="./README.ja.md">日本語</a> ·
@@ -29,7 +29,7 @@
 
 Humanization은 글쓰기, 편집, 현지화, 콘텐츠 디자인, anti-slop 분야에서 꾸준히 발전해 온 여러 프로젝트의 실무 방식을 한데 모은 Codex Skill입니다. 다국어 제품을 만드는 사람을 위해 산문, 이야기, 문서, 제품 콘텐츠, 마케팅 카피, 이메일, 소셜 게시물을 지원합니다. 내비게이션, 버튼, 오류, 빈 상태, 확인, 알림, 개인정보 안내, 접근 가능한 이름 같은 GUI 텍스트도 다룹니다. 다듬기 전에 내부 기능 정보와 선택한 화면에서 사용자에게 실제로 필요한 메시지를 구분합니다.
 
-**로캘 프로필:** [zh-CN 简体中文](./humanization/references/locales/zh-CN.md) · [zh-TW 繁體中文](./humanization/references/locales/zh-TW.md) · [en English](./humanization/references/locales/en.md) · [ja 日本語](./humanization/references/locales/ja.md) · [ko 한국어](./humanization/references/locales/ko.md) · [es Español](./humanization/references/locales/es.md)
+**로캘 프로필:** [zh-CN 简体中文](../humanization/references/locales/zh-CN.md) · [zh-TW 繁體中文](../humanization/references/locales/zh-TW.md) · [en English](../humanization/references/locales/en.md) · [ja 日本語](../humanization/references/locales/ja.md) · [ko 한국어](../humanization/references/locales/ko.md) · [es Español](../humanization/references/locales/es.md)
 
 ## 작동 방식
 
@@ -49,12 +49,12 @@ Humanization은 사실이라는 이유만으로 모든 문장을 공개 문구�
 
 | 수정 전 | 수정 후 |
 | :--- | :--- |
-| **내부 기능 목록**<br><br>“이 공개 사이트에는 처리 서비스가 없고, 파일 업로드나 외부 시스템 연동을 지원하지 않으며, 작업을 시작할 진입점도 없습니다.” | **대체할 공개 문구는 없습니다.**<br><br>**문구 처리:** `remove`<br>**제품 흐름:** `needs_product_decision`. 이 페이지는 읽기 전용인가요, 아니면 방문자가 여기서 작업을 시작할 수 있어야 하나요? 분석 기능이 필요한 페이지라면 문구를 쓰기 전에 실제 진입점과 CTA부터 구현합니다. |
-| **확인된 기능이 상투적인 표현에 묻힌 경우**<br><br>“빠르게 변화하는 작업 환경에서 혁신적인 AI 인사이트로 팀이 모든 문서를 동일한 검토 기준에 따라 비교할 수 있도록 지원합니다.” | **모든 문서를 동일한 검토 기준으로 비교합니다.**<br><br>**문구 처리:** `rewrite` |
-| **재시도를 지원하는 오류**<br><br>“오류 500: worker 시간 초과로 POST /profile 요청에 실패했습니다.” | **변경 사항을 저장하지 못했습니다. 다시 시도해 주세요.**<br><br>**공개 메시지:** `rewrite`<br>**개발자 진단:** 로그로 `move` |
-| **변수가 포함된 알림**<br><br>“{fileName} 파일이 성공적으로 업로드되었습니다.” | **{fileName} 업로드를 마쳤습니다.**<br><br>**문구 처리:** `rewrite`<br>**보호된 변수:** `{fileName}` |
+| **내부 기능 목록**<br><br>“이 페이지에는 처리 서비스가 없고, 파일을 받거나 외부 시스템에 연결하지 않으며, 작업을 시작할 진입점도 없습니다.” | **대체할 공개 문구는 없습니다.**<br><br>**문구 처리:** `remove`<br>**제품 흐름:** `needs_product_decision`. 이 페이지는 정보만 제공하나요, 아니면 방문자가 여기서 작업을 완료할 수 있어야 하나요? 여기서 작업해야 한다면 문구를 쓰기 전에 실제 진입점과 CTA부터 구현합니다. |
+| **사실이 과장된 설명에 묻힌 경우**<br><br>“사용자 경험을 지속적으로 개선하기 위해 지원 문의 42건을 종합적으로 분석한 결과, 주목할 만한 중요한 사실을 발견했습니다. 그중 31건에서 계정 연결 문제를 언급했습니다.” | **지원 문의 42건을 검토했고, 그중 31건에서 계정 연결 문제를 언급했습니다.**<br><br>**문구 처리:** `rewrite` |
+| **재시도를 지원하는 오류**<br><br>“오류 500: worker 시간 초과로 저장 요청에 실패했습니다.” | **변경 사항을 저장하지 못했습니다. 다시 시도해 주세요.**<br><br>**공개 메시지:** `rewrite`<br>**개발자 진단:** 로그로 `move` |
+| **필터를 지울 수 있는 빈 상태**<br><br>“데이터가 없습니다.” | **현재 필터와 일치하는 결과가 없습니다. 필터를 지우면 모든 항목을 볼 수 있습니다.**<br><br>**문구 처리:** `rewrite` |
 
-어떤 예시도 기능이나 복구 경로를 새로 만들어 내지 않습니다. 사용자에게 필요 없는 문구는 삭제하고, 확인된 의미는 보존하며, 개발자 진단은 알맞은 위치로 옮기고, 런타임 변수는 그대로 유지합니다.
+어떤 예시도 기능이나 복구 경로를 새로 만들어 내지 않습니다. 사용자에게 필요 없는 문구는 삭제하고, `42/31` 사실은 그대로 보존하며, 개발자 진단은 알맞은 위치로 옮기고, 빈 상태에서는 실제로 지원하는 동작만 안내합니다.
 
 ## 규칙의 출처
 
@@ -83,7 +83,7 @@ Humanization은 여러 프로젝트가 유용한 글쓰기 방법과 언어별 �
 | `ko` | [Mozilla Korean style guide](https://github.com/mozilla-l10n/styleguides/blob/main/docs/ko/README.md), [dotoricode/korean-humanizer](https://github.com/dotoricode/korean-humanizer/tree/7dff5b48cc06fc4252d4766b802ecd61e62c50ad) 및 [HarryJhin/korean-writing](https://github.com/HarryJhin/korean-writing/tree/e4db3883ed76521b7a0cac30392fa67d182cc8ab) | 자연스러운 주어 생략, 조사와 띄어쓰기, `합니다`/`해요`/`다` 문체, 높임말 보존, 종결어미, 영어와 일본어 번역투 검토. |
 | `es` | [Mozilla Spanish style guides](https://github.com/mozilla-l10n/styleguides/tree/main/docs/es) | 성과 수의 일치, 접어, `tú`/`usted`/`ustedes`, 문장형 대소문자를 쓰는 UI, 지역 용어, 문장부호, 영어 직역 표현. |
 
-링크된 프로젝트에는 각각의 라이선스가 적용됩니다. [다국어 연구 기록](./research/multilingual-skill-research.md)과 [GUI 카피 존재 여부 판단 보고서](./research/gui-copy-existence-gate.md)에는 출처의 근거와 각 출처가 Humanization에 기여한 방식이 정리되어 있습니다. 해당 텍스트나 코드를 재사용하기 전에 각 저장소의 라이선스를 확인하세요. Humanization의 프로젝트별 지침은 위에서 정리한 실무 방식을 바탕으로 새로 작성했습니다.
+링크된 프로젝트에는 각각의 라이선스가 적용됩니다. [다국어 연구 기록](../research/multilingual-skill-research.md)과 [GUI 카피 존재 여부 판단 보고서](../research/gui-copy-existence-gate.md)에는 출처의 근거와 각 출처가 Humanization에 기여한 방식이 정리되어 있습니다. 해당 텍스트나 코드를 재사용하기 전에 각 저장소의 라이선스를 확인하세요. Humanization의 프로젝트별 지침은 위에서 정리한 실무 방식을 바탕으로 새로 작성했습니다.
 
 ## 설치
 
@@ -98,7 +98,7 @@ https://github.com/thevenomsnake/humanization 에서 humanization Skill을 설�
 <details>
 <summary><strong>수동 설치</strong></summary>
 
-저장소의 [`humanization`](./humanization) 디렉터리를 Codex Skills 디렉터리로 복사합니다.
+저장소의 [`humanization`](../humanization) 디렉터리를 Codex Skills 디렉터리로 복사합니다.
 
 ```text
 $CODEX_HOME/skills/humanization/
@@ -135,7 +135,7 @@ python humanization/scripts/check_writing.py --locale es --format web-microcopy 
 - 내부 기능 정보와 게시 가능한 사용자 메시지를 구분하는 다국어 콘텐츠 존재 여부 판단 게이트를 추가했습니다.
 - `--locale`과 `--format`을 명시하고, 여러 언어가 섞인 텍스트의 경로는 호출자가 선택하며, 어조 판단은 warning 수준에서 검토하도록 했습니다.
 
-전체 변경 이력은 [CHANGELOG.md](./CHANGELOG.md)에서 확인할 수 있습니다.
+전체 변경 이력은 [CHANGELOG.md](../CHANGELOG.md)에서 확인할 수 있습니다.
 
 ## 저장소 구조
 
@@ -181,13 +181,13 @@ humanization/
 
 | 경로 | 용도 |
 | :--- | :--- |
-| [`SKILL.md`](./humanization/SKILL.md) | 각 작업을 공통, 로캘, 형식 모듈로 연결합니다. |
-| [`core.md`](./humanization/references/core.md) | 사실, 출처, 기능, 개인정보, CTA, 브랜드 용어, 플레이스홀더, 최소 편집, 콘텐츠 처리 결과를 담당합니다. |
-| [`locales/`](./humanization/references/locales) | 여섯 개 언어의 고유한 작성 프로필을 담습니다. |
-| [`expressive-text.md`](./humanization/references/formats/expressive-text.md) | GUI가 아닌 제품, 문서, 마케팅, 이메일, 소셜 카피를 다룹니다. |
-| [`gui-microcopy.md`](./humanization/references/formats/gui-microcopy.md) | GUI 콘텐츠 게이트, 컴포넌트의 역할, 구조화된 리소스 보호 규칙을 정의합니다. |
-| [`check_writing.py`](./humanization/scripts/check_writing.py) | 공통, 로캘, GUI 검사를 위한 단일 CLI를 제공합니다. |
-| [`check_zh_cn.py`](./humanization/scripts/check_zh_cn.py) | 기존 동작 수준 검사기의 범위를 `zh-CN prose`로 제한합니다. |
+| [`SKILL.md`](../humanization/SKILL.md) | 각 작업을 공통, 로캘, 형식 모듈로 연결합니다. |
+| [`core.md`](../humanization/references/core.md) | 사실, 출처, 기능, 개인정보, CTA, 브랜드 용어, 플레이스홀더, 최소 편집, 콘텐츠 처리 결과를 담당합니다. |
+| [`locales/`](../humanization/references/locales) | 여섯 개 언어의 고유한 작성 프로필을 담습니다. |
+| [`expressive-text.md`](../humanization/references/formats/expressive-text.md) | GUI가 아닌 제품, 문서, 마케팅, 이메일, 소셜 카피를 다룹니다. |
+| [`gui-microcopy.md`](../humanization/references/formats/gui-microcopy.md) | GUI 콘텐츠 게이트, 컴포넌트의 역할, 구조화된 리소스 보호 규칙을 정의합니다. |
+| [`check_writing.py`](../humanization/scripts/check_writing.py) | 공통, 로캘, GUI 검사를 위한 단일 CLI를 제공합니다. |
+| [`check_zh_cn.py`](../humanization/scripts/check_zh_cn.py) | 기존 동작 수준 검사기의 범위를 `zh-CN prose`로 제한합니다. |
 
 </details>
 

@@ -4,11 +4,11 @@
 
 <p align="center">
   <strong>English</strong> ·
-  <a href="./README.zh-CN.md">简体中文</a> ·
-  <a href="./README.zh-TW.md">繁體中文</a> ·
-  <a href="./README.ja.md">日本語</a> ·
-  <a href="./README.ko.md">한국어</a> ·
-  <a href="./README.es.md">Español</a>
+  <a href="./docs/README.zh-CN.md">简体中文</a> ·
+  <a href="./docs/README.zh-TW.md">繁體中文</a> ·
+  <a href="./docs/README.ja.md">日本語</a> ·
+  <a href="./docs/README.ko.md">한국어</a> ·
+  <a href="./docs/README.es.md">Español</a>
 </p>
 
 <p align="center">
@@ -49,12 +49,12 @@ Humanization does not polish every true sentence into publishable copy. It first
 
 | Before | After |
 | :--- | :--- |
-| **Internal capability inventory**<br><br>“This public site has no processing service, does not provide file uploads, does not connect to external systems, and has no entry point to start a task.” | **No replacement public copy.**<br><br>**Copy disposition:** `remove`<br>**Product flow:** `needs_product_decision`. Is this page reading-only, or should visitors be able to start a task here? If analysis belongs here, implement a real entry point and CTA before writing copy. |
-| **Verified capability buried in slogans**<br><br>“Transform work with revolutionary AI insights that empower teams to compare every document against the same review criteria.” | **Compare every document against the same review criteria.**<br><br>**Copy disposition:** `rewrite` |
-| **Error with a supported retry**<br><br>“Error 500: POST /profile failed because the worker timed out.” | **We couldn't save your changes. Try again.**<br><br>**Public message:** `rewrite`<br>**Developer diagnostic:** `move` to logs |
-| **Structured notification**<br><br>“The file {fileName} has been successfully uploaded.” | **Uploaded {fileName}.**<br><br>**Copy disposition:** `rewrite`<br>**Protected token:** `{fileName}` |
+| **Internal capability inventory**<br><br>“This page has no processing service, does not accept files, does not connect to external systems, and has no action to start a task.” | **No replacement public copy.**<br><br>**Copy disposition:** `remove`<br>**Product flow:** `needs_product_decision`. Is this page informational, or should visitors complete a task here? If the task belongs here, implement a real entry point and CTA before writing copy. |
+| **Facts buried in inflated prose**<br><br>“As part of our ongoing commitment to improving the user experience, we conducted a comprehensive review of 42 support tickets and uncovered an important insight: 31 of them described difficulties linking an account.” | **We reviewed 42 support tickets. Thirty-one described problems linking an account.**<br><br>**Copy disposition:** `rewrite` |
+| **Error with a supported retry**<br><br>“Error 500: the save request failed because the worker timed out.” | **We couldn't save your changes. Try again.**<br><br>**Public message:** `rewrite`<br>**Developer diagnostic:** `move` to logs |
+| **Empty state with a supported action**<br><br>“No data.” | **No results match these filters. Clear the filters to see all items.**<br><br>**Copy disposition:** `rewrite` |
 
-These examples do not invent a feature or recovery path. They remove text with no user-facing job, keep verified meaning, move diagnostics to the right surface, and preserve runtime tokens exactly.
+These examples do not invent a feature or recovery path. They remove text with no user-facing job, preserve the verified `42/31` evidence, move diagnostics to the right surface, and connect an empty state to an action that actually exists.
 
 ## Where the rules come from
 

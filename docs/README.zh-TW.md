@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="./assets/readme-cover.svg" alt="Humanization" width="100%">
+  <img src="../assets/readme-cover.svg" alt="Humanization" width="100%">
 </p>
 
 <p align="center">
-  <a href="./README.md">English</a> ·
+  <a href="../README.md">English</a> ·
   <a href="./README.zh-CN.md">简体中文</a> ·
   <strong>繁體中文</strong> ·
   <a href="./README.ja.md">日本語</a> ·
@@ -29,7 +29,7 @@
 
 Humanization 整合多個成熟寫作、編輯、在地化、內容設計與 anti-slop 專案的實務，服務多語言產品創作者。使用情境涵蓋文章、故事、文件、產品內容、行銷文案、電子郵件和社群貼文，也包括導覽、按鈕、錯誤、空白狀態、確認、通知、隱私權說明和無障礙名稱等 GUI 文字。開始改寫前，它會先分清內部能力事實，以及使用者在目前呈現位置真正需要看到的訊息。
 
-**語言檔案：** [zh-CN 简体中文](./humanization/references/locales/zh-CN.md) · [zh-TW 繁體中文](./humanization/references/locales/zh-TW.md) · [en English](./humanization/references/locales/en.md) · [ja 日本語](./humanization/references/locales/ja.md) · [ko 한국어](./humanization/references/locales/ko.md) · [es Español](./humanization/references/locales/es.md)
+**語言檔案：** [zh-CN 简体中文](../humanization/references/locales/zh-CN.md) · [zh-TW 繁體中文](../humanization/references/locales/zh-TW.md) · [en English](../humanization/references/locales/en.md) · [ja 日本語](../humanization/references/locales/ja.md) · [ko 한국어](../humanization/references/locales/ko.md) · [es Español](../humanization/references/locales/es.md)
 
 ## 運作方式
 
@@ -49,12 +49,12 @@ Humanization 不會把每一句真實資訊潤飾後直接公開。它會先判�
 
 | 修改前 | 修改後 |
 | :--- | :--- |
-| **內部能力盤點**<br><br>「這個公開網站沒有處理服務，不提供檔案上傳，不連接求職網站，也沒有開始任務的入口。」 | **不補任何公開文案。**<br><br>**文案處置：** `remove`<br>**產品流程：** `needs_product_decision`。這個頁面只提供閱讀資訊，還是應該讓訪客在這裡開始任務？如果分析功能屬於這個頁面，請先實作可用的入口與 CTA，再撰寫文案。 |
-| **已確認的能力被套話蓋過**<br><br>「面對快速變動的招募環境，我們以創新的 AI 洞察協助團隊，讓每份文件都能依同一套職缺條件比較。」 | **依同一套職缺條件比較每份文件。**<br><br>**文案處置：** `rewrite` |
-| **確實支援重試的錯誤**<br><br>「錯誤 500：worker 逾時，POST /profile 請求失敗。」 | **無法儲存變更，請再試一次。**<br><br>**公開訊息：** `rewrite`<br>**開發診斷：** `move` 到紀錄 |
-| **含變數的通知**<br><br>「檔案 {fileName} 已被成功上傳。」 | **{fileName} 已上傳。**<br><br>**文案處置：** `rewrite`<br>**受保護變數：** `{fileName}` |
+| **內部能力盤點**<br><br>「這個頁面沒有處理服務，不接收檔案，不連接外部系統，也沒有開始任務的入口。」 | **不補任何公開文案。**<br><br>**文案處置：** `remove`<br>**產品流程：** `needs_product_decision`。這個頁面只提供資訊，還是應該讓訪客在這裡完成任務？如果任務應該在這裡完成，請先實作可用的入口與 CTA，再撰寫文案。 |
+| **事實被空話蓋過**<br><br>「為了持續改善使用者體驗，我們全面深入分析了 42 則客服紀錄，並發現一項值得關注的重要現象：其中 31 則都提到連結帳號時遇到困難。」 | **我們檢視了 42 則客服紀錄，其中 31 則提到連結帳號時遇到問題。**<br><br>**文案處置：** `rewrite` |
+| **確實支援重試的錯誤**<br><br>「錯誤 500：worker 逾時，儲存請求失敗。」 | **無法儲存變更，請再試一次。**<br><br>**公開訊息：** `rewrite`<br>**開發診斷：** `move` 到紀錄 |
+| **確實提供清除篩選的空白狀態**<br><br>「找不到資料。」 | **目前的篩選條件沒有結果。清除篩選條件即可查看全部內容。**<br><br>**文案處置：** `rewrite` |
 
-這些例子不會虛構功能或復原路徑。沒有使用者職責的文字直接移除，已確認的內容繼續保留，開發診斷移到合適位置，執行階段變數維持原樣。
+這些例子不會虛構功能或復原路徑。沒有使用者職責的文字直接移除，`42/31` 的事實維持不變，開發診斷移到合適位置，空白狀態只指向實際存在的操作。
 
 ## 規則來源
 
@@ -83,7 +83,7 @@ Humanization 的形成，仰賴其他專案公開實用的寫作方法和語言�
 | `ko` | [Mozilla Korean style guide](https://github.com/mozilla-l10n/styleguides/blob/main/docs/ko/README.md)、[dotoricode/korean-humanizer](https://github.com/dotoricode/korean-humanizer/tree/7dff5b48cc06fc4252d4766b802ecd61e62c50ad) 和 [HarryJhin/korean-writing](https://github.com/HarryJhin/korean-writing/tree/e4db3883ed76521b7a0cac30392fa67d182cc8ab) | 自然省略主詞、助詞和分寫、`합니다`/`해요`/`다` 語體層級、敬語、句尾形式，以及英語和日語翻譯腔審查。 |
 | `es` | [Mozilla Spanish style guides](https://github.com/mozilla-l10n/styleguides/tree/main/docs/es) | 性數一致、附著代名詞、`tú`/`usted`/`ustedes`、句首大寫式 UI、地區術語、標點和英語仿譯審查。 |
 
-連結的專案分別適用各自的授權條款。[多語言研究筆記](./research/multilingual-skill-research.md) 和 [GUI 文案存在性門研究報告](./research/gui-copy-existence-gate.md) 記錄了來源證據，以及這些來源如何影響 Humanization；使用相關文字或程式碼前，請先查閱相應儲存庫的授權條款。Humanization 的專案規則依據上述實務重新撰寫。
+連結的專案分別適用各自的授權條款。[多語言研究筆記](../research/multilingual-skill-research.md) 和 [GUI 文案存在性門研究報告](../research/gui-copy-existence-gate.md) 記錄了來源證據，以及這些來源如何影響 Humanization；使用相關文字或程式碼前，請先查閱相應儲存庫的授權條款。Humanization 的專案規則依據上述實務重新撰寫。
 
 ## 安裝
 
@@ -98,7 +98,7 @@ Install the humanization Skill from https://github.com/thevenomsnake/humanizatio
 <details>
 <summary><strong>手動安裝</strong></summary>
 
-將儲存庫中的 [`humanization`](./humanization) 目錄複製到 Codex Skills 目錄：
+將儲存庫中的 [`humanization`](../humanization) 目錄複製到 Codex Skills 目錄：
 
 ```text
 $CODEX_HOME/skills/humanization/
@@ -135,7 +135,7 @@ python humanization/scripts/check_writing.py --locale es --format web-microcopy 
 - 新增跨語言內容存在性門，用來區分內部能力事實與適合公開的使用者訊息。
 - `--locale` 和 `--format` 改為明確參數，由使用者為混合文字指定路由，語氣繼續作為人工審閱項目。
 
-完整歷史記錄請見 [CHANGELOG.md](./CHANGELOG.md)。
+完整歷史記錄請見 [CHANGELOG.md](../CHANGELOG.md)。
 
 ## 儲存庫結構
 
@@ -181,13 +181,13 @@ humanization/
 
 | 路徑 | 用途 |
 | :--- | :--- |
-| [`SKILL.md`](./humanization/SKILL.md) | 讓每項任務依序經過通用、語言和格式模組。 |
-| [`core.md`](./humanization/references/core.md) | 負責事實、來源、能力、隱私權、CTA、品牌詞、placeholder、最小幅度修改和內容處置。 |
-| [`locales/`](./humanization/references/locales) | 保存六個語言的原生寫作檔案。 |
-| [`expressive-text.md`](./humanization/references/formats/expressive-text.md) | 處理非 GUI 的產品、文件、行銷、電子郵件和社群文字。 |
-| [`gui-microcopy.md`](./humanization/references/formats/gui-microcopy.md) | 定義 GUI 內容存在性門、元件職責和結構化資源保護。 |
-| [`check_writing.py`](./humanization/scripts/check_writing.py) | 提供執行通用、語言和 GUI 檢查的單一 CLI。 |
-| [`check_zh_cn.py`](./humanization/scripts/check_zh_cn.py) | 將原有的動作層級檢查器限定在 `zh-CN prose`。 |
+| [`SKILL.md`](../humanization/SKILL.md) | 讓每項任務依序經過通用、語言和格式模組。 |
+| [`core.md`](../humanization/references/core.md) | 負責事實、來源、能力、隱私權、CTA、品牌詞、placeholder、最小幅度修改和內容處置。 |
+| [`locales/`](../humanization/references/locales) | 保存六個語言的原生寫作檔案。 |
+| [`expressive-text.md`](../humanization/references/formats/expressive-text.md) | 處理非 GUI 的產品、文件、行銷、電子郵件和社群文字。 |
+| [`gui-microcopy.md`](../humanization/references/formats/gui-microcopy.md) | 定義 GUI 內容存在性門、元件職責和結構化資源保護。 |
+| [`check_writing.py`](../humanization/scripts/check_writing.py) | 提供執行通用、語言和 GUI 檢查的單一 CLI。 |
+| [`check_zh_cn.py`](../humanization/scripts/check_zh_cn.py) | 將原有的動作層級檢查器限定在 `zh-CN prose`。 |
 
 </details>
 
