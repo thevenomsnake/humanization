@@ -51,10 +51,11 @@ Humanization does not polish every true sentence into publishable copy. It first
 | :--- | :--- |
 | **Internal capability inventory**<br><br>“This page has no processing service, does not accept files, does not connect to external systems, and has no action to start a task.” | **No replacement public copy.**<br><br>**Copy disposition:** `remove`<br>**Product flow:** `needs_product_decision`. Is this page informational, or should visitors complete a task here? If the task belongs here, implement a real entry point and CTA before writing copy. |
 | **Facts buried in inflated prose**<br><br>“As part of our ongoing commitment to improving the user experience, we conducted a comprehensive review of 42 support tickets and uncovered an important insight: 31 of them described difficulties linking an account.” | **We reviewed 42 support tickets. Thirty-one described problems linking an account.**<br><br>**Copy disposition:** `rewrite` |
+| **A measured result wrapped in a false contrast**<br><br>“The update doesn't just reduce average export time; it cuts it from 40 seconds to 18 seconds.” | **The update cuts average export time from 40 seconds to 18 seconds.**<br><br>**Copy disposition:** `rewrite` |
 | **Error with a supported retry**<br><br>“Error 500: the save request failed because the worker timed out.” | **We couldn't save your changes. Try again.**<br><br>**Public message:** `rewrite`<br>**Developer diagnostic:** `move` to logs |
 | **Empty state with a supported action**<br><br>“No data.” | **No results match these filters. Clear the filters to see all items.**<br><br>**Copy disposition:** `rewrite` |
 
-These examples do not invent a feature or recovery path. They remove text with no user-facing job, preserve the verified `42/31` evidence, move diagnostics to the right surface, and connect an empty state to an action that actually exists.
+These examples do not invent a feature or recovery path. They remove text with no user-facing job, preserve the verified `42/31` and `40/18` evidence, replace a false contrast with the measured result, move diagnostics to the right surface, and connect an empty state to an action that actually exists.
 
 ## Where the rules come from
 

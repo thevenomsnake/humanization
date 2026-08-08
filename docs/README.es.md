@@ -51,10 +51,11 @@ Humanization no convierte en texto publicable cada frase que sea cierta. Primero
 | :--- | :--- |
 | **Inventario interno de capacidades**<br><br>«Esta página no tiene servicio de procesamiento, no acepta archivos, no se conecta a sistemas externos y no ofrece una acción para iniciar una tarea». | **No se añade ningún texto público en su lugar.**<br><br>**Destino del texto:** `remove`<br>**Flujo de producto:** `needs_product_decision`. ¿Esta página es solo informativa o debería permitir completar una tarea? Si la tarea corresponde a esta página, primero hay que implementar un punto de entrada y una CTA reales. |
 | **Hechos ocultos entre frases grandilocuentes**<br><br>«Como parte de nuestro compromiso continuo con la mejora de la experiencia de usuario, realizamos un análisis exhaustivo de 42 solicitudes de soporte y descubrimos un dato importante que merece atención: en 31 se mencionaban dificultades para vincular una cuenta». | **Revisamos 42 solicitudes de soporte. En 31 se mencionaban problemas al vincular una cuenta.**<br><br>**Destino del texto:** `rewrite` |
+| **Hechos unidos con un contraste innecesario**<br><br>«La nueva vista no solo reúne las facturas pendientes, sino que también las ordena por fecha de vencimiento». | **La nueva vista reúne las facturas pendientes y las ordena por fecha de vencimiento.**<br><br>**Destino del texto:** `rewrite` |
 | **Error que permite volver a intentarlo**<br><br>«Error 500: la solicitud de guardado falló porque el worker agotó el tiempo de espera». | **No se pudieron guardar los cambios. Inténtalo de nuevo.**<br><br>**Mensaje público:** `rewrite`<br>**Diagnóstico de desarrollo:** `move` a los registros |
 | **Estado vacío con una acción disponible**<br><br>«No hay datos». | **Ningún resultado coincide con estos filtros. Al borrar los filtros se mostrarán todos los elementos.**<br><br>**Destino del texto:** `rewrite` |
 
-Ningún ejemplo inventa funciones ni vías de recuperación. El texto sin una función para el usuario se elimina, los datos `42/31` se conservan, los diagnósticos se trasladan a la superficie adecuada y el estado vacío solo remite a una acción disponible.
+Ningún ejemplo inventa funciones ni vías de recuperación. El texto sin una función para el usuario se elimina, los datos `42/31` se conservan, los contrastes vacíos se sustituyen por afirmaciones directas, los diagnósticos se trasladan a la superficie adecuada y el estado vacío solo remite a una acción disponible.
 
 ## De dónde salen las reglas
 
