@@ -17,7 +17,7 @@
 
 <p align="center"><strong>Write and revise text in six locales without carrying one language's rules into another.</strong></p>
 
-Humanization is a Codex Skill for prose, stories, documentation, product content, marketing copy, email, and social posts. It also handles GUI text such as navigation, buttons, errors, empty states, confirmations, notifications, privacy notices, and accessible names.
+Humanization is an independently maintained Codex Skill for prose, stories, documentation, product content, marketing copy, email, and social posts. It also handles GUI text such as navigation, buttons, errors, empty states, confirmations, notifications, privacy notices, and accessible names.
 
 **Locale profiles:** [zh-CN 简体中文](./humanization/references/locales/zh-CN.md) · [zh-TW 台灣繁體中文](./humanization/references/locales/zh-TW.md) · [en English](./humanization/references/locales/en.md) · [ja 日本語](./humanization/references/locales/ja.md) · [ko 한국어](./humanization/references/locales/ko.md) · [es Español](./humanization/references/locales/es.md)
 
@@ -162,7 +162,7 @@ humanization/
 
 Humanization is released under the MIT License. The repository does not include third-party articles, training corpora, or model weights.
 
-This fork is based on [KKKKhazix/human-writing](https://github.com/KKKKhazix/human-writing) and retains an `upstream` remote for synchronization. The source map above distinguishes the rules that informed Humanization from the project-specific rules that were deliberately excluded.
+Humanization is an independent project. Its initial `zh-CN` long-form foundation was derived from [KKKKhazix/human-writing v1.1.0](https://github.com/KKKKhazix/human-writing/tree/cd879d22c8588125c1869d0b443f5d8df74b4192) under the MIT License. The source map above records every project or guide that informed the current architecture, the principles adopted from each, and the project-specific rules that were deliberately excluded.
 
 For rule conflicts, false positives, or model-specific failures, [open an issue](https://github.com/thevenomsnake/humanization/issues) with the prompt, the relevant output, and the result you expected.
 
