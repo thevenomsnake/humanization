@@ -10,7 +10,7 @@ project_name: "humanization"
 ## Product Direction
 
 - Intended user: 使用 Codex Skill 写作、改稿和制作网站短文案的多语言用户。
-- Problem: 中文长文规则不能直接用于英文、日文、韩文、西班牙文或台湾繁中，短文案也不应被长文材料门槛误伤。
+- Problem: 简体中文长文规则不能直接用于繁体中文、英文、日文、韩文或西班牙文，短文案也不应被长文材料门槛误伤。
 - First value: 明确指定 `locale`、`format` 与 `surface` 后，Skill 按通用契约、一个语言档案和一个格式模块生成或检查文章、产品内容和 GUI microcopy。
 - Delivery: 可安装的 `humanization/` Skill 目录、通用契约、六个语言档案、GUI microcopy 参考和确定性 CLI 校验器。
 - Boundaries: 只修改本独立项目；不触碰 Sumimi、Cloudflare、生产环境或自动发布；保留 MIT 许可证与所有来源项目的逐项归属。

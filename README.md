@@ -3,6 +3,15 @@
 </p>
 
 <p align="center">
+  <strong>English</strong> ·
+  <a href="./README.zh-CN.md">简体中文</a> ·
+  <a href="./README.zh-TW.md">繁體中文</a> ·
+  <a href="./README.ja.md">日本語</a> ·
+  <a href="./README.ko.md">한국어</a> ·
+  <a href="./README.es.md">Español</a>
+</p>
+
+<p align="center">
   <strong>v3.0.0</strong> · MIT · 6 locales · prose / copy / GUI microcopy
 </p>
 
@@ -19,7 +28,7 @@
 
 Humanization is an independently maintained Codex Skill for prose, stories, documentation, product content, marketing copy, email, and social posts. It also handles GUI text such as navigation, buttons, errors, empty states, confirmations, notifications, privacy notices, and accessible names.
 
-**Locale profiles:** [zh-CN 简体中文](./humanization/references/locales/zh-CN.md) · [zh-TW 台灣繁體中文](./humanization/references/locales/zh-TW.md) · [en English](./humanization/references/locales/en.md) · [ja 日本語](./humanization/references/locales/ja.md) · [ko 한국어](./humanization/references/locales/ko.md) · [es Español](./humanization/references/locales/es.md)
+**Locale profiles:** [zh-CN 简体中文](./humanization/references/locales/zh-CN.md) · [zh-TW 繁體中文](./humanization/references/locales/zh-TW.md) · [en English](./humanization/references/locales/en.md) · [ja 日本語](./humanization/references/locales/ja.md) · [ko 한국어](./humanization/references/locales/ko.md) · [es Español](./humanization/references/locales/es.md)
 
 ## How it works
 
@@ -51,7 +60,7 @@ The profiles are native writing contracts, not translations of the Chinese rules
 | Locale | Native projects and guidance used | Language-specific principles adopted |
 | :--- | :--- | :--- |
 | `zh-CN` | [KKKKhazix/human-writing](https://github.com/KKKKhazix/human-writing/tree/cd879d22c8588125c1869d0b443f5d8df74b4192) and [GB/T 15834-2011](https://openstd.samr.gov.cn/) | Mainland Chinese syntax and terminology, full-width punctuation, material-led long-form writing, and Chinese house rules confined to `zh-CN prose`. |
-| `zh-TW` | [Mozilla zh-TW style guide](https://github.com/mozilla-l10n/styleguides/blob/main/docs/zh-TW/README.md) and [bruce6731/anti-ai-writing-taiwan](https://github.com/bruce6731/anti-ai-writing-taiwan/tree/2c14f6a6015885b0c1cad9b54c861bc7b8a3b27d) | Taiwan vocabulary, register, punctuation, cultural reordering, and the rule that `zh-TW` is not a Simplified-to-Traditional character conversion. Product-specific Mozilla terms were not imported. |
+| `zh-TW` | [Mozilla zh-TW style guide](https://github.com/mozilla-l10n/styleguides/blob/main/docs/zh-TW/README.md) and [bruce6731/anti-ai-writing-taiwan](https://github.com/bruce6731/anti-ai-writing-taiwan/tree/2c14f6a6015885b0c1cad9b54c861bc7b8a3b27d) | Traditional Chinese terminology, register, punctuation, and cultural reordering for the `zh-TW` locale, plus the rule that this profile is not a Simplified-to-Traditional character conversion. Product-specific Mozilla terms were not imported. |
 | `en` | [Google styleguide](https://github.com/google/styleguide/tree/gh-pages/docguide), [Microsoft Writing Style Guide](https://github.com/MicrosoftDocs/microsoft-style-guide), and [Digital.gov Plain Language](https://digital.gov/guides/plain-language/) | Clear actor/action relationships, concise documentation, contextual brand voice, regional consistency, and ordinary use of English punctuation. Microsoft-specific terminology was not imported. |
 | `ja` | [Mozilla Japanese style guide](https://github.com/mozilla-l10n/styleguides/blob/main/docs/ja/l10nguideline.md), [chezou/slop-nuki](https://github.com/chezou/slop-nuki/tree/1bdf627b5991f4f806069619c9bde407960feac7), [iKora128/stop-ai-slop-jp](https://github.com/iKora128/stop-ai-slop-jp/tree/e09d32796f253a62693885757cea484c275d06f2), [RobTar97/japanese-writing-skills](https://github.com/RobTar97/japanese-writing-skills/tree/e4b1700464219c60da786f005a061bccffbbd4e3), and [coji/natural-japanese](https://github.com/coji/natural-japanese/tree/b54954f8deb4f110f0959f4e4fac295708900120) | Natural omission and word order, particles, honorifics and cushioning by context, component-specific noun/verb forms, GUI resource integrity, and density/genre-aware review instead of absolute pattern bans. |
 | `ko` | [Mozilla Korean style guide](https://github.com/mozilla-l10n/styleguides/blob/main/docs/ko/README.md), [dotoricode/korean-humanizer](https://github.com/dotoricode/korean-humanizer/tree/7dff5b48cc06fc4252d4766b802ecd61e62c50ad), and [HarryJhin/korean-writing](https://github.com/HarryJhin/korean-writing/tree/e4db3883ed76521b7a0cac30392fa67d182cc8ab) | Natural subject omission, particles and spacing, `합니다`/`해요`/`다` speech levels, honorific preservation, endings, and English/Japanese translationese. Arbitrary rewrite quotas were rejected. |

@@ -39,7 +39,7 @@ IETF BCP 47（RFC 5646）定义语言标签的结构、子标签和区域语义�
 | 语言档案 | BCP 47 标签 | 实现含义 |
 | --- | --- | --- |
 | 简体中文 | `zh-CN` | 中国大陆简体中文规则；不能只由 `zh` 推断地区。 |
-| 繁体中文 | `zh-TW` | 台湾繁体中文规则；用词、语气和标点单独维护，不能当作简繁转换。 |
+| 繁体中文 | `zh-TW` | `zh-TW` 地区用词、语气和标点单独维护，不能当作简繁转换。 |
 | English | `en` | 语言中立英语；产品需要地区差异时再明确 `en-US`、`en-GB` 等。 |
 | 日本語 | `ja` | 日语规则。 |
 | 한국어 | `ko` | 韩语规则。 |
@@ -129,7 +129,7 @@ Mozilla 的 [`mozilla-l10n/styleguides`](https://github.com/mozilla-l10n/stylegu
 - [`docs/ko/README.md`](https://github.com/mozilla-l10n/styleguides/blob/main/docs/ko/README.md) 要求合쇼체敬语，句末有句点时写完整句、没有句点时使用名词短语；品牌、变量和占位符不翻译；术语变更要考虑多产品影响；明确提醒不要直接复制机器翻译，也要避免日式翻译腔。
 - 可借鉴：为组件和句末形态建立 profile 级规则，保留品牌/变量/占位符保护和术语变更影响检查；不可搬用：韩语敬语、助词和句末规则不适用于其他语言，也不能当成一般散文的硬规则。
 
-#### `zh-TW` 繁体中文（台湾）
+#### `zh-TW` 繁体中文档案
 
 - [`docs/zh-TW/README.md`](https://github.com/mozilla-l10n/styleguides/blob/main/docs/zh-TW/README.md) 说明该指南由 MozTW 维护，要求使用台湾常用词（例如「網路」而非「互聯網」）、避免机器翻译、允许为文化和语境调整顺序或删减；它还规定品牌/硬编码字符串保护、中英半角空格、句尾半角冒号、参数顺序、字符串截断和日期时间 QA。
 - 可借鉴：把地区词、品牌词、占位符、长度/截断和格式化检查放进 `zh-TW` 档案，并让“译文不自然”触发人工校阅而不是自动替换；不可搬用：`您`、半角冒号、Mozilla/SUMO slug 和产品术语属于该产品语境，不应成为所有繁中文案的全局禁令。
@@ -185,7 +185,7 @@ Mozilla 的 [`mozilla-l10n/styleguides`](https://github.com/mozilla-l10n/stylegu
 | 捷克语 | [`nowork-ai/anti-ai-slop-cz`](https://github.com/nowork-ai/anti-ai-slop-cz/tree/5efb11a03a064e8e31e46f29c46e6c1a8ce94b1a) | 捷克语公开文案、LinkedIn 套路、具体性与准确性。 |
 | 七语言并列包 | [`White-Wolf-dv/Natural-Writing-Skills-Claude`](https://github.com/White-Wolf-dv/Natural-Writing-Skills-Claude/tree/d6d55b7cb60fccee67c08cce225ca9d8a3406663) | `fa/en/ar/es/he/it/fr` 独立安装包，但共享同一组九类模式。 |
 | 四语言统一系统 | [`devswha/patina`](https://github.com/devswha/patina/tree/9cbfc7873b71efca7cf117f10412b4c481810d34) | `ko/en/zh/ja` pattern pack、document type/persona/register 三轴和意义保留门。 |
-| 台灣繁中 | [`bruce6731/anti-ai-writing-taiwan`](https://github.com/bruce6731/anti-ai-writing-taiwan/tree/2c14f6a6015885b0c1cad9b54c861bc7b8a3b27d) | 台灣读者语感、最小编辑和繁中独立边界。 |
+| 繁体中文（`zh-TW`） | [`bruce6731/anti-ai-writing-taiwan`](https://github.com/bruce6731/anti-ai-writing-taiwan/tree/2c14f6a6015885b0c1cad9b54c861bc7b8a3b27d) | `zh-TW` 读者语感、最小编辑和繁体中文独立边界。 |
 
 ### 真正可跨语言的是编辑契约，不是禁词表
 
