@@ -45,13 +45,16 @@ When source material is incomplete, the Skill asks a focused question, checks a 
 
 ## Before and after
 
-Humanization does not polish every true sentence into publishable copy. It first asks whether the sentence has a user-facing job on this surface.
+Humanization does not polish every true sentence into publishable copy. It first asks what job the text has on this surface. The result may be a rewrite, a move, or no public copy at all.
 
 | Before | After |
 | :--- | :--- |
-| “This public site has no processing service, does not provide file uploads, does not connect to external systems, and has no entry point to start a task.” | **No replacement public copy.**<br><br>**Copy disposition:** `remove`<br>**Product flow:** `needs_product_decision`. Is this page reading-only, or should visitors be able to start a task here? If analysis belongs here, implement a real entry point and CTA before writing copy. |
+| **Internal capability inventory**<br><br>“This public site has no processing service, does not provide file uploads, does not connect to external systems, and has no entry point to start a task.” | **No replacement public copy.**<br><br>**Copy disposition:** `remove`<br>**Product flow:** `needs_product_decision`. Is this page reading-only, or should visitors be able to start a task here? If analysis belongs here, implement a real entry point and CTA before writing copy. |
+| **Verified capability buried in slogans**<br><br>“Transform work with revolutionary AI insights that empower teams to compare every document against the same review criteria.” | **Compare every document against the same review criteria.**<br><br>**Copy disposition:** `rewrite` |
+| **Error with a supported retry**<br><br>“Error 500: POST /profile failed because the worker timed out.” | **We couldn't save your changes. Try again.**<br><br>**Public message:** `rewrite`<br>**Developer diagnostic:** `move` to logs |
+| **Structured notification**<br><br>“The file {fileName} has been successfully uploaded.” | **Uploaded {fileName}.**<br><br>**Copy disposition:** `rewrite`<br>**Protected token:** `{fileName}` |
 
-The internal facts stay in the capability ledger. The sentence disappears because it does not help a visitor act or decide. The missing entry point remains a separate product decision; explanatory copy cannot complete that journey.
+These examples do not invent a feature or recovery path. They remove text with no user-facing job, keep verified meaning, move diagnostics to the right surface, and preserve runtime tokens exactly.
 
 ## Where the rules come from
 

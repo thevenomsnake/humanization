@@ -45,13 +45,16 @@ Si el material de partida está incompleto, la Skill formula una pregunta concre
 
 ## Antes y después
 
-Humanization no convierte en texto publicable cada frase que sea cierta. Primero comprueba si cumple una función para el usuario en esa superficie.
+Humanization no convierte en texto publicable cada frase que sea cierta. Primero comprueba qué función cumple en esa superficie y después decide si debe reescribirse, trasladarse o desaparecer del contenido público.
 
 | Antes | Después |
 | :--- | :--- |
-| «Este sitio público no tiene un servicio de procesamiento, no permite subir archivos, no se conecta a sistemas externos y tampoco ofrece una forma de iniciar una tarea». | **No se añade ningún texto público en su lugar.**<br><br>**Destino del texto:** `remove`<br>**Flujo de producto:** `needs_product_decision`. ¿Esta página es solo informativa o debería permitir iniciar un análisis? Si el análisis forma parte de esta página, primero hay que implementar un punto de entrada y una CTA reales. |
+| **Inventario interno de capacidades**<br><br>«Este sitio público no tiene un servicio de procesamiento, no permite subir archivos, no se conecta a sistemas externos y tampoco ofrece una forma de iniciar una tarea». | **No se añade ningún texto público en su lugar.**<br><br>**Destino del texto:** `remove`<br>**Flujo de producto:** `needs_product_decision`. ¿Esta página es solo informativa o debería permitir iniciar un análisis? Si el análisis forma parte de esta página, primero hay que implementar un punto de entrada y una CTA reales. |
+| **Una capacidad verificada oculta entre eslóganes**<br><br>«En el cambiante panorama de la trabajo, nuestra innovadora solución de IA permite a los equipos comparar todos los elementos con los mismos criterios del puesto». | **Los elementos se comparan con los mismos criterios del puesto.**<br><br>**Destino del texto:** `rewrite` |
+| **Error que permite volver a intentarlo**<br><br>«Error 500: POST /profile falló porque el worker agotó el tiempo de espera». | **No se pudieron guardar los cambios. Inténtalo de nuevo.**<br><br>**Mensaje público:** `rewrite`<br>**Diagnóstico de desarrollo:** `move` a los registros |
+| **Notificación con una variable**<br><br>«El archivo {fileName} se ha subido correctamente». | **Se ha subido {fileName}.**<br><br>**Destino del texto:** `rewrite`<br>**Variable protegida:** `{fileName}` |
 
-Los datos internos permanecen en el inventario de capacidades. La frase se elimina porque no ayuda a actuar ni a decidir. La falta de un punto de entrada sigue siendo una decisión de producto independiente; un texto explicativo no completa ese recorrido.
+Ningún ejemplo inventa funciones ni vías de recuperación. El texto sin una función para el usuario se elimina, el significado verificado se conserva, los diagnósticos se trasladan a la superficie adecuada y las variables de ejecución permanecen intactas.
 
 ## De dónde salen las reglas
 
