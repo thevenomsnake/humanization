@@ -1,6 +1,6 @@
 ---
 name: humanization
-description: Write, revise, and audit whether prose, stories, documentation, product content, marketing copy, email, and GUI microcopy should appear in zh-CN, zh-TW, en, ja, ko, and es. Use an explicit locale, format, and surface to decide each message's user-facing job, preserve facts, sources, capabilities, privacy, CTA, brand terms, placeholders, ICU messages, variables, markup, and runtime structure, and apply native language rules.
+description: Write, revise, and audit whether prose, stories, documentation, product content, marketing copy, email, and GUI microcopy should appear in zh-CN, zh-TW, en, ja, ko, and es, optionally calibrating expression to a user-designated writing sample for the current task. Use an explicit locale, format, and surface to decide each message's user-facing job, preserve facts, sources, capabilities, privacy, CTA, brand terms, placeholders, ICU messages, variables, markup, and runtime structure, and apply native language rules.
 ---
 
 # Humanization 3.0.0
@@ -15,6 +15,7 @@ description: Write, revise, and audit whether prose, stories, documentation, pro
 - `format`: `prose`、`copy` 或 `web-microcopy`；
 - `surface`: 文章、邮件、按钮、错误、空状态、确认、通知、页面或资源文件等真实表面；
 - 受众、目的、渠道、已有材料和交付限制；
+- 可选的 `author_sample`：用户明确指定用于当前任务表达校准的样本文字，并记录其 locale、format/surface 和正文边界；
 - 公开文字的用户目标、决定点、当前状态和必须披露项；
 - 现实、虚构或混合，以及现实内容的来源边界；
 - 品牌词、不可翻译词、CTA、隐私/能力承诺；
@@ -52,7 +53,7 @@ description: Write, revise, and audit whether prose, stories, documentation, pro
 ## 3. 写作或改稿
 
 1. 按 `core.md` 建立事实账本，并为每条候选信息判定 `keep`、`rewrite`、`move` 或 `remove`；候选文案暴露产品流程缺口时同时标记 `needs_product_decision`。
-2. 用目标 locale 档案决定自然语序、语体、标点、地区词和节奏。
+2. 用目标 locale 档案决定自然语序、语体、标点、地区词和节奏；有 `author_sample` 时，再按 `core.md` 的“任务内作者样本校准”匹配可观察的文字习惯。
 3. 用选定的 format 模块完成文字表面的任务；组件职责不能替代存在性判定。
 4. 只做必要改动；原文合格时返回 `no_change`，无用户职责的信息不要改写成另一段宣传文案。
 5. 跨语言只对齐事实、能力、隐私、CTA、品牌词和保护 token，不要求逐句直译或句数相同。

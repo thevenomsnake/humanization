@@ -35,7 +35,7 @@ Humanizationは、実績のあるライティング、編集、ローカライ�
 
 すべてのタスクで、役割の異なる3つのモジュールを読み込みます。
 
-- **共通契約:** 事実、出典、機能、プライバシー、CTA、ブランド用語、プレースホルダー、最小限の編集、コンテンツ掲載判定。
+- **共通契約:** 事実、出典、機能、プライバシー、CTA、ブランド用語、プレースホルダー、最小限の編集、書き手の文章例に基づく、その作業に限った文体調整、コンテンツ掲載判定。
 - **ロケールプロファイル:** 構文、文体または敬語、句読点、地域語彙、翻訳調、自然なリズム。
 - **GUIマイクロコピー:** ボタン、エラー、空状態、確認、通知に応じた文言と、key、ICUメッセージ、変数、markup、ランタイム構造の保護。
 
@@ -66,7 +66,8 @@ Humanizationが成り立っているのは、他のプロジェクトが有用�
 | [KKKKhazix/human-writing](https://github.com/KKKKhazix/human-writing/tree/cd879d22c8588125c1869d0b443f5d8df74b4192) | 資料の充足度、出典チェック、現実とフィクションの境界、推敲フロー、自然な中国語のリズムを含む、最初の`zh-CN`長文基盤を提供しました。 |
 | [yetone/kill-ai-slop](https://github.com/yetone/kill-ai-slop/tree/96d1ca568a1db7e1ef9a381644c744440f816ee4) | 具体的な情報を中心に据え、書き直す前に装飾を取り除き、パターン一致を次のレビューへつなげるテキストレビューの実践に影響を与えました。 |
 | [ehmo/slopkit (`slopbeth`)](https://github.com/ehmo/slopkit/blob/b33718bb9283c11b09567dc714f92d90ffb7bd16/skills/slopbeth/SKILL.md) | エンティティ、数値、日付、URL、引用、不確実性を扱い、すべての主張を手元の証拠の範囲に収める証拠台帳の設計に影響を与えました。 |
-| [blader/humanizer](https://github.com/blader/humanizer/blob/523374dee72d67c7b2b5f858ea0094ffda49c3ac/SKILL.md)と[petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop/blob/d30eddb9e04562234f2070b5ee63ca4649d9a05e/skills/no-ai-slop/SKILL.md) | 書き手の事実と自然な文体を保ち、有用な最小限の修正を加え、`no_change`を認める編集フローに影響を与えました。 |
+| [blader/humanizer](https://github.com/blader/humanizer/blob/523374dee72d67c7b2b5f858ea0094ffda49c3ac/SKILL.md) | ユーザーが指定した文章例から、文や段落のリズム、段落冒頭、語彙と文体、人称、句読点、反復、つなぎ方、不確実性の示し方、意図的な癖を読み取り、現在の作業だけに反映する方法に影響を与えました。作業をまたいで使う書き手プロファイルは作りません。 |
+| [petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop/blob/d30eddb9e04562234f2070b5ee63ca4649d9a05e/skills/no-ai-slop/SKILL.md) | 書き手の事実と自然な文体を保ち、有用な最小限の修正を加え、`no_change`を認める編集フローに影響を与えました。 |
 | [18F/content-guide](https://github.com/18F/content-guide/tree/1b1723d3d5b8f91d92c16487c88b56265dc0ec3a)と[GOV.UK Design System](https://github.com/alphagov/govuk-design-system/tree/efb0d77d38b7ed7f921697564d2c47723d434977) | ユーザーニーズに基づく掲載判定、前向きで実行可能な手順、適切なメッセージ配置、エラーや利用不可状態で実際の次の手順を示す要件に影響を与えました。 |
 | [Shopify Polaris](https://github.com/Shopify/polaris-react-archive/blob/af6ffb66a5b1d20f6c2c898b334a1ebb53728ba2/polaris.shopify.com/content/content/fundamentals.mdx)、[Carbon Design System](https://github.com/carbon-design-system/carbon-website/tree/e14433309b1dd53ec790eaa176139007ea9e9c80)、[PatternFly](https://github.com/patternfly/patternfly-org/tree/3aff87cace31c7d7e94ebae4cb35666f4f2e75d7) | コンポーネント単位のコンテンツ選択に影響を与えました。タスクに必要な支援を残し、インターフェースの状態を区別し、制約を確認可能な結果と実装済みの操作へ結び付けます。 |
 | [ya8282/ux-writing-skill](https://github.com/ya8282/ux-writing-skill/tree/711e4162d21367bc62003e428696dc76807d56ec)、[OOOOuyang/UX-writing-skill](https://github.com/OOOOuyang/UX-writing-skill/tree/fad02668533dca76d638aaacf6c2e834657df0ab)、[RobTar97/japanese-writing-skills](https://github.com/RobTar97/japanese-writing-skills/tree/e4b1700464219c60da786f005a061bccffbbd4e3) | コンテンツの扱いを明示し、すべての補助文に役割を持たせ、ユーザー向けの復旧案内と開発者向け診断情報を分ける設計に影響を与えました。 |
@@ -84,7 +85,7 @@ Humanizationが成り立っているのは、他のプロジェクトが有用�
 | `ko` | [Mozilla Korean style guide](https://github.com/mozilla-l10n/styleguides/blob/main/docs/ko/README.md)、[dotoricode/korean-humanizer](https://github.com/dotoricode/korean-humanizer/tree/7dff5b48cc06fc4252d4766b802ecd61e62c50ad)、[HarryJhin/korean-writing](https://github.com/HarryJhin/korean-writing/tree/e4db3883ed76521b7a0cac30392fa67d182cc8ab) | 自然な主語の省略、助詞と分かち書き、`합니다`/`해요`/`다`の文体レベル、敬語の保持、文末表現、英語・日本語由来の翻訳調の見直し。 |
 | `es` | [Mozilla Spanish style guides](https://github.com/mozilla-l10n/styleguides/tree/main/docs/es) | 性数一致、接語、`tú`/`usted`/`ustedes`、sentence caseのUI、地域用語、句読点、英語の直訳表現。 |
 
-リンク先のプロジェクトには、それぞれ固有のライセンスが適用されます。[多言語調査ノート](../research/multilingual-skill-research.md)と[GUIコピー掲載判定レポート](../research/gui-copy-existence-gate.md)には、出典となる根拠と、各情報源がHumanizationにどう生かされているかを記録しています。文章やコードを再利用する前に、各リポジトリのライセンスを確認してください。Humanizationのプロジェクト固有の指示は、上記の実践をもとに新しく書かれています。
+リンク先のプロジェクトには、それぞれ固有のライセンスが適用されます。[多言語調査ノート](../research/multilingual-skill-research.md)、[GUIコピー掲載判定レポート](../research/gui-copy-existence-gate.md)、[`blader/humanizer`の調査](../research/blader-humanizer.md)には、出典となる根拠と、各情報源がHumanizationにどう生かされているかを記録しています。文章やコードを再利用する前に、各リポジトリのライセンスを確認してください。Humanizationのプロジェクト固有の指示は、上記の実践をもとに新しく書かれています。
 
 ## インストール
 

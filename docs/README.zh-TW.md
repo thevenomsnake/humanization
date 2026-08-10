@@ -35,7 +35,7 @@ Humanization 整合多個成熟寫作、編輯、在地化、內容設計與 ant
 
 每項任務由三個職責清楚的模組共同處理。
 
-- **通用契約：** 事實、來源、能力、隱私權、CTA、品牌詞、placeholder、最小幅度修改和內容存在性門。
+- **通用契約：** 事實、來源、能力、隱私權、CTA、品牌詞、placeholder、最小幅度修改、依作者寫作樣本調整當次任務的表達和內容存在性門。
 - **語言檔案：** 分別定義該語言的語序、語體或敬語、標點、術語、翻譯腔審查和自然節奏。
 - **GUI 微文案：** 依按鈕、錯誤、空白狀態、確認和通知等元件分別處理文字，並保護 key、ICU 訊息、變數、markup 和執行階段結構。
 
@@ -66,7 +66,8 @@ Humanization 的形成，仰賴其他專案公開實用的寫作方法和語言�
 | [KKKKhazix/human-writing](https://github.com/KKKKhazix/human-writing/tree/cd879d22c8588125c1869d0b443f5d8df74b4192) | 奠定最初的 `zh-CN` 長文基礎，包括材料是否充足、來源查核、現實與虛構邊界、修改流程和自然中文節奏。 |
 | [yetone/kill-ai-slop](https://github.com/yetone/kill-ai-slop/tree/96d1ca568a1db7e1ef9a381644c744440f816ee4) | 啟發文字審閱流程，以具體資訊取代口號，先清理裝飾再改寫，並把模式命中視為進一步審閱的線索。 |
 | [ehmo/slopkit (`slopbeth`)](https://github.com/ehmo/slopkit/blob/b33718bb9283c11b09567dc714f92d90ffb7bd16/skills/slopbeth/SKILL.md) | 啟發證據帳本的設計，用來記錄實體、數字、日期、URL、引文和不確定性，讓每項主張都能對應現有證據。 |
-| [blader/humanizer](https://github.com/blader/humanizer/blob/523374dee72d67c7b2b5f858ea0094ffda49c3ac/SKILL.md) 和 [petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop/blob/d30eddb9e04562234f2070b5ee63ca4649d9a05e/skills/no-ai-slop/SKILL.md) | 啟發最小編輯流程，保留作者的事實和有效語氣，只做足以解決問題的修改，並允許 `no_change`。 |
+| [blader/humanizer](https://github.com/blader/humanizer/blob/523374dee72d67c7b2b5f858ea0094ffda49c3ac/SKILL.md) | 啟發依作者寫作樣本調整當次任務表達的做法：從使用者明確指定的樣本中觀察反覆出現的節奏、段落開頭、用詞、語體、人稱、標點、重複、銜接方式、不確定語氣和刻意保留的習慣，不建立可跨任務沿用的作者檔案。 |
+| [petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop/blob/d30eddb9e04562234f2070b5ee63ca4649d9a05e/skills/no-ai-slop/SKILL.md) | 啟發最小編輯流程，保留作者的事實和有效語氣，只做足以解決問題的修改，並允許 `no_change`。 |
 | [18F/content-guide](https://github.com/18F/content-guide/tree/1b1723d3d5b8f91d92c16487c88b56265dc0ec3a) 和 [GOV.UK Design System](https://github.com/alphagov/govuk-design-system/tree/efb0d77d38b7ed7f921697564d2c47723d434977) | 啟發以使用者需求為準的內容取捨、正向任務指示和訊息放置原則，並要求錯誤與無法使用的狀態為使用者提供實際的下一步。 |
 | [Shopify Polaris](https://github.com/Shopify/polaris-react-archive/blob/af6ffb66a5b1d20f6c2c898b334a1ebb53728ba2/polaris.shopify.com/content/content/fundamentals.mdx)、[Carbon Design System](https://github.com/carbon-design-system/carbon-website/tree/e14433309b1dd53ec790eaa176139007ea9e9c80) 和 [PatternFly](https://github.com/patternfly/patternfly-org/tree/3aff87cace31c7d7e94ebae4cb35666f4f2e75d7) | 啟發元件層級的內容取捨，保留與任務相關的協助、區分介面狀態，並將限制連結到使用者可觀察的後果與產品支援的動作。 |
 | [ya8282/ux-writing-skill](https://github.com/ya8282/ux-writing-skill/tree/711e4162d21367bc62003e428696dc76807d56ec)、[OOOOuyang/UX-writing-skill](https://github.com/OOOOuyang/UX-writing-skill/tree/fad02668533dca76d638aaacf6c2e834657df0ab) 和 [RobTar97/japanese-writing-skills](https://github.com/RobTar97/japanese-writing-skills/tree/e4b1700464219c60da786f005a061bccffbbd4e3) | 啟發明確的內容處置，讓每一段輔助文字都有清楚職責，並將面向使用者的復原文案與開發診斷分開。 |
@@ -84,7 +85,7 @@ Humanization 的形成，仰賴其他專案公開實用的寫作方法和語言�
 | `ko` | [Mozilla Korean style guide](https://github.com/mozilla-l10n/styleguides/blob/main/docs/ko/README.md)、[dotoricode/korean-humanizer](https://github.com/dotoricode/korean-humanizer/tree/7dff5b48cc06fc4252d4766b802ecd61e62c50ad) 和 [HarryJhin/korean-writing](https://github.com/HarryJhin/korean-writing/tree/e4db3883ed76521b7a0cac30392fa67d182cc8ab) | 自然省略主詞、助詞和分寫、`합니다`/`해요`/`다` 語體層級、敬語、句尾形式，以及英語和日語翻譯腔審查。 |
 | `es` | [Mozilla Spanish style guides](https://github.com/mozilla-l10n/styleguides/tree/main/docs/es) | 性數一致、附著代名詞、`tú`/`usted`/`ustedes`、句首大寫式 UI、地區術語、標點和英語仿譯審查。 |
 
-連結的專案分別適用各自的授權條款。[多語言研究筆記](../research/multilingual-skill-research.md) 和 [GUI 文案存在性門研究報告](../research/gui-copy-existence-gate.md) 記錄了來源證據，以及這些來源如何影響 Humanization；使用相關文字或程式碼前，請先查閱相應儲存庫的授權條款。Humanization 的專案規則依據上述實務重新撰寫。
+連結的專案分別適用各自的授權條款。[多語言研究筆記](../research/multilingual-skill-research.md)、[GUI 文案存在性門研究報告](../research/gui-copy-existence-gate.md) 和 [`blader/humanizer` 深度研究](../research/blader-humanizer.md) 記錄了來源證據，以及這些來源如何影響 Humanization；使用相關文字或程式碼前，請先查閱相應儲存庫的授權條款。Humanization 的專案規則依據上述實務重新撰寫。
 
 ## 安裝
 

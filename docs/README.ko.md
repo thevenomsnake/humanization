@@ -35,7 +35,7 @@ Humanization은 글쓰기, 편집, 현지화, 콘텐츠 디자인, anti-slop 분
 
 모든 작업은 역할이 분명한 세 모듈을 불러옵니다.
 
-- **공통 계약:** 사실, 출처, 기능, 개인정보, CTA, 브랜드 용어, 플레이스홀더, 최소 편집, 콘텐츠 존재 여부 판단을 담당합니다.
+- **공통 계약:** 사실, 출처, 기능, 개인정보, CTA, 브랜드 용어, 플레이스홀더, 최소 편집, 작성자 글 예시를 바탕으로 현재 작업에서만 적용하는 문체 조정, 콘텐츠 존재 여부 판단을 담당합니다.
 - **로캘 프로필:** 구문, 문체 또는 높임말, 문장부호, 지역 어휘, 번역투, 자연스러운 리듬을 담당합니다.
 - **GUI 마이크로카피:** 버튼, 오류, 빈 상태, 확인, 알림에 맞는 문구를 작성하고 key, ICU 메시지, 변수, markup, 런타임 구조를 보호합니다.
 
@@ -66,7 +66,8 @@ Humanization은 여러 프로젝트가 유용한 글쓰기 방법과 언어별 �
 | [KKKKhazix/human-writing](https://github.com/KKKKhazix/human-writing/tree/cd879d22c8588125c1869d0b443f5d8df74b4192) | 자료의 충분성, 출처 확인, 현실과 허구의 경계, 수정 흐름, 자연스러운 중국어 리듬을 포함한 최초의 `zh-CN` 장문 기반을 제공했습니다. |
 | [yetone/kill-ai-slop](https://github.com/yetone/kill-ai-slop/tree/96d1ca568a1db7e1ef9a381644c744440f816ee4) | 구체적인 정보를 중심에 두고, 다시 쓰기 전에 장식을 걷어 내며, 패턴 일치를 다음 검토로 이어 가는 텍스트 검토 방식에 영향을 주었습니다. |
 | [ehmo/slopkit (`slopbeth`)](https://github.com/ehmo/slopkit/blob/b33718bb9283c11b09567dc714f92d90ffb7bd16/skills/slopbeth/SKILL.md) | 개체, 숫자, 날짜, URL, 인용, 불확실성을 관리하고 모든 주장을 현재 증거의 범위 안에 두는 증거 원장에 영향을 주었습니다. |
-| [blader/humanizer](https://github.com/blader/humanizer/blob/523374dee72d67c7b2b5f858ea0094ffda49c3ac/SKILL.md) 및 [petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop/blob/d30eddb9e04562234f2070b5ee63ca4649d9a05e/skills/no-ai-slop/SKILL.md) | 작성자의 사실과 자연스러운 문체를 보존하고, 필요한 만큼만 다듬으며, `no_change`를 허용하는 최소 편집 흐름에 영향을 주었습니다. |
+| [blader/humanizer](https://github.com/blader/humanizer/blob/523374dee72d67c7b2b5f858ea0094ffda49c3ac/SKILL.md) | 사용자가 지정한 글 예시에서 반복되는 문장과 문단의 리듬, 문단 시작 방식, 어휘, 문체, 인칭, 문장부호, 반복, 전환, 불확실성 표현, 의도적으로 유지한 습관을 파악해 현재 작업에만 반영하는 방식에 영향을 주었습니다. 작업을 넘어 유지되는 작성자 프로필은 만들지 않습니다. |
+| [petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop/blob/d30eddb9e04562234f2070b5ee63ca4649d9a05e/skills/no-ai-slop/SKILL.md) | 작성자의 사실과 자연스러운 문체를 보존하고, 필요한 만큼만 다듬으며, `no_change`를 허용하는 최소 편집 흐름에 영향을 주었습니다. |
 | [18F/content-guide](https://github.com/18F/content-guide/tree/1b1723d3d5b8f91d92c16487c88b56265dc0ec3a) 및 [GOV.UK Design System](https://github.com/alphagov/govuk-design-system/tree/efb0d77d38b7ed7f921697564d2c47723d434977) | 사용자 요구에 따른 콘텐츠 판단, 긍정적이고 실행 가능한 작업 안내, 알맞은 메시지 배치, 오류와 사용 불가 상태에서 실제 다음 단계를 제공하는 원칙에 영향을 주었습니다. |
 | [Shopify Polaris](https://github.com/Shopify/polaris-react-archive/blob/af6ffb66a5b1d20f6c2c898b334a1ebb53728ba2/polaris.shopify.com/content/content/fundamentals.mdx), [Carbon Design System](https://github.com/carbon-design-system/carbon-website/tree/e14433309b1dd53ec790eaa176139007ea9e9c80) 및 [PatternFly](https://github.com/patternfly/patternfly-org/tree/3aff87cace31c7d7e94ebae4cb35666f4f2e75d7) | 컴포넌트별 콘텐츠 선택에 영향을 주었습니다. 작업에 필요한 도움을 남기고, 인터페이스 상태를 구분하며, 제약을 관찰 가능한 결과와 지원되는 동작에 연결합니다. |
 | [ya8282/ux-writing-skill](https://github.com/ya8282/ux-writing-skill/tree/711e4162d21367bc62003e428696dc76807d56ec), [OOOOuyang/UX-writing-skill](https://github.com/OOOOuyang/UX-writing-skill/tree/fad02668533dca76d638aaacf6c2e834657df0ab) 및 [RobTar97/japanese-writing-skills](https://github.com/RobTar97/japanese-writing-skills/tree/e4b1700464219c60da786f005a061bccffbbd4e3) | 콘텐츠 처리 결과를 명시하고, 모든 도움말 문구에 분명한 역할을 부여하며, 사용자 복구 문구와 개발자 진단 정보를 구분하는 설계에 영향을 주었습니다. |
@@ -84,7 +85,7 @@ Humanization은 여러 프로젝트가 유용한 글쓰기 방법과 언어별 �
 | `ko` | [Mozilla Korean style guide](https://github.com/mozilla-l10n/styleguides/blob/main/docs/ko/README.md), [dotoricode/korean-humanizer](https://github.com/dotoricode/korean-humanizer/tree/7dff5b48cc06fc4252d4766b802ecd61e62c50ad) 및 [HarryJhin/korean-writing](https://github.com/HarryJhin/korean-writing/tree/e4db3883ed76521b7a0cac30392fa67d182cc8ab) | 자연스러운 주어 생략, 조사와 띄어쓰기, `합니다`/`해요`/`다` 문체, 높임말 보존, 종결어미, 영어와 일본어 번역투 검토. |
 | `es` | [Mozilla Spanish style guides](https://github.com/mozilla-l10n/styleguides/tree/main/docs/es) | 성과 수의 일치, 접어, `tú`/`usted`/`ustedes`, 문장형 대소문자를 쓰는 UI, 지역 용어, 문장부호, 영어 직역 표현. |
 
-링크된 프로젝트에는 각각의 라이선스가 적용됩니다. [다국어 연구 기록](../research/multilingual-skill-research.md)과 [GUI 카피 존재 여부 판단 보고서](../research/gui-copy-existence-gate.md)에는 출처의 근거와 각 출처가 Humanization에 기여한 방식이 정리되어 있습니다. 해당 텍스트나 코드를 재사용하기 전에 각 저장소의 라이선스를 확인하세요. Humanization의 프로젝트별 지침은 위에서 정리한 실무 방식을 바탕으로 새로 작성했습니다.
+링크된 프로젝트에는 각각의 라이선스가 적용됩니다. [다국어 연구 기록](../research/multilingual-skill-research.md), [GUI 카피 존재 여부 판단 보고서](../research/gui-copy-existence-gate.md), [`blader/humanizer` 심층 연구](../research/blader-humanizer.md)에는 출처의 근거와 각 출처가 Humanization에 기여한 방식이 정리되어 있습니다. 해당 텍스트나 코드를 재사용하기 전에 각 저장소의 라이선스를 확인하세요. Humanization의 프로젝트별 지침은 위에서 정리한 실무 방식을 바탕으로 새로 작성했습니다.
 
 ## 설치
 
